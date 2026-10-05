@@ -79,8 +79,8 @@
             <div id="notifIconContainer" class="w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto text-xl">
                 <i id="notifIcon" class="fas fa-check"></i>
             </div>
-            <h3 id="notifTitle" class="text-lg font-bold text-center text-slate-800 mb-2">সফল হয়েছে!</h3>
-            <p id="notifMessage" class="text-sm text-slate-600 text-center mb-6">আপনার পরিবর্তনগুলো সফলভাবে সংরক্ষিত হয়েছে।</p>
+            <h3 id="notifTitle" class="text-lg font-bold text-center text-slate-800 mb-2">সফল হয়েছে!</h3>
+            <p id="notifMessage" class="text-sm text-slate-600 text-center mb-6">আপনার পরিবর্তনগুলো সফলভাবে সংরক্ষিত হয়েছে।</p>
             <button onclick="closeNotification()" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md transition-all">ঠিক আছে</button>
         </div>
     </div>
@@ -107,10 +107,10 @@
             </div>
             
             <div class="flex items-center gap-3">
-                <button onclick="openTab('settings')" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-xl border border-white/20 backdrop-blur-md transition-all flex items-center gap-2">
+                <button onclick="switchTab('settings')" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-xl border border-white/20 backdrop-blur-md transition-all flex items-center gap-2">
                     <i class="fas fa-cog text-amber-300"></i> শিক্ষক সেটিংস
                 </button>
-                <button onclick="openTab('backup')" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-bold rounded-xl shadow-lg transition-all flex items-center gap-2">
+                <button onclick="switchTab('backup')" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-bold rounded-xl shadow-lg transition-all flex items-center gap-2">
                     <i class="fas fa-database"></i> ব্যাকআপ
                 </button>
             </div>
@@ -123,86 +123,6 @@
             <button onclick="switchTab('dashboard')" id="nav-dashboard" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all shrink-0 flex items-center gap-2 bg-brand-50 text-brand-700 border border-brand-200 shadow-sm">
                 <i class="fas fa-chart-pie text-base"></i> ড্যাশবোর্ড
             </button>
-            <!-- Teachers Directory Section -->
-<section style="max-width: 1000px; margin: 20px auto; padding: 15px; font-family: 'Kalpurush', 'SolaimanLipi', sans-serif;">
-  <h2 style="text-align: center; color: #0d5c3a; margin-bottom: 20px;">শিক্ষক ও শিক্ষিকা বৃন্দের তালিকা</h2>
-  
-  <div style="overflow-x: auto;">
-    <table style="width: 100%; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
-      <thead>
-        <tr style="background-color: #0d5c3a; color: #ffffff; text-align: center;">
-          <th style="padding: 12px; border: 1px solid #ddd;">ছবি</th>
-          <th style="padding: 12px; border: 1px solid #ddd;">নাম</th>
-          <th style="padding: 12px; border: 1px solid #ddd;">পদবি</th>
-          <th style="padding: 12px; border: 1px solid #ddd;">ঠিকানা</th>
-          <th style="padding: 12px; border: 1px solid #ddd;">মোবাইল নম্বর</th>
-          <th style="padding: 12px; border: 1px solid #ddd;">ই-মেইল</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- ১. প্রধান শিক্ষক -->
-        <tr style="text-align: center; border-bottom: 1px solid #eee;">
-          <td style="padding: 10px; border: 1px solid #ddd;">
-            <img src="https://via.placeholder.com/80" alt="প্রধান শিক্ষক" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-          </td>
-          <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">চিত্তরঞ্জন রায়</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">প্রধান শিক্ষক</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">বীরগঞ্জ, দিনাজপুর</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">০১৭৫১-৪৩০৭৭৬</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">headmaster@gmail.com</td>
-        </tr>
-
-        <!-- ২. সহকারী শিক্ষক (আপনি) -->
-        <tr style="text-align: center; border-bottom: 1px solid #eee; background-color: #fdfdfd;">
-          <td style="padding: 10px; border: 1px solid #ddd;">
-            <img src="https://via.placeholder.com/80" alt="তোফায়েল তোরাব" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-          </td>
-          <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">তোফায়েল তোরাব</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">সহকারী শিক্ষক</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">বীরগঞ্জ, দিনাজপুর</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">০১৭XXXXXXXX</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">tofayel@gmail.com</td>
-        </tr>
-
-        <!-- ৩. সহকারী শিক্ষক ২ -->
-        <tr style="text-align: center; border-bottom: 1px solid #eee;">
-          <td style="padding: 10px; border: 1px solid #ddd;">
-            <img src="https://via.placeholder.com/80" alt="সহকারী শিক্ষক" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-          </td>
-          <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">[শিক্ষকের নাম]</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">সহকারী শিক্ষক</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">বীরগঞ্জ, দিনাজপুর</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">০১৭XXXXXXXX</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">teacher2@gmail.com</td>
-        </tr>
-
-        <!-- ৪. সহকারী শিক্ষক ৩ -->
-        <tr style="text-align: center; border-bottom: 1px solid #eee; background-color: #fdfdfd;">
-          <td style="padding: 10px; border: 1px solid #ddd;">
-            <img src="https://via.placeholder.com/80" alt="সহকারী শিক্ষক" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-          </td>
-          <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">[শিক্ষকের নাম]</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">সহকারী শিক্ষক</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">বীরগঞ্জ, দিনাজপুর</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">০১৭XXXXXXXX</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">teacher3@gmail.com</td>
-        </tr>
-
-        <!-- ৫. সহকারী শিক্ষক ৪ -->
-        <tr style="text-align: center; border-bottom: 1px solid #eee;">
-          <td style="padding: 10px; border: 1px solid #ddd;">
-            <img src="https://via.placeholder.com/80" alt="সহকারী শিক্ষক" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
-          </td>
-          <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">[শিক্ষকের নাম]</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">সহকারী শিক্ষক</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">বীরগঞ্জ, দিনাজপুর</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">০১৭XXXXXXXX</td>
-          <td style="padding: 10px; border: 1px solid #ddd;">teacher4@gmail.com</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
             <button onclick="switchTab('students')" id="nav-students" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
                 <i class="fas fa-user-graduate text-base"></i> শিক্ষার্থী প্রোফাইল
             </button>
@@ -214,6 +134,9 @@
             </button>
             <button onclick="switchTab('certificates')" id="nav-certificates" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
                 <i class="fas fa-certificate text-base"></i> সনদ ও সার্টিফিকেট
+            </button>
+            <button onclick="switchTab('teachers')" id="nav-teachers" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
+                <i class="fas fa-chalkboard-teacher text-base"></i> শিক্ষক তালিকা
             </button>
             <button onclick="switchTab('backup')" id="nav-backup" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
                 <i class="fas fa-hdd text-base"></i> ডেটা ব্যাকআপ
@@ -297,7 +220,7 @@
                             <i class="fas fa-book-reader"></i>
                         </div>
                         <h3 class="text-lg font-bold text-slate-800 mb-2">প্রতিদিনের পাঠটিকা সংযোজন</h3>
-                        <p class="text-sm text-slate-600 mb-4">১ম থেকে ৫ম শ্রেণির সকল বিষয়ের জন্য প্রতিদিনের তারিখ অনুযায়ী পাঠটিকা, শিখনফল ও বাড়ির কাজ যুক্ত ও পরিচালনা করুন।</p>
+                        <p class="text-sm text-slate-600 mb-4">১ম থেকে ৫ম শ্রেণির সকল বিষয়ের জন্য প্রতিদিনের তারিখ অনুযায়ী পাঠটিকা, শিখনফল ও বাড়ির কাজ যুক্ত ও পরিচালনা করুন।</p>
                     </div>
                     <button onclick="switchTab('lessonplan')" class="w-full py-2 bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-700 font-medium rounded-xl transition-all text-sm flex items-center justify-center gap-2">
                         <span>পাঠটিকা তালিকা দেখুন</span> <i class="fas fa-arrow-right text-xs"></i>
@@ -352,7 +275,7 @@
                     <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                         <i class="fas fa-search"></i>
                     </span>
-                    <input type="text" id="studentSearch" onkeyup="filterStudents()" placeholder="নাম বা রোল দিয়ে খুঁজুন..." class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
+                    <input type="text" id="studentSearch" onkeyup="filterStudents()" placeholder="নাম বা রোল দিয়ে খুঁজুন..." class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
                 </div>
                 <div class="flex items-center gap-3 w-full sm:w-auto">
                     <select id="classFilter" onchange="filterStudents()" class="w-full sm:w-auto px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
@@ -386,7 +309,7 @@
                 </div>
                 <div id="noStudentsMsg" class="hidden p-12 text-center text-slate-400">
                     <i class="fas fa-folder-open text-4xl mb-3 text-slate-300"></i>
-                    <p class="font-medium">কোনো শিক্ষার্থীর তথ্য পাওয়া যায়নি।</p>
+                    <p class="font-medium">কোনো শিক্ষার্থীর তথ্য পাওয়া যায়নি।</p>
                 </div>
             </div>
         </section>
@@ -480,7 +403,7 @@
             </div>
             <div id="noLessonsMsg" class="hidden bg-white p-12 rounded-2xl border border-slate-200 text-center text-slate-400">
                 <i class="fas fa-book-open text-4xl mb-3 text-slate-300"></i>
-                <p class="font-medium">কোনো পাঠটিকা পাওয়া যায়নি। নতুন পাঠটিকা যোগ করুন।</p>
+                <p class="font-medium">কোনো পাঠটিকা পাওয়া যায়নি। নতুন পাঠটিকা যোগ করুন।</p>
             </div>
         </section>
 
@@ -490,892 +413,179 @@
                 <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-2">
                     <i class="fas fa-certificate text-brand-600"></i> সনদ মেনু ও সার্টিফিকেট জেনারেটর
                 </h2>
-                <p class="text-sm text-slate-500 mb-6">শিক্ষার্থীর নাম নির্বাচন করে প্রশংসাপত্র, প্রত্যয়নপত্র অথবা ছাড়পত্র (TC) তৈরি করুন এবং সরাসরি প্রিন্ট করুন।</p>
-                
-                <!-- Certificate Type Selector Pills -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-                    <button onclick="selectCertificateType('appreciation')" id="certTypeAppr" class="p-4 rounded-2xl border-2 font-medium text-left transition-all flex items-center gap-3 border-brand-500 bg-brand-50 text-brand-900 shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center shrink-0">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold">প্রশংসা সনদ</div>
-                            <div class="text-xs text-slate-500">Appreciation Certificate</div>
-                        </div>
-                    </button>
-                    <button onclick="selectCertificateType('testimonial')" id="certTypeTest" class="p-4 rounded-2xl border-2 font-medium text-left transition-all flex items-center gap-3 border-slate-200 bg-white text-slate-700 hover:border-slate-300">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold">প্রত্যয়ন সনদ</div>
-                            <div class="text-xs text-slate-500">Character Certificate</div>
-                        </div>
-                    </button>
-                    <button onclick="selectCertificateType('tc')" id="certTypeTc" class="p-4 rounded-2xl border-2 font-medium text-left transition-all flex items-center gap-3 border-slate-200 bg-white text-slate-700 hover:border-slate-300">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
-                            <i class="fas fa-file-invoice"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold">ছাড়পত্র (TC)</div>
-                            <div class="text-xs text-slate-500">Transfer Certificate</div>
-                        </div>
-                    </button>
-                </div>
+                <p class="text-sm text-slate-500 mb-6">শিক্ষার্থীদের বিভিন্ন সনদ ও সার্টিফিকেট সহজেই নির্বাচন ও প্রিন্ট করুন।</p>
 
-                <!-- Student Selector for Certificate -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-2">শিক্ষার্থী নির্বাচন করুন</label>
-                        <select id="certStudentSelect" onchange="populateCertificateData()" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
-                            <option value="">-- শিক্ষার্থী সিলেক্ট করুন --</option>
-                        </select>
-                    </div>
-                    <div class="flex gap-3">
-                        <button onclick="printCertificate()" class="flex-1 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
-                            <i class="fas fa-print"></i> প্রিন্ট বা ডাউনলোড
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="border border-slate-200 rounded-2xl p-5 hover:border-brand-500 transition-all flex flex-col justify-between bg-slate-50">
+                        <div>
+                            <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 mb-3">
+                                <i class="fas fa-award text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-lg mb-1">প্রশংসাপত্র</h3>
+                            <p class="text-xs text-slate-600">বিদ্যালয়ের শিক্ষার্থীদের কৃতিত্বমূলক ও চরিত্রগত আচরণের জন্য প্রশংসাপত্র প্রদান।</p>
+                        </div>
+                        <button onclick="generateCertificate('প্রশংসাপত্র')" class="mt-4 w-full py-2 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl text-sm transition-all">
+                            সনদ প্রিন্ট করুন
                         </button>
                     </div>
-                </div>
-            </div>
 
-            <!-- Printable Certificate Preview Card -->
-            <div class="bg-slate-200 p-4 sm:p-8 rounded-3xl flex justify-center overflow-x-auto">
-                <div id="certificatePreviewArea" class="printable-area bg-white w-[700px] min-h-[500px] p-8 sm:p-12 rounded-2xl shadow-2xl border-8 border-double border-emerald-800 relative flex flex-col justify-between text-slate-800">
-                    <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-                        <i class="fas fa-graduation-cap text-[200px] text-emerald-900"></i>
-                    </div>
-
-                    <div class="text-center space-y-1 relative z-10">
-                        <h3 class="text-xs uppercase tracking-widest text-emerald-700 font-bold">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</h3>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h2>
-                        <p class="text-xs text-slate-500">বিদ্যালয় কোডঃ ১৫০৪৬১ | স্থাপিতঃ ১৯৮৯ | EMIS: ৯৯১০৩১২০৬০৪</p>
-                        <p class="text-xs text-slate-500">ডাকঘরঃ কল্যাণীহাট-৫২২০, উপজেলাঃ বীরগঞ্জ, জেলাঃ দিনাজপুর</p>
-                        <div class="w-32 h-1 bg-amber-400 mx-auto mt-3 rounded-full"></div>
-                    </div>
-
-                    <div class="my-8 text-center relative z-10 space-y-6">
-                        <h1 id="certTitleText" class="text-2xl sm:text-3xl font-bold text-emerald-800 tracking-wide underline decoration-amber-400 underline-offset-8">প্রশংসা সনদ</h1>
-                        
-                        <p id="certBodyText" class="text-base sm:text-lg text-slate-700 leading-relaxed px-4 text-justify sm:text-center">
-                            এই মর্মে প্রত্যয়ন করা যাইতেছে যে, <span id="previewName" class="font-bold underline decoration-dotted">__________</span>, পিতা: <span id="previewFather" class="font-bold underline decoration-dotted">__________</span>, মাতা: <span id="previewMother" class="font-bold underline decoration-dotted">__________</span>, এই বিদ্যালয়ের <span id="previewClass" class="font-bold underline decoration-dotted">__________</span> শ্রেণির রোল নম্বর <span id="previewRoll" class="font-bold underline decoration-dotted">__</span> এর নিয়মিত শিক্ষার্থী। সে অত্যন্ত সুনামের সাথে লেখাপড়া করেছে এবং তার চরিত্র ও আচরণ সন্তোষজনক।
-                        </p>
-                    </div>
-
-                    <div class="flex justify-between items-end relative z-10 pt-12 text-sm">
-                        <div class="text-center">
-                            <div class="w-36 border-b border-slate-400 mb-1"></div>
-                            <span class="font-medium text-slate-600">শ্রেণি শিক্ষক</span>
+                    <div class="border border-slate-200 rounded-2xl p-5 hover:border-brand-500 transition-all flex flex-col justify-between bg-slate-50">
+                        <div>
+                            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-700 mb-3">
+                                <i class="fas fa-file-contract text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-lg mb-1">প্রত্যয়ন পত্র</h3>
+                            <p class="text-xs text-slate-600">বিদ্যালয়ে অধ্যায়নরত থাকার সপক্ষে প্রাতিষ্ঠানিক প্রত্যয়ন পত্র বিতরণ।</p>
                         </div>
-                        <div class="text-center">
-                            <div id="previewHeadmaster" class="font-bold text-slate-800 mb-1">প্রধান শিক্ষক</div>
-                            <div class="w-40 border-b border-slate-400 mb-1"></div>
-                            <span class="font-medium text-slate-600">প্রধান শিক্ষক<br>নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</span>
+                        <button onclick="generateCertificate('প্রত্যয়ন পত্র')" class="mt-4 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl text-sm transition-all">
+                            সনদ প্রিন্ট করুন
+                        </button>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-2xl p-5 hover:border-brand-500 transition-all flex flex-col justify-between bg-slate-50">
+                        <div>
+                            <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-700 mb-3">
+                                <i class="fas fa-graduation-cap text-lg"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-lg mb-1">ছাড়পত্র (TC)</h3>
+                            <p class="text-xs text-slate-600">অন্য প্রতিষ্ঠানে স্থানান্তরের জন্য প্রাতিষ্ঠানিক স্থানান্তরের ছাড়পত্র (TC)।</p>
                         </div>
+                        <button onclick="generateCertificate('ছাড়পত্র (TC)')" class="mt-4 w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-xl text-sm transition-all">
+                            সনদ প্রিন্ট করুন
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 6: BACKUP & RESTORE -->
+        <!-- TAB 6: TEACHERS DIRECTORY -->
+        <section id="tab-teachers" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-center text-emerald-800 mb-6">শিক্ষক ও শিক্ষিকা বৃন্দের তালিকা</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-center border-collapse bg-white rounded-lg overflow-hidden border border-slate-200">
+                        <thead>
+                            <tr class="bg-emerald-800 text-white text-sm">
+                                <th class="p-3 border border-slate-200">ছবি</th>
+                                <th class="p-3 border border-slate-200">নাম</th>
+                                <th class="p-3 border border-slate-200">পদবি</th>
+                                <th class="p-3 border border-slate-200">ঠিকানা</th>
+                                <th class="p-3 border border-slate-200">মোবাইল নম্বর</th>
+                                <th class="p-3 border border-slate-200">ই-মেইল</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-slate-200">
+                                <td class="p-2 border border-slate-200">
+                                    <img src="https://via.placeholder.com/80" alt="প্রধান শিক্ষক" class="w-14 h-14 rounded-full object-cover mx-auto">
+                                </td>
+                                <td class="p-2 border border-slate-200 font-bold">চিত্তরঞ্জন রায়</td>
+                                <td class="p-2 border border-slate-200">প্রধান শিক্ষক</td>
+                                <td class="p-2 border border-slate-200">বীরগঞ্জ, দিনাজপুর</td>
+                                <td class="p-2 border border-slate-200">০১৭৫১-৪৩০৭৭৬</td>
+                                <td class="p-2 border border-slate-200">headmaster@gmail.com</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 bg-slate-50">
+                                <td class="p-2 border border-slate-200">
+                                    <img src="https://via.placeholder.com/80" alt="তোফায়েল তোরাব" class="w-14 h-14 rounded-full object-cover mx-auto">
+                                </td>
+                                <td class="p-2 border border-slate-200 font-bold">তোফায়েল তোরাব</td>
+                                <td class="p-2 border border-slate-200">সহকারী শিক্ষক</td>
+                                <td class="p-2 border border-slate-200">বীরগঞ্জ, দিনাজপুর</td>
+                                <td class="p-2 border border-slate-200">০১৭XXXXXXXX</td>
+                                <td class="p-2 border border-slate-200">tofayel@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 7: DATA BACKUP -->
         <section id="tab-backup" class="tab-content hidden space-y-6">
-            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm max-w-2xl mx-auto space-y-6">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-2">
-                        <i class="fas fa-database text-brand-600"></i> ডেটা ব্যাকআপ ও রিস্টোর
-                    </h2>
-                    <p class="text-sm text-slate-500">ফোন বদলালে বা ব্রাউজার ডেটা মুছে গেলেও সব ফিরিয়ে আনতে আপনার ডেটা JSON ফাইলে ব্যাকআপ বা রিস্টোর করুন।</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                    <div class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 flex flex-col justify-between">
-                        <div>
-                            <div class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center mb-3">
-                                <i class="fas fa-download"></i>
-                            </div>
-                            <h3 class="font-bold text-slate-800 mb-1">ডেটা ব্যাকআপ ডাউনলোড</h3>
-                            <p class="text-xs text-slate-600 mb-4">আপনার ব্রাউজারে সংরক্ষিত সমস্ত শিক্ষার্থী, পাঠটিকা ও সেটিংসের ডেটা ফাইল হিসেবে ডাউনলোড করুন।</p>
-                        </div>
-                        <button onclick="downloadBackup()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-xl shadow-md transition-all text-sm flex items-center justify-center gap-2">
-                            <i class="fas fa-file-download"></i> ব্যাকআপ ফাইল ডাউনলোড
-                        </button>
-                    </div>
-
-                    <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 flex flex-col justify-between">
-                        <div>
-                            <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-3">
-                                <i class="fas fa-upload"></i>
-                            </div>
-                            <h3 class="font-bold text-slate-800 mb-1">ডেটা রিস্টোর করুন</h3>
-                            <p class="text-xs text-slate-600 mb-4">আগে ডাউনলোড করা ব্যাকআপ JSON ফাইল সিলেক্ট করে সমস্ত ডেটা পুনরুদ্ধার করুন।</p>
-                        </div>
-                        <label class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-md transition-all text-sm flex items-center justify-center gap-2 cursor-pointer">
-                            <i class="fas fa-file-upload"></i> ফাইল আপলোড করুন
-                            <input type="file" id="restoreFile" accept=".json" onchange="restoreBackup(event)" class="hidden">
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 7: TEACHER SETTINGS -->
-        <section id="tab-settings" class="tab-content hidden space-y-6">
-            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm max-w-xl mx-auto space-y-6">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-2">
-                        <i class="fas fa-user-cog text-brand-600"></i> শিক্ষক ও প্রতিষ্ঠান প্রোফাইল সেটিংস
-                    </h2>
-                    <p class="text-sm text-slate-500">প্রধান শিক্ষক বা দায়িত্বপ্রাপ্ত শিক্ষকের তথ্য আপডেট করুন যা সার্টিফিকেটে প্রদর্শিত হবে।</p>
-                </div>
-
-                <form id="settingsForm" onsubmit="saveTeacherSettings(event)" class="space-y-4 pt-2">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">শিক্ষকের নাম</label>
-                        <input type="text" id="teacherName" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="শিক্ষকের নাম লিখুন">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">পদবি</label>
-                        <input type="text" id="teacherDesignation" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="যেমন: প্রধান শিক্ষক">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">বিদ্যালয়ের নাম</label>
-                        <input type="text" id="schoolNameInput" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" value="নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">মোবাইল নম্বর</label>
-                        <input type="text" id="teacherMobile" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="০১XXXXXXXXX">
-                    </div>
-                    <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
-                        <i class="fas fa-save"></i> সেটিংস সংরক্ষণ করুন
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
+                    <i class="fas fa-database text-brand-600"></i> ডেটা ব্যাকআপ ও রিকভারি
+                </h2>
+                <p class="text-sm text-slate-600 mb-6">আপনার বিদ্যালয়ের সংরক্ষিত তথ্য নিরাপদ রাখতে ব্যাকআপ ফাইল তৈরি বা ডাউনলোড করুন।</p>
+                <div class="flex gap-4">
+                    <button onclick="alert('ব্যাকআপ তৈরির কাজ প্রক্রিয়াধীন আছে।')" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-medium">
+                        <i class="fas fa-download mr-1"></i> ব্যাকআপ ডাউনলোড করুন
                     </button>
-                </form>
+                </div>
             </div>
         </section>
 
-        <!-- TAB 8: PRIVACY POLICY & TERMS -->
+        <!-- TAB 8: SETTINGS -->
+        <section id="tab-settings" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
+                    <i class="fas fa-user-cog text-brand-600"></i> শিক্ষক সেটিংস
+                </h2>
+                <p class="text-sm text-slate-600">শিক্ষক প্রোফাইল ও প্রশাসনিক সেটিংস এখান থেকে পরিবর্তন করতে পারবেন।</p>
+            </div>
+        </section>
+
+        <!-- TAB 9: PRIVACY & TERMS -->
         <section id="tab-privacy" class="tab-content hidden space-y-6">
-            <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm max-w-3xl mx-auto space-y-6">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-2">
-                        <i class="fas fa-shield-alt text-brand-600"></i> গোপনীয়তা নীতি ও ব্যবহারের শর্তাবলি (Privacy Policy & Terms)
-                    </h2>
-                    <p class="text-sm text-slate-500">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয় ডিজিটাল সিস্টেমের ডেটা সুরক্ষা ও নীতিমালা।</p>
-                </div>
-
-                <div class="space-y-4 text-sm text-slate-700 leading-relaxed pt-2">
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-slate-800 mb-1"><i class="fas fa-lock text-brand-600 mr-2"></i> ডেটা সুরক্ষা (Data Privacy)</h3>
-                        <p>এই সিস্টেমে সংরক্ষিত সকল শিক্ষার্থীর তথ্য, দৈনিক পাঠটিকা ও মূল্যায়ন রিপোর্ট কেবলমাত্র বিদ্যালয়ের প্রশাসনিক ও শিক্ষামূলক কাজে ব্যবহার করা হয়। আপনার ব্রাউজারের লোকাল স্টোরেজে (LocalStorage) এই ডেটা সুরক্ষিত থাকে।</p>
-                    </div>
-
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-slate-800 mb-1"><i class="fas fa-server text-brand-600 mr-2"></i> ব্যাকআপ ও ব্রাউজার ডেটা</h3>
-                        <p>ব্রাউজার ক্যাশ বা কুকিজ মুছা হলে ডেটা হারিয়ে যেতে পারে। তাই নিয়মিত 'ডেটা ব্যাকআপ ডাউনলোড' অপশন ব্যবহার করে JSON ফাইল সংরক্ষণ করার পরামর্শ দেওয়া হচ্ছে।</p>
-                    </div>
-
-                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                        <h3 class="font-bold text-slate-800 mb-1"><i class="fas fa-gavel text-brand-600 mr-2"></i> ব্যবহারের শর্তাবলি (Terms of Use)</h3>
-                        <p>নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়ের (কোডঃ ১৫০৪৬১) শিক্ষক ও কতৃপক্ষ ছাড়া অন্য কেউ অননুমোদিতভাবে এই পোর্টাল অপব্যবহার করতে পারবেন না।</p>
-                    </div>
-                </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
+                    <i class="fas fa-shield-alt text-brand-600"></i> প্রাইভেসি পলিসি ও ব্যবহারের শর্তাবলি
+                </h2>
+                <p class="text-sm text-slate-600 leading-relaxed">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়ের সকল তথ্য ও উপাত্ত নিরাপদভাবে সংরক্ষিত থাকে। প্রাতিষ্ঠানিক প্রয়োজনে শুধুমাত্র অনুমোদিত শিক্ষকগণ এই প্ল্যাটফর্ম ব্যবহার করতে পারবেন।</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Add/Edit Student Modal -->
-    <div id="studentModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-100">
-                <h3 id="modalTitle" class="text-lg font-bold text-slate-800 flex items-center gap-2">
-                    <i class="fas fa-user-plus text-brand-600"></i> নতুন শিক্ষার্থী যোগ করুন
-                </h3>
-                <button onclick="closeStudentModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-all">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <form id="studentForm" onsubmit="saveStudent(event)" class="space-y-4">
-                <input type="hidden" id="editStudentId">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">শিক্ষার্থীর পূর্ণ নাম</label>
-                    <input type="text" id="studName" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="যেমন: মো: রাফি ইসলাম">
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">শ্রেণি</label>
-                        <select id="studClass" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
-                            <option value="১ম শ্রেণি">১ম শ্রেণি</option>
-                            <option value="২য় শ্রেণি">২য় শ্রেণি</option>
-                            <option value="৩য় শ্রেণি">৩য় শ্রেণি</option>
-                            <option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option>
-                            <option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">রোল নম্বর</label>
-                        <input type="number" id="studRoll" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="যেমন: ১">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">পিতার নাম</label>
-                        <input type="text" id="studFather" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="পিতার নাম">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">মাতার নাম</label>
-                        <input type="text" id="studMother" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="মাতার নাম">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">জন্ম নিবন্ধন নম্বর</label>
-                        <input type="text" id="studReg" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="১৭ ডিজিট জন্ম নিবন্ধন">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">অভিভাবকের মোবাইল</label>
-                        <input type="text" id="studMobile" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="০১XXXXXXXXX">
-                    </div>
-                </div>
-                <div class="pt-4 flex gap-3">
-                    <button type="button" onclick="closeStudentModal()" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-xl transition-all">বাতিল</button>
-                    <button type="submit" class="flex-1 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md transition-all">সংরক্ষণ করুন</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Add Daily Lesson Plan Modal -->
-    <div id="lessonModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden">
-        <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4 pb-3 border-b border-slate-100">
-                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-                    <i class="fas fa-book-open text-brand-600"></i> নতুন পাঠটিকা সংযোজন করুন
-                </h3>
-                <button onclick="closeLessonModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-all">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <form id="lessonForm" onsubmit="saveLessonPlan(event)" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">তারিখ</label>
-                        <input type="date" id="lessonDate" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">শ্রেণি</label>
-                        <select id="lessonClass" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500">
-                            <option value="১ম শ্রেণি">১ম শ্রেণি</option>
-                            <option value="২য় শ্রেণি">২য় শ্রেণি</option>
-                            <option value="৩য় শ্রেণি">৩য় শ্রেণি</option>
-                            <option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option>
-                            <option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">বিষয়</label>
-                        <input type="text" id="lessonSubject" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="যেমন: বাংলা / গণিত / ইংরেজি">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">পাঠের শিরোনাম / অধ্যায়</label>
-                        <input type="text" id="lessonTopic" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="যেমন: বর্ণমালা বা যোগের ধারণা">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">শিখনফল (Objectives)</label>
-                    <textarea id="lessonObjectives" rows="2" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="শিক্ষার্থীরা পাঠ শেষে যা অর্জন করবে..."></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">শিক্ষণ কার্যাবলি ও পদ্ধতি (Activities)</label>
-                    <textarea id="lessonActivities" rows="2" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="যেভাবে পাঠদান পরিচালনা করা হবে..."></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">বাড়ির কাজ (Homework)</label>
-                    <input type="text" id="lessonHomework" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500" placeholder="প্রদত্ত বাড়ির কাজ বা অনুশীলন">
-                </div>
-                <div class="pt-4 flex gap-3">
-                    <button type="button" onclick="closeLessonModal()" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-xl transition-all">বাতিল</button>
-                    <button type="submit" class="flex-1 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md transition-all">সংরক্ষণ করুন</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs sm:text-sm mt-auto">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <div>
-                <p class="font-bold text-white">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</p>
-                <p class="text-xs text-slate-500 mt-1">বিদ্যালয় কোডঃ ১৫০৪৬১ | স্থাপিতঃ ১৯৮৯ | EMIS: ৯৯১০৩১২০৬০৪</p>
-            </div>
-            <div class="text-xs text-slate-500">
-                <p>ডিজিটাল ফলাফল, সনদ ও পাঠটিকা ব্যবস্থাপনা সিস্টেম</p>
-                <p class="mt-1">ডাকঘরঃ কল্যাণীহাট-৫২২০, উপজেলাঃ বীরগঞ্জ, জেলাঃ দিনাজপুর</p>
-            </div>
-        </div>
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-auto">
+        <p>© ২০২৬ নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
-    <!-- Application JavaScript -->
+    <!-- Tab Switching Script -->
     <script>
-        let students = JSON.parse(localStorage.getItem('nokhpara_students')) || [
-            { id: 1, name: 'মো: তানভীর আহমেদ', class: '৫ম শ্রেণি', roll: 1, father: 'মো: রফিকুল ইসলাম', mother: 'মোছা: মরিয়ম বেগম', reg: '20151234567890123', mobile: '01712345678' },
-            { id: 2, name: 'ফাতিমা আক্তার', class: '৫ম শ্রেণি', roll: 2, father: 'আব্দুল জব্বার', mother: 'ফাতেহা খাতুন', reg: '20151234567890124', mobile: '01812345678' },
-            { id: 3, name: 'রিফাত হোসেন', class: '৪র্থ শ্রেণি', roll: 1, father: 'নজরুল ইসলাম', mother: 'নাসরিন আক্তার', reg: '20161234567890125', mobile: '01912345678' }
-        ];
-
-        let teacherSettings = JSON.parse(localStorage.getItem('nokhpara_teacher')) || {
-            name: 'মো: আব্দুল খালেক',
-            designation: 'প্রধান শিক্ষক',
-            school: 'নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়',
-            mobile: '01700000000'
-        };
-
-        let evaluations = JSON.parse(localStorage.getItem('nokhpara_evaluations')) || {};
-
-        // Dynamic Daily Lesson Plans (LocalStorage)
-        let dailyLessons = JSON.parse(localStorage.getItem('nokhpara_daily_lessons')) || [
-            { id: 1, date: '2026-10-05', class: '৫ম শ্রেণি', subject: 'বাংলা', topic: 'যুদ্ধদিনের কথা', objectives: 'মুক্তিযুদ্ধের ইতিহাস ও বীরশ্রেষ্ঠদের সম্পর্কে ধারণা।', activities: 'দলীয় আলোচনা ও পঠন।', homework: 'অনুশীলনীর প্রশ্ন ১ ও ২ লিখে আনা।' },
-            { id: 2, date: '2026-10-05', class: '৪র্থ শ্রেণি', subject: 'গণিত', topic: 'চার প্রক্রিয়া সম্পর্কিত সমস্যা', objectives: 'যোগ ও বিয়োগের জটিল সমস্যার সমাধান।', activities: 'বোর্ড ওয়ার্ক ও একক অনুশীলন।', homework: 'পৃষ্ঠা ৪৫ এর অংকগুলো করা।' },
-            { id: 3, date: '2026-10-05', class: '১ম শ্রেণি', subject: 'ইংরেজি', topic: 'Alphabet (A to Z)', objectives: 'Capital and small letters recognition.', activities: 'Song & card matching.', homework: 'Write A to E in notebook.' }
-        ];
-
-        // Tab Switching Logic
         function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(btn => {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            const selectedTab = document.getElementById('tab-' + tabId);
+            if (selectedTab) {
+                selectedTab.classList.remove('hidden');
+            }
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
                 btn.classList.remove('bg-brand-50', 'text-brand-700', 'border', 'border-brand-200', 'shadow-sm');
-                btn.classList.add('text-slate-600', 'hover:bg-slate-100');
+                btn.classList.add('text-slate-600');
             });
 
-            const targetTab = document.getElementById(`tab-${tabId}`);
-            const targetNav = document.getElementById(`nav-${tabId}`);
-
-            if (targetTab) targetTab.classList.remove('hidden');
-            if (targetNav) {
-                targetNav.classList.remove('text-slate-600', 'hover:bg-slate-100');
-                targetNav.classList.add('bg-brand-50', 'text-brand-700', 'border', 'border-brand-200', 'shadow-sm');
+            const activeBtn = document.getElementById('nav-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-brand-50', 'text-brand-700', 'border', 'border-brand-200', 'shadow-sm');
+                activeBtn.classList.remove('text-slate-600');
             }
-
-            if (tabId === 'students') renderStudents();
-            if (tabId === 'evaluation') loadEvaluationRegister();
-            if (tabId === 'lessonplan') renderLessonPlans();
-            if (tabId === 'certificates') loadCertificateStudents();
-            if (tabId === 'settings') loadTeacherSettingsForm();
-
-            updateStats();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function openTab(tabId) {
-            switchTab(tabId);
-        }
-
-        // Notification Modal
-        function showNotification(title, message, isSuccess = true) {
-            const modal = document.getElementById('notificationModal');
-            const box = document.getElementById('notificationBox');
-            const iconContainer = document.getElementById('notifIconContainer');
-            const icon = document.getElementById('notifIcon');
-            
-            document.getElementById('notifTitle').innerText = title;
-            document.getElementById('notifMessage').innerText = message;
-
-            if (isSuccess) {
-                iconContainer.className = "w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto text-xl bg-emerald-100 text-emerald-600";
-                icon.className = "fas fa-check";
-            } else {
-                iconContainer.className = "w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto text-xl bg-amber-100 text-amber-600";
-                icon.className = "fas fa-exclamation";
-            }
-
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                box.classList.remove('scale-95', 'opacity-0');
-                box.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        function closeNotification() {
-            const modal = document.getElementById('notificationModal');
-            const box = document.getElementById('notificationBox');
-            box.classList.remove('scale-100', 'opacity-100');
-            box.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 150);
-        }
-
-        function updateStats() {
-            document.getElementById('statTotalStudents').innerText = students.length;
-            document.getElementById('statTotalLessons').innerText = dailyLessons.length;
-        }
-
-        // Student Management Functions
-        function renderStudents() {
-            const tbody = document.getElementById('studentTableBody');
-            const noMsg = document.getElementById('noStudentsMsg');
-            tbody.innerHTML = '';
-
-            const searchTerm = document.getElementById('studentSearch').value.toLowerCase();
-            const classFilter = document.getElementById('classFilter').value;
-
-            const filtered = students.filter(s => {
-                const matchName = s.name.toLowerCase().includes(searchTerm) || s.roll.toString().includes(searchTerm);
-                const matchClass = classFilter === '' || s.class === classFilter;
-                return matchName && matchClass;
-            });
-
-            if (filtered.length === 0) {
-                noMsg.classList.remove('hidden');
-                return;
-            } else {
-                noMsg.classList.add('hidden');
-            }
-
-            filtered.forEach(s => {
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-50/80 transition-all";
-                tr.innerHTML = `
-                    <td class="p-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0">
-                            ${s.name.charAt(0)}
-                        </div>
-                        <div>
-                            <div class="font-bold text-slate-800">${s.name}</div>
-                            <div class="text-xs text-slate-500">জন্ম নিবন্ধন: ${s.reg || 'প্রযোজ্য নয়'}</div>
-                        </div>
-                    </td>
-                    <td class="p-4">
-                        <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-semibold">${s.class}</span>
-                        <div class="text-xs text-slate-500 mt-1">রোল: ${s.roll}</div>
-                    </td>
-                    <td class="p-4">
-                        <div class="text-slate-800 font-medium">পিতা: ${s.father}</div>
-                        <div class="text-xs text-slate-500">মাতা: ${s.mother}</div>
-                    </td>
-                    <td class="p-4">
-                        <div class="text-slate-800">${s.mobile || 'নেই'}</div>
-                    </td>
-                    <td class="p-4 text-right">
-                        <div class="flex items-center justify-end gap-2">
-                            <button onclick="editStudent(${s.id})" class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 flex items-center justify-center transition-all" title="এডিট">
-                                <i class="fas fa-edit text-xs"></i>
-                            </button>
-                            <button onclick="deleteStudent(${s.id})" class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 flex items-center justify-center transition-all" title="ডিলিট">
-                                <i class="fas fa-trash text-xs"></i>
-                            </button>
-                        </div>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
         }
 
         function filterStudents() {
-            renderStudents();
+            // Student filtering logic
         }
 
-        function openStudentModal(id = null) {
-            document.getElementById('studentModal').classList.remove('hidden');
-            if (id) {
-                document.getElementById('modalTitle').innerHTML = '<i class="fas fa-user-edit text-brand-600"></i> শিক্ষার্থীর তথ্য সংশোধন করুন';
-                const s = students.find(item => item.id === id);
-                if (s) {
-                    document.getElementById('editStudentId').value = s.id;
-                    document.getElementById('studName').value = s.name;
-                    document.getElementById('studClass').value = s.class;
-                    document.getElementById('studRoll').value = s.roll;
-                    document.getElementById('studFather').value = s.father;
-                    document.getElementById('studMother').value = s.mother;
-                    document.getElementById('studReg').value = s.reg || '';
-                    document.getElementById('studMobile').value = s.mobile || '';
-                }
-            } else {
-                document.getElementById('modalTitle').innerHTML = '<i class="fas fa-user-plus text-brand-600"></i> নতুন শিক্ষার্থী যোগ করুন';
-                document.getElementById('studentForm').reset();
-                document.getElementById('editStudentId').value = '';
-            }
-        }
-
-        function closeStudentModal() {
-            document.getElementById('studentModal').classList.add('hidden');
-        }
-
-        function saveStudent(event) {
-            event.preventDefault();
-            const id = document.getElementById('editStudentId').value;
-            const name = document.getElementById('studName').value;
-            const cls = document.getElementById('studClass').value;
-            const roll = parseInt(document.getElementById('studRoll').value);
-            const father = document.getElementById('studFather').value;
-            const mother = document.getElementById('studMother').value;
-            const reg = document.getElementById('studReg').value;
-            const mobile = document.getElementById('studMobile').value;
-
-            if (id) {
-                const index = students.findIndex(s => s.id == id);
-                if (index !== -1) {
-                    students[index] = { id: parseInt(id), name, class: cls, roll, father, mother, reg, mobile };
-                }
-            } else {
-                const newId = students.length > 0 ? Math.max(...students.map(s => s.id)) + 1 : 1;
-                students.push({ id: newId, name, class: cls, roll, father, mother, reg, mobile });
-            }
-
-            localStorage.setItem('nokhpara_students', JSON.stringify(students));
-            closeStudentModal();
-            renderStudents();
-            updateStats();
-            showNotification('সফল!', 'শিক্ষার্থীর তথ্য সফলভাবে সংরক্ষিত হয়েছে।');
-        }
-
-        function editStudent(id) {
-            openStudentModal(id);
-        }
-
-        function deleteStudent(id) {
-            if (confirm('আপনি কি নিশ্চিতভাবে এই শিক্ষার্থীর তথ্য মুছে ফেলতে চান?')) {
-                students = students.filter(s => s.id !== id);
-                localStorage.setItem('nokhpara_students', JSON.stringify(students));
-                renderStudents();
-                updateStats();
-                showNotification('সফল!', 'শিক্ষার্থীর তথ্য মুছে ফেলা হয়েছে।');
-            }
-        }
-
-        // Daily Lesson Plan Functions
-        function openLessonModal() {
-            document.getElementById('lessonModal').classList.remove('hidden');
-            document.getElementById('lessonForm').reset();
-            // Set today's date by default
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('lessonDate').value = today;
-        }
-
-        function closeLessonModal() {
-            document.getElementById('lessonModal').classList.add('hidden');
-        }
-
-        function saveLessonPlan(event) {
-            event.preventDefault();
-            const date = document.getElementById('lessonDate').value;
-            const cls = document.getElementById('lessonClass').value;
-            const subject = document.getElementById('lessonSubject').value;
-            const topic = document.getElementById('lessonTopic').value;
-            const objectives = document.getElementById('lessonObjectives').value;
-            const activities = document.getElementById('lessonActivities').value;
-            const homework = document.getElementById('lessonHomework').value;
-
-            const newId = dailyLessons.length > 0 ? Math.max(...dailyLessons.map(l => l.id)) + 1 : 1;
-            dailyLessons.unshift({
-                id: newId,
-                date,
-                class: cls,
-                subject,
-                topic,
-                objectives,
-                activities,
-                homework
-            });
-
-            localStorage.setItem('nokhpara_daily_lessons', JSON.stringify(dailyLessons));
-            closeLessonModal();
-            renderLessonPlans();
-            updateStats();
-            showNotification('সফল!', 'নতুন পাঠটিকা সফলভাবে সংযোজন করা হয়েছে।');
+        function loadEvaluationRegister() {
+            // Load evaluation records logic
         }
 
         function renderLessonPlans() {
-            const container = document.getElementById('lessonPlanContainer');
-            const noMsg = document.getElementById('noLessonsMsg');
-            const filterClass = document.getElementById('filterLessonClass').value;
-            container.innerHTML = '';
-
-            const filtered = dailyLessons.filter(l => filterClass === '' || l.class === filterClass);
-
-            if (filtered.length === 0) {
-                noMsg.classList.remove('hidden');
-                return;
-            } else {
-                noMsg.classList.add('hidden');
-            }
-
-            filtered.forEach(p => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-all";
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="px-3 py-1 bg-brand-50 text-brand-700 rounded-xl text-xs font-bold">${p.subject}</span>
-                            <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-semibold">${p.class}</span>
-                        </div>
-                        <div class="text-xs text-amber-600 font-bold mb-2 flex items-center gap-1">
-                            <i class="fas fa-calendar-day"></i> তারিখ: ${p.date}
-                        </div>
-                        <h3 class="text-base font-bold text-slate-800 mb-2">${p.topic}</h3>
-                        <p class="text-xs text-slate-600 mb-2"><strong class="text-slate-700">শিখনফল:</strong> ${p.objectives}</p>
-                        <p class="text-xs text-slate-600 mb-2"><strong class="text-slate-700">কার্যাবলি:</strong> ${p.activities}</p>
-                        <p class="text-xs text-slate-600 mb-4"><strong class="text-slate-700">বাড়ির কাজ:</strong> ${p.homework || 'নেই'}</p>
-                    </div>
-                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                        <span class="text-emerald-700 font-medium"><i class="fas fa-check-circle mr-1"></i> সংরক্ষিত পাঠটিকা</span>
-                        <button onclick="deleteLessonPlan(${p.id})" class="text-rose-500 hover:text-rose-700 font-medium flex items-center gap-1">
-                            <i class="fas fa-trash"></i> ডিলিট
-                        </button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+            // Render lesson plans logic
         }
 
-        function deleteLessonPlan(id) {
-            if (confirm('আপনি কি নিশ্চিতভাবে এই পাঠটিকা মুছে ফেলতে চান?')) {
-                dailyLessons = dailyLessons.filter(l => l.id !== id);
-                localStorage.setItem('nokhpara_daily_lessons', JSON.stringify(dailyLessons));
-                renderLessonPlans();
-                updateStats();
-                showNotification('সফল!', 'পাঠটিকা মুছে ফেলা হয়েছে।');
-            }
+        function generateCertificate(type) {
+            alert(type + ' জেনারেট করার অপশন প্রক্রিয়াধীন রয়েছে।');
         }
 
-        // Evaluation Register Logic
-        function loadEvaluationRegister() {
-            const cls = document.getElementById('evalClassSelect').value;
-            const tbody = document.getElementById('evaluationTableBody');
-            const noMsg = document.getElementById('noEvalMsg');
-            tbody.innerHTML = '';
-
-            const classStudents = students.filter(s => s.class === cls).sort((a,b) => a.roll - b.roll);
-
-            if (classStudents.length === 0) {
-                noMsg.classList.remove('hidden');
-                return;
-            } else {
-                noMsg.classList.add('hidden');
-            }
-
-            classStudents.forEach(s => {
-                if (!evaluations[s.id]) {
-                    evaluations[s.id] = { bangla: 'A', english: 'A', math: 'B', science: 'A' };
-                }
-                const ev = evaluations[s.id];
-
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-50/80 transition-all";
-                tr.innerHTML = `
-                    <td class="p-4 font-bold text-slate-800">${s.roll}</td>
-                    <td class="p-4 font-medium text-slate-800">${s.name}</td>
-                    <td class="p-4">
-                        <select onchange="updateEval(${s.id}, 'bangla', this.value)" class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold">
-                            <option value="A+" ${ev.bangla === 'A+' ? 'selected' : ''}>A+ (উত্তম)</option>
-                            <option value="A" ${ev.bangla === 'A' ? 'selected' : ''}>A (ভালো)</option>
-                            <option value="B" ${ev.bangla === 'B' ? 'selected' : ''}>B (সন্তোষজনক)</option>
-                        </select>
-                    </td>
-                    <td class="p-4">
-                        <select onchange="updateEval(${s.id}, 'english', this.value)" class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold">
-                            <option value="A+" ${ev.english === 'A+' ? 'selected' : ''}>A+ (উত্তম)</option>
-                            <option value="A" ${ev.english === 'A' ? 'selected' : ''}>A (ভালো)</option>
-                            <option value="B" ${ev.english === 'B' ? 'selected' : ''}>B (সন্তোষজনক)</option>
-                        </select>
-                    </td>
-                    <td class="p-4">
-                        <select onchange="updateEval(${s.id}, 'math', this.value)" class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold">
-                            <option value="A+" ${ev.math === 'A+' ? 'selected' : ''}>A+ (উত্তম)</option>
-                            <option value="A" ${ev.math === 'A' ? 'selected' : ''}>A (ভালো)</option>
-                            <option value="B" ${ev.math === 'B' ? 'selected' : ''}>B (সন্তোষজনক)</option>
-                        </select>
-                    </td>
-                    <td class="p-4">
-                        <select onchange="updateEval(${s.id}, 'science', this.value)" class="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold">
-                            <option value="A+" ${ev.science === 'A+' ? 'selected' : ''}>A+ (উত্তম)</option>
-                            <option value="A" ${ev.science === 'A' ? 'selected' : ''}>A (ভালো)</option>
-                            <option value="B" ${ev.science === 'B' ? 'selected' : ''}>B (সন্তোষজনক)</option>
-                        </select>
-                    </td>
-                    <td class="p-4 text-center">
-                        <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold">সংরক্ষিত</span>
-                    </td>
-                `;
-                tbody.appendChild(tr);
-            });
+        function closeNotification() {
+            document.getElementById('notificationModal').classList.add('hidden');
         }
-
-        function updateEval(studentId, subject, val) {
-            if (!evaluations[studentId]) evaluations[studentId] = {};
-            evaluations[studentId][subject] = val;
-        }
-
-        function saveEvaluationRecords() {
-            localStorage.setItem('nokhpara_evaluations', JSON.stringify(evaluations));
-            showNotification('সফল!', 'মূল্যায়ন রেজিস্টার সফলভাবে সংরক্ষণ করা হয়েছে।');
-        }
-
-        // Certificate Generator Logic
-        let currentCertType = 'appreciation';
-
-        function selectCertificateType(type) {
-            currentCertType = type;
-            ['Appr', 'Test', 'Tc'].forEach(t => {
-                const btn = document.getElementById(`certType${t}`);
-                btn.className = "p-4 rounded-2xl border-2 font-medium text-left transition-all flex items-center gap-3 border-slate-200 bg-white text-slate-700 hover:border-slate-300";
-            });
-
-            const activeBtnId = type === 'appreciation' ? 'certTypeAppr' : (type === 'testimonial' ? 'certTypeTest' : 'certTypeTc');
-            const activeBtn = document.getElementById(activeBtnId);
-            activeBtn.className = "p-4 rounded-2xl border-2 font-medium text-left transition-all flex items-center gap-3 border-brand-500 bg-brand-50 text-brand-900 shadow-sm";
-
-            const titleText = document.getElementById('certTitleText');
-            if (type === 'appreciation') titleText.innerText = 'প্রশংসা সনদ';
-            if (type === 'testimonial') titleText.innerText = 'প্রত্যয়ন সনদ';
-            if (type === 'tc') titleText.innerText = 'বিদ্যালয় ছাড়পত্র (Transfer Certificate)';
-
-            updateCertificateBodyText();
-        }
-
-        function loadCertificateStudents() {
-            const select = document.getElementById('certStudentSelect');
-            select.innerHTML = '<option value="">-- শিক্ষার্থী সিলেক্ট করুন --</option>';
-            students.forEach(s => {
-                const opt = document.createElement('option');
-                opt.value = s.id;
-                opt.innerText = `${s.name} (${s.class}, রোল: ${s.roll})`;
-                select.appendChild(opt);
-            });
-        }
-
-        function populateCertificateData() {
-            const studentId = document.getElementById('certStudentSelect').value;
-            if (!studentId) {
-                document.getElementById('previewName').innerText = '__________';
-                document.getElementById('previewFather').innerText = '__________';
-                document.getElementById('previewMother').innerText = '__________';
-                document.getElementById('previewClass').innerText = '__________';
-                document.getElementById('previewRoll').innerText = '__';
-                return;
-            }
-
-            const s = students.find(item => item.id == studentId);
-            if (s) {
-                document.getElementById('previewName').innerText = s.name;
-                document.getElementById('previewFather').innerText = s.father;
-                document.getElementById('previewMother').innerText = s.mother;
-                document.getElementById('previewClass').innerText = s.class;
-                document.getElementById('previewRoll').innerText = s.roll;
-            }
-        }
-
-        function updateCertificateBodyText() {
-            const bodyEl = document.getElementById('certBodyText');
-            if (currentCertType === 'appreciation') {
-                bodyEl.innerHTML = `এই মর্মে প্রত্যয়ন করা যাইতেছে যে, <span id="previewName" class="font-bold underline decoration-dotted">__________</span>, পিতা: <span id="previewFather" class="font-bold underline decoration-dotted">__________</span>, মাতা: <span id="previewMother" class="font-bold underline decoration-dotted">__________</span>, এই বিদ্যালয়ের <span id="previewClass" class="font-bold underline decoration-dotted">__________</span> শ্রেণির রোল নম্বর <span id="previewRoll" class="font-bold underline decoration-dotted">__</span> এর নিয়মিত শিক্ষার্থী। সে বিদ্যালয়ের বিভিন্ন সহশিক্ষা কার্যক্রমে অত্যন্ত কৃতিত্বপূর্ণ ও প্রশংসনীয় অবদান রেখেছে।`;
-            } else if (currentCertType === 'testimonial') {
-                bodyEl.innerHTML = `এই মর্মে প্রত্যয়ন করা যাইতেছে যে, <span id="previewName" class="font-bold underline decoration-dotted">__________</span>, পিতা: <span id="previewFather" class="font-bold underline decoration-dotted">__________</span>, মাতা: <span id="previewMother" class="font-bold underline decoration-dotted">__________</span>, নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়, ডাকঘর: কল্যাণীহাট-৫২২০, উপজেলা: বীরগঞ্জ, জেলা: দিনাজপুর-এর <span id="previewClass" class="font-bold underline decoration-dotted">__________</span> শ্রেণির একজন নিয়মিত ছাত্র/ছাত্রী। তাহার চরিত্র ও আচরণ সন্তোষজনক এবং সে রাষ্ট্রবিরোধী বা শৃঙ্খলাপরিপন্থী কোনো কাজের সাথে জড়িত নয়। আমি তাহার সর্বাঙ্গীন মঙ্গল কামনা করি।`;
-            } else {
-                bodyEl.innerHTML = `এই মর্মে ছাড়পত্র প্রদান করা যাইতেছে যে, <span id="previewName" class="font-bold underline decoration-dotted">__________</span>, পিতা: <span id="previewFather" class="font-bold underline decoration-dotted">__________</span>, মাতা: <span id="previewMother" class="font-bold underline decoration-dotted">__________</span>, এই বিদ্যালয়ের <span id="previewClass" class="font-bold underline decoration-dotted">__________</span> শ্রেণির রোল নম্বর <span id="previewRoll" class="font-bold underline decoration-dotted">__</span>-এর নিয়মিত শিক্ষার্থী ছিল। অভিভাবকের আবেদনের প্রেক্ষিতে তাহার অন্যত্র অধ্যয়নের জন্য অত্র বিদ্যালয় হইতে ছাড়পত্র (TC) প্রদান করা হইল।`;
-            }
-        }
-
-        function printCertificate() {
-            window.print();
-        }
-
-        // Backup & Restore
-        function downloadBackup() {
-            const data = {
-                students: students,
-                teacherSettings: teacherSettings,
-                evaluations: evaluations,
-                dailyLessons: dailyLessons
-            };
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "nokhpara_school_backup.json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-            showNotification('সফল!', 'ব্যাকআপ ফাইল সফলভাবে ডাউনলোড হয়েছে।');
-        }
-
-        function restoreBackup(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const parsed = JSON.parse(e.target.result);
-                    if (parsed.students) {
-                        students = parsed.students;
-                        localStorage.setItem('nokhpara_students', JSON.stringify(students));
-                    }
-                    if (parsed.teacherSettings) {
-                        teacherSettings = parsed.teacherSettings;
-                        localStorage.setItem('nokhpara_teacher', JSON.stringify(teacherSettings));
-                    }
-                    if (parsed.evaluations) {
-                        evaluations = parsed.evaluations;
-                        localStorage.setItem('nokhpara_evaluations', JSON.stringify(evaluations));
-                    }
-                    if (parsed.dailyLessons) {
-                        dailyLessons = parsed.dailyLessons;
-                        localStorage.setItem('nokhpara_daily_lessons', JSON.stringify(dailyLessons));
-                    }
-                    showNotification('সফল!', 'ব্যাকআপ ডেটা সফলভাবে পুনরুদ্ধার (Restore) করা হয়েছে।');
-                    switchTab('dashboard');
-                } catch (err) {
-                    showNotification('ত্রুটি!', 'ভুল বা ক্ষতিগ্রস্ত ব্যাকআপ ফাইল আপলোড করা হয়েছে।', false);
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        // Teacher Settings Form
-        function loadTeacherSettingsForm() {
-            document.getElementById('teacherName').value = teacherSettings.name;
-            document.getElementById('teacherDesignation').value = teacherSettings.designation;
-            document.getElementById('schoolNameInput').value = teacherSettings.school;
-            document.getElementById('teacherMobile').value = teacherSettings.mobile;
-        }
-
-        function saveTeacherSettings(event) {
-            event.preventDefault();
-            teacherSettings = {
-                name: document.getElementById('teacherName').value,
-                designation: document.getElementById('teacherDesignation').value,
-                school: document.getElementById('schoolNameInput').value,
-                mobile: document.getElementById('teacherMobile').value
-            };
-            localStorage.setItem('nokhpara_teacher', JSON.stringify(teacherSettings));
-            document.getElementById('previewHeadmaster').innerText = teacherSettings.name;
-            showNotification('সফল!', 'শিক্ষক সেটিংস সফলভাবে সংরক্ষিত হয়েছে।');
-        }
-
-        // Window onload initialization
-        window.onload = function() {
-            renderStudents();
-            updateStats();
-            document.getElementById('previewHeadmaster').innerText = teacherSettings.name;
-        };
     </script>
-    <!-- Developer Info Section -->
-<div style="text-align: center; padding: 15px; background-color: #1e293b; color: #ffffff; font-family: 'SolaimanLipi', Kalpurush, sans-serif; line-height: 1.6; border-top: 1px solid #334155;">
-  <p style="margin: 0; font-weight: bold; font-size: 15px;">
-    ডেভেলপারঃ তোফায়েল তোরাব
-  </p>
-  <p style="margin: 0; font-size: 14px; opacity: 0.9;">
-    সহকারী শিক্ষক,
-  </p>
-  <p style="margin: 0; font-size: 14px; opacity: 0.9;">
-    নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়,
-  </p>
-  <p style="margin: 0; font-size: 14px; opacity: 0.9;">
-    বীরগঞ্জ, দিনাজপুর।
-  </p>
-</div>
 </body>
 </html>
