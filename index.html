@@ -428,7 +428,12 @@
                 <div class="text-center space-y-2 border-b border-slate-200 pb-4">
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-800">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h2>
                     <p class="text-sm md:text-base text-slate-600">ডাকঘরঃ কল্যাণীহাট-৫২২০, ক্লাস্টারঃ রঘুনাথপুর, উপজেলাঃ বীরগঞ্জ, জেলাঃ দিনাজপুর</p>
-                    <a href="mailto:ngps.bir89@gmail.com"></a>
+                    <!-- জিমেইল সংযোজন -->
+<div class="flex items-center justify-center gap-1 text-xs md:text-sm text-slate-600 pt-1">
+    <i class="fas fa-envelope text-brand-600"></i>
+    <span class="font-semibold text-slate-700">ইমেইল / জিমেইল:</span>
+    <input type="email" id="glance_email" placeholder="nakhaparagps@gmail.com" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-64">
+</div>
                     <span class="inline-block px-4 py-1 bg-brand-100 text-brand-800 rounded-full text-xs md:text-sm font-semibold">বিদ্যালয় পরিদর্শন তথ্য ছক</span>
                 </div>
 
@@ -634,6 +639,10 @@
 
                 <!-- প্রিন্ট বাটন -->
                 <div class="text-right no-print pt-4">
+                    <!-- তথ্য সংরক্ষণ বাটন -->
+<button onclick="saveGlanceData()" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2">
+    <i class="fas fa-save"></i> তথ্যটি সংরক্ষণ করুন
+</button>
                     <button onclick="window.print()" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-md transition-all">
                         <i class="fas fa-print mr-2"></i> ছকটি প্রিন্ট করুন
                     </button>
@@ -641,27 +650,7 @@
 
             </div>
         </section>
-
-    
-
-
-    
-                  
-              
-    
-        
-       
-                        
-                    
-                
-            
-    
-
-       
-            
-
-   
-    <!-- LESSON PLAN MODAL -->
+ <!-- LESSON PLAN MODAL -->
     <div id="lessonModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden no-print">
         <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center border-b pb-3 mb-4">
@@ -904,6 +893,36 @@
             downloadAnchor.remove();
         }
 
+    // তথ্য সেভ করার ফাংশন
+    function saveGlanceData() {
+        const inputs = document.querySelectorAll('#tab-glance input');
+        const glanceData = {};
+        inputs.forEach(input => {
+            if(input.id) {
+                glanceData[input.id] = input.value;
+            }
+        });
+        localStorage.setItem('nakhapara_glance_data', JSON.stringify(glanceData));
+        alert('তথ্য সফলভাবে সংরক্ষণ করা হয়েছে!');
+    }
+
+    // পেজ লোড হলে আগের সেভ করা তথ্য ফিরিয়ে আনার ফাংশন
+    function loadGlanceData() {
+        const savedData = localStorage.getItem('nakhapara_glance_data');
+        if (savedData) {
+            const glanceData = JSON.parse(savedData);
+            Object.keys(glanceData).forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.value = glanceData[id];
+                }
+            });
+        }
+    }
+
+    // পেজ রান হওয়ার সাথে সাথে লোড হবে
+    document.addEventListener('DOMContentLoaded', loadGlanceData);
+</script>
         // Initialize App
         renderLessonPlans();
         renderStudents();
