@@ -422,6 +422,7 @@
 
          <!-- TAB 8: AT A GLANCE (এডিটেবল পরিদর্শন তথ্য ছক) -->
         <!-- TAB 8: AT A GLANCE (মোট কলামসহ আপডেট করা ছক) -->
+        <!--
         <section id="tab-glance" class="tab-content hidden space-y-6">
             <div class="space-y-8 p-4 md:p-6 bg-white rounded-2xl shadow-sm border border-slate-200 printable-area">
 
@@ -800,7 +801,455 @@
 
                 document.addEventListener('DOMContentLoaded', loadGlanceData);
             </script>
-            </section>
+            </section> -->
+        <!-- TAB 8: AT A GLANCE (উপবৃত্তি কলাম সহ সম্পূর্ণ ছক) -->
+        <section id="tab-glance" class="tab-content hidden space-y-6">
+            <div class="space-y-8 p-4 md:p-6 bg-white rounded-2xl shadow-sm border border-slate-200 printable-area">
+
+                <!-- বিদ্যালয়ের শিরোনাম ও ঠিকানার তথ্য -->
+                <div class="text-center space-y-2 border-b border-slate-200 pb-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-xs md:text-sm text-slate-600 max-w-4xl mx-auto pt-2">
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="font-semibold text-slate-700">ডাকঘর:</span>
+                            <input type="text" id="glance_po" value="কল্যাণীহাট-৫২২০" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-32">
+                        </div>
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="font-semibold text-slate-700">ক্লাস্টার:</span>
+                            <input type="text" id="glance_cluster" value="রঘুনাথপুর" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-24">
+                        </div>
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="font-semibold text-slate-700">উপজেলা:</span>
+                            <input type="text" id="glance_upazila" value="বীরগঞ্জ" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-20">
+                        </div>
+                        <div class="flex items-center justify-center gap-1">
+                            <span class="font-semibold text-slate-700">জেলা:</span>
+                            <input type="text" id="glance_zila" value="দিনাজপুর" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-20">
+                        </div>
+                    </div>
+
+                    <!-- জিমেইল -->
+                    <div class="flex items-center justify-center gap-1 text-xs md:text-sm text-slate-600 pt-1">
+                        <i class="fas fa-envelope text-brand-600"></i>
+                        <span class="font-semibold text-slate-700">ই-মেইল:</span>
+                        <input type="email" id="glance_email" value="ngps.bir89@gmail.com" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-64">
+                    </div>
+
+                    <div class="pt-2">
+                        <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs md:text-sm font-semibold">বিদ্যালয় পরিদর্শন তথ্য ছক</span>
+                    </div>
+                </div>
+
+                <!-- ১. শিশু জরিপ ও ভর্তি সংক্রান্ত তথ্য -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">১. শিশু জরিপ ও ভর্তি তথ্য</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        
+                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <p class="text-xs text-slate-500 font-medium mb-2">৪ থেকে ১০+ বয়স পর্যন্ত জরিপকৃত শিশু</p>
+                            <div class="text-sm text-slate-700 space-y-2">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালক:</span>
+                                    <input type="number" id="glance_j1_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালিকা:</span>
+                                    <input type="number" id="glance_j1_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
+                                    <span>মোট:</span>
+                                    <input type="number" id="glance_j1_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <p class="text-xs text-slate-500 font-medium mb-2">জরিপকৃত ৫+ শিশুর সংখ্যা</p>
+                            <div class="text-sm text-slate-700 space-y-2">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালক:</span>
+                                    <input type="number" id="glance_j2_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালিকা:</span>
+                                    <input type="number" id="glance_j2_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
+                                    <span>মোট:</span>
+                                    <input type="number" id="glance_j2_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <p class="text-xs text-slate-500 font-medium mb-2">নিজ বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
+                            <div class="text-sm text-slate-700 space-y-2">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালক:</span>
+                                    <input type="number" id="glance_j3_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালিকা:</span>
+                                    <input type="number" id="glance_j3_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
+                                    <span>মোট:</span>
+                                    <input type="number" id="glance_j3_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+                            <p class="text-xs text-slate-500 font-medium mb-2">অন্য বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
+                            <div class="text-sm text-slate-700 space-y-2">
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালক:</span>
+                                    <input type="number" id="glance_j4_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span>বালিকা:</span>
+                                    <input type="number" id="glance_j4_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
+                                </div>
+                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
+                                    <span>মোট:</span>
+                                    <input type="number" id="glance_j4_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ২. শ্রেণি ভিত্তিক ভর্তি, উপস্থিতি ও উপবৃত্তি ছক -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">২. শ্রেণি ভিত্তিক ভর্তি, উপস্থিতি ও উপবৃত্তি</h3>
+                    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                        <table class="w-full text-sm text-left text-slate-600 border-collapse">
+                            <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
+                                <tr>
+                                    <th rowspan="2" class="px-3 py-3 border-r text-center">শ্রেণি</th>
+                                    <th colspan="3" class="px-3 py-2 border-b border-r text-center">ভর্তিকৃত শিশু</th>
+                                    <th colspan="3" class="px-3 py-2 border-b border-r text-center">উপস্থিতি</th>
+                                    <th colspan="3" class="px-3 py-2 border-b text-center">উপবৃত্তি প্রাপ্তি</th>
+                                </tr>
+                                <tr>
+                                    <!-- ভর্তি -->
+                                    <th class="px-2 py-2 border-r text-center">বালক</th>
+                                    <th class="px-2 py-2 border-r text-center">বালিকা</th>
+                                    <th class="px-2 py-2 border-r text-center bg-slate-200 font-bold">মোট</th>
+                                    <!-- উপস্থিতি -->
+                                    <th class="px-2 py-2 border-r text-center">বালক</th>
+                                    <th class="px-2 py-2 border-r text-center">বালিকা</th>
+                                    <th class="px-2 py-2 border-r text-center bg-slate-200 font-bold">মোট</th>
+                                    <!-- উপবৃত্তি -->
+                                    <th class="px-2 py-2 border-r text-center">বালক</th>
+                                    <th class="px-2 py-2 border-r text-center">বালিকা</th>
+                                    <th class="px-2 py-2 text-center bg-slate-200 font-bold">মোট</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-center">
+                                <tr>
+                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">প্রাক-প্রাথমিক</td>
+                                    <td class="p-1 border-r"><input type="number" id="c0_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c0_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c0_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c0_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c0_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c0_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c0_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c0_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 bg-slate-50"><input type="number" id="c0_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">১ম শ্রেণি</td>
+                                    <td class="p-1 border-r"><input type="number" id="c1_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c1_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c1_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c1_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c1_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c1_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c1_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c1_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 bg-slate-50"><input type="number" id="c1_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">২য় শ্রেণি</td>
+                                    <td class="p-1 border-r"><input type="number" id="c2_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c2_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c2_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c2_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c2_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c2_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c2_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c2_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 bg-slate-50"><input type="number" id="c2_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">৩য় শ্রেণি</td>
+                                    <td class="p-1 border-r"><input type="number" id="c3_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c3_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c3_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c3_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c3_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c3_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c3_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c3_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 bg-slate-50"><input type="number" id="c3_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">৪র্থ শ্রেণি</td>
+                                    <td class="p-1 border-r"><input type="number" id="c4_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c4_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c4_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c4_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c4_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c4_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c4_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c4_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 bg-slate-50"><input type="number" id="c4_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">৫ম শ্রেণি</td>
+                                    <td class="p-1 border-r"><input type="number" id="c5_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c5_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c5_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c5_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c5_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c5_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    <td class="p-1 border-r"><input type="number" id="c5_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="c5_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                    <td class="p-1 bg-slate-50"><input type="number" id="c5_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="bg-slate-100 font-bold border-t border-slate-300 text-center">
+                                <tr>
+                                    <td class="px-3 py-2 border-r text-slate-800">সর্বমোট</td>
+                                    <!-- ভর্তি সর্বমোট -->
+                                    <td class="p-1 border-r"><input type="number" id="tot_vb" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="tot_vg" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
+                                    <td class="p-1 border-r text-emerald-700 bg-slate-200"><input type="number" id="tot_v_all" class="w-full text-center p-1 font-bold bg-transparent outline-none text-emerald-700" readonly placeholder="০"></td>
+                                    <!-- উপস্থিতি সর্বমোট -->
+                                    <td class="p-1 border-r"><input type="number" id="tot_ob" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="tot_og" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
+                                    <td class="p-1 border-r text-emerald-700 bg-slate-200"><input type="number" id="tot_o_all" class="w-full text-center p-1 font-bold bg-transparent outline-none text-emerald-700" readonly placeholder="০"></td>
+                                    <!-- উপবৃত্তি সর্বমোট -->
+                                    <td class="p-1 border-r"><input type="number" id="tot_ub" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
+                                    <td class="p-1 border-r"><input type="number" id="tot_ug" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
+                                    <td class="p-1 text-emerald-700 bg-slate-200"><input type="number" id="tot_u_all" class="w-full text-center p-1 font-bold bg-transparent outline-none text-emerald-700" readonly placeholder="০"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="mt-3 flex items-center gap-2 text-xs text-slate-600">
+                        <span>প্রাক-প্রাথমিক শিক্ষকের নাম:</span>
+                        <input type="text" id="glance_pre_teacher" placeholder="শিক্ষকের নাম লিখুন" class="p-1 border rounded-lg w-64 focus:ring-1 focus:ring-emerald-500 outline-none">
+                    </div>
+                </div>
+
+                <!-- ৩. শিক্ষক ও শিক্ষার্থী সংক্রান্ত অন্যান্য তথ্য -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- শিক্ষকের পাঠদান -->
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">৩. একজন শিক্ষকের পাঠদান</h3>
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                            <table class="w-full text-sm text-left text-slate-600">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
+                                    <tr>
+                                        <th class="px-4 py-3 border-r">শিক্ষকের নাম</th>
+                                        <th class="px-4 py-3 border-r">বিষয়</th>
+                                        <th class="px-4 py-3">শ্রেণি</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200">
+                                    <tr>
+                                        <td class="p-1 border-r"><input type="text" id="t1_name" placeholder="নাম" class="w-full p-1 border rounded"></td>
+                                        <td class="p-1 border-r"><input type="text" id="t1_sub" placeholder="বিষয়" class="w-full p-1 border rounded"></td>
+                                        <td class="p-1"><input type="text" id="t1_class" placeholder="শ্রেণি" class="w-full p-1 border rounded"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-1 border-r"><input type="text" id="t2_name" placeholder="নাম" class="w-full p-1 border rounded"></td>
+                                        <td class="p-1 border-r"><input type="text" id="t2_sub" placeholder="বিষয়" class="w-full p-1 border rounded"></td>
+                                        <td class="p-1"><input type="text" id="t2_class" placeholder="শ্রেণি" class="w-full p-1 border rounded"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ৪. গত বছরের শিক্ষার্থীর সংখ্যা -->
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">৪. গত বছরের শিক্ষার্থীর সংখ্যা</h3>
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+                            <table class="w-full text-sm text-center text-slate-600 border-collapse">
+                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
+                                    <tr>
+                                        <th class="px-4 py-3 border-r">শ্রেণি</th>
+                                        <th class="px-4 py-3 border-r">বালক</th>
+                                        <th class="px-4 py-3 border-r">বালিকা</th>
+                                        <th class="px-4 py-3 bg-slate-200 font-bold">মোট</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200">
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৩য় শ্রেণি</td>
+                                        <td class="p-1 border-r"><input type="number" id="prev_c3_b" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                        <td class="p-1 border-r"><input type="number" id="prev_c3_g" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                        <td class="p-1 bg-slate-50"><input type="number" id="prev_c3_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৪র্থ শ্রেণি</td>
+                                        <td class="p-1 border-r"><input type="number" id="prev_c4_b" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                        <td class="p-1 border-r"><input type="number" id="prev_c4_g" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                        <td class="p-1 bg-slate-50"><input type="number" id="prev_c4_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৫ম শ্রেণি</td>
+                                        <td class="p-1 border-r"><input type="number" id="prev_c5_b" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                        <td class="p-1 border-r"><input type="number" id="prev_c5_g" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
+                                        <td class="p-1 bg-slate-50"><input type="number" id="prev_c5_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+     <!-- ৫. জমির তথ্য (স্থির মান) -->
+            <div class="mt-6">
+    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">৫. জমির তথ্য</h3>
+    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-sm text-center text-slate-700 border-collapse">
+            <thead class="text-xs uppercase bg-slate-100 border-b border-slate-200">
+                <tr>
+                    <th colspan="7" class="px-4 py-2.5 text-base font-bold text-slate-800 bg-slate-200 border-b">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</th>
+                </tr>
+                <tr class="text-slate-700 font-bold">
+                    <th class="px-4 py-2.5 border-r border-slate-200">মৌজা</th>
+                    <th class="px-4 py-2.5 border-r border-slate-200">দাগ নং</th>
+                    <th class="px-4 py-2.5 border-r border-slate-200">খতিয়ান</th>
+                    <th class="px-4 py-2.5 border-r border-slate-200">জমি পরিমাণ</th>
+                    <th class="px-4 py-2.5 border-r border-slate-200">দখল পরিমাণ</th>
+                    <th class="px-4 py-2.5 border-r border-slate-200">বেদখল পরিমাণ</th>
+                    <th class="px-4 py-2.5">মামলা আছে কিনা</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 font-medium">
+                <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-4 py-3 border-r border-slate-200 font-semibold text-slate-900">সৈয়দপুর কল্যাণী</td>
+                    <td class="px-4 py-3 border-r border-slate-200">২২৬৫</td>
+                    <td class="px-4 py-3 border-r border-slate-200">৭০০</td>
+                    <td class="px-4 py-3 border-r border-slate-200">০.৩৩ শতক</td>
+                    <td class="px-4 py-3 border-r border-slate-200">০.৩৩</td>
+                    <td class="px-4 py-3 border-r border-slate-200 text-slate-600">নেই</td>
+                    <td class="px-4 py-3 text-slate-600">নেই</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+                <!-- বাটনসমূহ -->
+                <div class="flex flex-wrap items-center justify-end gap-3 no-print pt-6 mt-4 border-t border-slate-200">
+                    <button onclick="saveGlanceData()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2">
+                        <i class="fas fa-save"></i> তথ্যটি সংরক্ষণ করুন
+                    </button>
+                    <button onclick="window.print()" class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2">
+                        <i class="fas fa-print"></i> ছকটি প্রিন্ট করুন
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- উপবৃত্তিসহ আপডেট করা জাভাস্ক্রিপ্ট -->
+            <script>
+                function calcGlance() {
+                    const getNum = (id) => {
+                        const el = document.getElementById(id);
+                        return el ? (parseFloat(el.value) || 0) : 0;
+                    };
+                    const setNum = (id, val) => {
+                        const el = document.getElementById(id);
+                        if(el) el.value = val > 0 ? val : '';
+                    };
+
+                    // ১. শিশু জরিপ ৪টি কার্ড
+                    for(let i=1; i<=4; i++) {
+                        setNum(`glance_j${i}_total`, getNum(`glance_j${i}_b`) + getNum(`glance_j${i}_g`));
+                    }
+
+                    // ২. শ্রেণি ভিত্তিক টেবিল (ভর্তি, উপস্থিতি ও উপবৃত্তি সারি)
+                    let sumVb = 0, sumVg = 0, sumOb = 0, sumOg = 0, sumUb = 0, sumUg = 0;
+                    for(let i=0; i<=5; i++) {
+                        let vb = getNum(`c${i}_vb`);
+                        let vg = getNum(`c${i}_vg`);
+                        let ob = getNum(`c${i}_ob`);
+                        let og = getNum(`c${i}_og`);
+                        let ub = getNum(`c${i}_ub`);
+                        let ug = getNum(`c${i}_ug`);
+
+                        setNum(`c${i}_v_total`, vb + vg);
+                        setNum(`c${i}_o_total`, ob + og);
+                        setNum(`c${i}_u_total`, ub + ug);
+
+                        sumVb += vb;
+                        sumVg += vg;
+                        sumOb += ob;
+                        sumOg += og;
+                        sumUb += ub;
+                        sumUg += ug;
+                    }
+
+                    // ২. শ্রেণি ভিত্তিক টেবিলের সর্বমোট কলাম
+                    setNum('tot_vb', sumVb);
+                    setNum('tot_vg', sumVg);
+                    setNum('tot_v_all', sumVb + sumVg);
+
+                    setNum('tot_ob', sumOb);
+                    setNum('tot_og', sumOg);
+                    setNum('tot_o_all', sumOb + sumOg);
+
+                    setNum('tot_ub', sumUb);
+                    setNum('tot_ug', sumUg);
+                    setNum('tot_u_all', sumUb + sumUg);
+
+                    // ৪. গত বছরের শিক্ষার্থী
+                    for(let i=3; i<=5; i++) {
+                        setNum(`prev_c${i}_total`, getNum(`prev_c${i}_b`) + getNum(`prev_c${i}_g`));
+                    }
+                }
+
+                function saveGlanceData() {
+                    calcGlance();
+                    const inputs = document.querySelectorAll('#tab-glance input');
+                    const glanceData = {};
+                    inputs.forEach(input => {
+                        if(input.id) {
+                            glanceData[input.id] = input.value;
+                        }
+                    });
+                    localStorage.setItem('nakhapara_glance_data', JSON.stringify(glanceData));
+                    alert('উপবৃত্তিসহ সবগুলো ছকের তথ্য সফলভাবে সংরক্ষণ করা হয়েছে!');
+                }
+
+                function loadGlanceData() {
+                    const savedData = localStorage.getItem('nakhapara_glance_data');
+                    if (savedData) {
+                        const glanceData = JSON.parse(savedData);
+                        Object.keys(glanceData).forEach(id => {
+                            const input = document.getElementById(id);
+                            if (input) {
+                                input.value = glanceData[id];
+                            }
+                        });
+                        calcGlance();
+                    }
+                }
+
+                setTimeout(loadGlanceData, 300);
+            </script>
+        </section>
      
         <!-- LESSON PLAN MODAL -->
     <div id="lessonModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden no-print">
