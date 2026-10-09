@@ -421,15 +421,7 @@
         </section>
 
          <!-- TAB 8: AT A GLANCE (এডিটেবল পরিদর্শন তথ্য ছক) -->
-       <!-- TAB 8: AT A GLANCE (মোট কলামসহ আপডেট করা ছক) -->
-        
-                      
-                
-                  
-                 
-
-            
-           <!-- TAB 8: AT A GLANCE (মোট কলামসহ আপডেট করা ছক) -->
+        <!-- TAB 8: AT A GLANCE (মোট কলামসহ আপডেট করা ছক) -->
         <section id="tab-glance" class="tab-content hidden space-y-6">
             <div class="space-y-8 p-4 md:p-6 bg-white rounded-2xl shadow-sm border border-slate-200 printable-area">
 
@@ -859,16 +851,47 @@
     </div>
 
     <!-- STUDENT MODAL -->
+    <!-- STUDENT MODAL -->
     <div id="studentModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden no-print">
-        <div class="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl relative">
+        <div class="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <h3 class="text-lg font-bold text-slate-800 mb-4"><i class="fas fa-user-plus text-brand-600"></i> নতুন শিক্ষার্থী যোগ করুন</h3>
             <form id="studentForm" onsubmit="saveStudent(event)" class="space-y-3">
-                <input type="text" id="stName" placeholder="শিক্ষার্থীর নাম" required class="w-full p-2 border rounded-xl text-sm">
-                <select id="stClass" class="w-full p-2 border rounded-xl text-sm">
-                    <option value="১ম শ্রেণি">১ম শ্রেণি</option><option value="২য় শ্রেণি">২য় শ্রেণি</option><option value="৩য় শ্রেণি">৩য় শ্রেণি</option><option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option><option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
-                </select>
-                <input type="text" id="stRoll" placeholder="রোল নম্বর" required class="w-full p-2 border rounded-xl text-sm">
-                <input type="text" id="stGuardian" placeholder="অভিভাবকের মোবাইল" required class="w-full p-2 border rounded-xl text-sm">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">শিক্ষার্থীর নাম</label>
+                    <input type="text" id="stName" placeholder="শিক্ষার্থীর নাম" required class="w-full p-2 border rounded-xl text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">শ্রেণি</label>
+                        <select id="stClass" class="w-full p-2 border rounded-xl text-sm">
+                            <option value="১ম শ্রেণি">১ম শ্রেণি</option>
+                            <option value="২য় শ্রেণি">২য় শ্রেণি</option>
+                            <option value="৩য় শ্রেণি">৩য় শ্রেণি</option>
+                            <option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option>
+                            <option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">রোল নম্বর</label>
+                        <input type="text" id="stRoll" placeholder="রোল নম্বর" required class="w-full p-2 border rounded-xl text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">পিতার নাম</label>
+                    <input type="text" id="stFather" placeholder="পিতার নাম" required class="w-full p-2 border rounded-xl text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">মাতার নাম</label>
+                    <input type="text" id="stMother" placeholder="মাতার নাম" required class="w-full p-2 border rounded-xl text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">অভিভাবকের নাম (যদি থাকে)</label>
+                    <input type="text" id="stGuardianName" placeholder="অভিভাবকের নাম (ঐচ্ছিক)" class="w-full p-2 border rounded-xl text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">যোগাযোগের মোবাইল নম্বর</label>
+                    <input type="text" id="stGuardian" placeholder="মোবাইল নম্বর" required class="w-full p-2 border rounded-xl text-sm">
+                </div>
                 <div class="flex justify-end gap-2 border-t pt-3">
                     <button type="button" onclick="closeStudentModal()" class="px-4 py-2 bg-slate-100 rounded-xl text-sm">বাতিল</button>
                     <button type="submit" class="px-4 py-2 bg-brand-600 text-white font-bold rounded-xl text-sm">সেভ করুন</button>
@@ -978,7 +1001,8 @@
             renderLessonPlans();
             updateStats();
         }
-
+        
+        /*
         // Student Handlers
         function openStudentModal() { document.getElementById('studentModal').classList.remove('hidden'); }
         function closeStudentModal() { document.getElementById('studentModal').classList.add('hidden'); }
@@ -1022,6 +1046,79 @@
             localStorage.setItem('students', JSON.stringify(students));
             renderStudents();
             updateStats();
+        }
+        */
+
+        // Student Handlers (আপডেটকৃত)
+        function openStudentModal() { 
+            document.getElementById('studentForm').reset();
+            document.getElementById('studentModal').classList.remove('hidden'); 
+        }
+        
+        function closeStudentModal() { 
+            document.getElementById('studentModal').classList.add('hidden'); 
+        }
+        
+        function saveStudent(e) {
+            e.preventDefault();
+            const st = {
+                id: Date.now(),
+                name: document.getElementById('stName').value,
+                className: document.getElementById('stClass').value,
+                roll: document.getElementById('stRoll').value,
+                father: document.getElementById('stFather').value,
+                mother: document.getElementById('stMother').value,
+                guardianName: document.getElementById('stGuardianName').value || 'প্রযোজ্য নয়',
+                phone: document.getElementById('stGuardian').value
+            };
+            students.push(st);
+            localStorage.setItem('students', JSON.stringify(students));
+            closeStudentModal();
+            renderStudents();
+            updateStats();
+        }
+
+        function renderStudents() {
+            const container = document.getElementById('studentList');
+            if(!container) return;
+            container.innerHTML = '';
+            
+            if(students.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-400">কোনো শিক্ষার্থীর তথ্য পাওয়া যায়নি।</div>`;
+                return;
+            }
+
+            students.forEach(st => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between gap-3";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h4 class="font-bold text-base text-slate-800">${st.name}</h4>
+                            <span class="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-md font-semibold">${st.className} | রোল: ${st.roll}</span>
+                        </div>
+                        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                            <p><span class="font-semibold text-slate-700">পিতা:</span> ${st.father || '---'}</p>
+                            <p><span class="font-semibold text-slate-700">মাতা:</span> ${st.mother || '---'}</p>
+                            <p><span class="font-semibold text-slate-700">অভিভাবক:</span> ${st.guardianName || '---'}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between border-t pt-2 text-xs">
+                        <span class="text-emerald-700 font-medium"><i class="fas fa-phone text-xs mr-1"></i> ${st.phone}</span>
+                        <button onclick="deleteStudent(${st.id})" class="text-red-400 hover:text-red-600 font-semibold p-1"><i class="fas fa-trash mr-1"></i> মুছুন</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function deleteStudent(id) {
+            if(confirm('আপনি কি এই শিক্ষার্থীর তথ্য মুছে ফেলতে চান?')) {
+                students = students.filter(s => s.id !== id);
+                localStorage.setItem('students', JSON.stringify(students));
+                renderStudents();
+                updateStats();
+            }
         }
 
         // Certificate Generator
