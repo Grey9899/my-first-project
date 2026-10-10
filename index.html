@@ -48,9 +48,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 h-full flex flex-col font-sans antialiased min-h-screen">
 
-    <!-- Top Header Banner -->
-    <!-- Top Header Banner -->
-    <!--<header class="bg-gradient-to-r from-brand-900 via-brand-800 to-emerald-900 text-white shadow-xl relative overflow-hidden no-print"> -->
+    <!-- Top Header Banner (z-index বাড়ানো হয়েছে যাতে সবসময় ওপরে থাকে) -->
     <header class="sticky top-0 z-50 bg-gradient-to-r from-brand-900 via-brand-800 to-emerald-900 text-white shadow-xl overflow-hidden no-print">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div class="max-w-7xl mx-auto px-4 py-4 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
@@ -77,8 +75,9 @@
             </div>
         </div>
     </header>
+
     <!-- Navigation Tabs -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm no-print">
+    <nav class="bg-white border-b border-slate-200 sticky top-[88px] sm:top-[104px] z-40 shadow-sm no-print">
         <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto no-scrollbar space-x-2 py-3">
             <button onclick="switchTab('dashboard')" id="nav-dashboard" class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all shrink-0 flex items-center gap-2 bg-brand-50 text-brand-700 border border-brand-200 shadow-sm">
                 <i class="fas fa-chart-pie text-base"></i> ড্যাশবোর্ড
@@ -108,8 +107,9 @@
     </nav>
 
     <!-- Main Content Container -->
-   <<main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 pb-20"> 
-    <!-- TAB 1: DASHBOARD -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 pb-20 relative z-10">  
+        
+        <!-- TAB 1: DASHBOARD -->
         <section id="tab-dashboard" class="tab-content space-y-6">
             <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
                 <div class="relative z-10 max-w-2xl">
@@ -175,7 +175,7 @@
                             <i class="fas fa-book-reader"></i>
                         </div>
                         <h3 class="font-bold text-slate-800 text-lg mb-2">প্রতিদিনের পাঠটিকা সংযোজন</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-4">১ম থেকে ৫োম শ্রেণির সকল বিষয়ের জন্য প্রতিদিনের তারিখ অনুযায়ী পাঠটিকা, শিখনফল ও বাড়ির কাজ যুক্ত ও পরিচালনা করুন।</p>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">১ম থেকে ৫ম শ্রেণির সকল বিষয়ের জন্য প্রতিদিনের তারিখ অনুযায়ী পাঠটিকা, শিখনফল ও বাড়ির কাজ যুক্ত ও পরিচালনা করুন।</p>
                     </div>
                     <button onclick="switchTab('lessonplan')" class="w-full py-2.5 bg-slate-100 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2">
                         পাঠটিকা তালিকা দেখুন <i class="fas fa-arrow-right"></i>
@@ -201,7 +201,7 @@
                             <i class="fas fa-certificate"></i>
                         </div>
                         <h3 class="font-bold text-slate-800 text-lg mb-2">সনদ মেনু ও সার্টিফিকেট</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-4">প্রশংসা সনদ, প্রত্যয়ন সনদ এবং ছাড়পত্র (TC) খুব সহজেই পূরণ করে প্রিন্ট বা ডাউনলোড করুন।</p>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">প্রশংসা সনদ, প্রত্যয়ন সনদ এবং ছাড়পত্র (TC) খুব সহজেই পূরণ করে প্রিন্ট বা ডাউনলোড করুন।</p>
                     </div>
                     <button onclick="switchTab('certificates')" class="w-full py-2.5 bg-slate-100 hover:bg-amber-50 text-slate-700 hover:text-amber-700 font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2">
                         সনদ তৈরি করুন <i class="fas fa-arrow-right"></i>
@@ -243,15 +243,15 @@
                                 <td class="p-2 border">০১৭১০-৩৮০৭১৩</td>
                                 <td class="p-2 border">bubly.at79@gmail.com</td>
                             </tr>
-                             <tr class="border-b bg-slate-50">
-                                <td class="p-2 border"><img src="https://i.postimg.cc/mrmNBqCk/1791259519676.png" alt="তোফায়েল তোরাব" class="w-12 h-12 rounded-full object-cover mx-auto"></td>
-                                <td class="p-2 border font-bold">জনাব তোফায়েল তোরাব</td>
+                            <tr class="border-b bg-slate-50">
+                                <td class="p-2 border"><img src="https://i.postimg.cc/mrmNBqCk/1791259519676.png" alt="তোফায়েল তোরাব" class="w-12 h-12 rounded-full object-cover mx-auto"></td>
+                                <td class="p-2 border font-bold">জনাব তোফায়েল তোরাব</td>
                                 <td class="p-2 border">সহকারী শিক্ষক</td>
                                 <td class="p-2 border">বীরগঞ্জ, দিনাজপুর</td>
                                 <td class="p-2 border">০১৬০১৮১৬৬৪৯</td>
                                 <td class="p-2 border">tt.physics9899@gmail.com</td>
                             </tr>
-                             <tr class="border-b bg-slate-50">
+                            <tr class="border-b bg-slate-50">
                                 <td class="p-2 border"><img src="https://i.postimg.cc/k5TFqZKg/1791260163049.jpg" alt="রাজেদুন্নাহার" class="w-12 h-12 rounded-full object-cover mx-auto"></td>
                                 <td class="p-2 border font-bold">জনাব রাজেদুন্নাহার</td>
                                 <td class="p-2 border">সহকারী শিক্ষক</td>
@@ -259,7 +259,7 @@
                                 <td class="p-2 border">০১৭৩৪-৩৮২১১৪</td>
                                 <td class="p-2 border">rajedun.at114@gmail.com</td>
                             </tr>
-                             <tr class="border-b bg-slate-50">
+                            <tr class="border-b bg-slate-50">
                                 <td class="p-2 border"><img src="https://i.postimg.cc/xd6yn7MT/1791260022345.jpg" alt="হাফিজা খাতুন" class="w-12 h-12 rounded-full object-cover mx-auto"></td>
                                 <td class="p-2 border font-bold">হাফিজা খাতুন</td>
                                 <td class="p-2 border">সহকারী শিক্ষক</td>
@@ -267,7 +267,7 @@
                                 <td class="p-2 border">০১৭৩২-০৬৩৯৭২</td>
                                 <td class="p-2 border">hafija.at72@gmail.com</td>
                             </tr>
-                             <tr class="border-b bg-slate-50">
+                            <tr class="border-b bg-slate-50">
                                 <td class="p-2 border"><img src="https://i.postimg.cc/mgQCyrmL/sa-na-ya-pada.jpg" alt="শূণ্য পদ" class="w-12 h-12 rounded-full object-cover mx-auto"></td>
                                 <td class="p-2 border font-bold">শূণ্য পদ</td>
                                 <td class="p-2 border">সহকারী শিক্ষক</td>
@@ -382,7 +382,7 @@
                     <p class="text-xs text-slate-600">বীরগঞ্জ, দিনাজপুর | স্থাপিত: ১৯৮৯</p>
                     <h3 id="prevCertType" class="text-xl font-bold text-amber-800 uppercase tracking-wide my-4 decoration-amber-500 underline">প্রশংসা পত্র</h3>
                     <p class="text-sm leading-relaxed text-slate-800 max-w-2xl mx-auto">
-                        এই মর্মে প্রত্যয়ন করা যাচ্ছে যে, <strong id="prevName" class="text-slate-900 font-bold">---</strong>, পিতা: <span id="prevFather">---</span>, মাতা: <span id="prevMother">---</span>, এই বিদ্যালয়ের <span id="prevClass">---</span> শ্রেণির একজন নিয়মিত শিক্ষার্থী ছিল। তার রোল নম্বর <span id="prevRoll">---</span>। আমার জানামতে সে সৎ ও ভালো চরিত্রের অধিকারী।
+                        এই মর্মে প্রত্যয়ন করা যাচ্ছে যে, <strong id="prevName" class="text-slate-900 font-bold">---</strong>, পিতা: <span id="prevFather">---</span>, মাতা: <span id="prevMother">---</span>, এই বিদ্যালয়ের <span id="prevClass">---</span> শ্রেণির একজন নিয়মিত শিক্ষার্থী ছিল। তার রোল নম্বর <span id="prevRoll">---</span>। আমার জানামতে সে সৎ ও ভালো চরিত্রের অধিকারী।
                     </p>
                     <div class="flex justify-between items-end pt-12 text-xs font-bold">
                         <div>তারিখ: ০৬/১০/২০২৬</div>
@@ -408,7 +408,7 @@
         <section id="tab-backup" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
                 <h2 class="text-xl font-bold text-slate-800"><i class="fas fa-database text-brand-600"></i> ডেটা ব্যাকআপ ও রিকভারি</h2>
-                <p class="text-sm text-slate-600">আপনার সংরক্ষিত সমস্ত পাঠটিকা ও শিক্ষার্থীদের তথ্য ফাইল আকারে রানিং ডিভাইসে ব্যাকআপ রাখুন।</p>
+                <p class="text-sm text-slate-600">আপনার সমস্ত সংরক্ষিত পাঠটিকা ও শিক্ষার্থীদের তথ্য ফাইল আকারে ব্যাকআপ রাখুন।</p>
                 <div class="flex gap-4">
                     <button onclick="exportData()" class="px-5 py-2.5 bg-emerald-600 text-white rounded-xl font-bold text-sm"><i class="fas fa-download mr-1"></i> ব্যাকআপ ডাউনলোড করুন</button>
                     <button onclick="alert('ব্যাকআপ ফাইল আপলোড করার সুবিধা যুক্ত হচ্ছে।')" class="px-5 py-2.5 bg-slate-100 border text-slate-700 rounded-xl font-bold text-sm"><i class="fas fa-upload mr-1"></i> রিকভার করুন</button>
@@ -416,844 +416,45 @@
             </div>
         </section>
 
-         <!-- TAB 8: AT A GLANCE (এডিটেবল পরিদর্শন তথ্য ছক) -->
-        <!-- TAB 8: AT A GLANCE (মোট কলামসহ আপডেট করা ছক) -->
-        
-       
-        <!-- TAB 8: AT A GLANCE (উপবৃত্তি কলাম সহ সম্পূর্ণ ছক) -->
+        <!-- TAB 8: AT A GLANCE -->
         <section id="tab-glance" class="tab-content hidden space-y-6">
             <div class="space-y-8 p-4 md:p-6 bg-white rounded-2xl shadow-sm border border-slate-200 printable-area">
-
-                <!-- বিদ্যালয়ের শিরোনাম ও ঠিকানার তথ্য -->
                 <div class="text-center space-y-2 border-b border-slate-200 pb-4">
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-xs md:text-sm text-slate-600 max-w-4xl mx-auto pt-2">
-                        <div class="flex items-center justify-center gap-1">
-                            <span class="font-semibold text-slate-700">ডাকঘর:</span>
-                            <input type="text" id="glance_po" value="কল্যাণীহাট-৫২২০" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-32">
-                        </div>
-                        <div class="flex items-center justify-center gap-1">
-                            <span class="font-semibold text-slate-700">ক্লাস্টার:</span>
-                            <input type="text" id="glance_cluster" value="রঘুনাথপুর" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-24">
-                        </div>
-                        <div class="flex items-center justify-center gap-1">
-                            <span class="font-semibold text-slate-700">উপজেলা:</span>
-                            <input type="text" id="glance_upazila" value="বীরগঞ্জ" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-20">
-                        </div>
-                        <div class="flex items-center justify-center gap-1">
-                            <span class="font-semibold text-slate-700">জেলা:</span>
-                            <input type="text" id="glance_zila" value="দিনাজপুর" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-20">
-                        </div>
-                    </div>
-
-                    <!-- জিমেইল -->
-                    <div class="flex items-center justify-center gap-1 text-xs md:text-sm text-slate-600 pt-1">
-                        <i class="fas fa-envelope text-brand-600"></i>
-                        <span class="font-semibold text-slate-700">ই-মেইল:</span>
-                        <input type="email" id="glance_email" value="ngps.bir89@gmail.com" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-64">
-                    </div>
-
-                    <div class="pt-2">
-                        <span class="inline-block px-4 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs md:text-sm font-semibold">বিদ্যালয় পরিদর্শন তথ্য ছক</span>
-                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h2>
+                    <p class="text-sm text-slate-600">ডাকঘরঃ কল্যাণীহাট-৫২২০, উপজেলাঃ বীরগঞ্জ, জেলাঃ দিনাজপুর</p>
                 </div>
-
-                <!-- ১. শিশু জরিপ ও ভর্তি সংক্রান্ত তথ্য -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">১. শিশু জরিপ ও ভর্তি তথ্য</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">৪ থেকে ১০+ বয়স পর্যন্ত জরিপকৃত শিশু</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" id="glance_j1_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" id="glance_j1_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
-                                    <span>মোট:</span>
-                                    <input type="number" id="glance_j1_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">জরিপকৃত ৫+ শিশুর সংখ্যা</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" id="glance_j2_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" id="glance_j2_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
-                                    <span>মোট:</span>
-                                    <input type="number" id="glance_j2_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">নিজ বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" id="glance_j3_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" id="glance_j3_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
-                                    <span>মোট:</span>
-                                    <input type="number" id="glance_j3_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">অন্য বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" id="glance_j4_b" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" id="glance_j4_g" oninput="calcGlance()" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center focus:ring-1 focus:ring-emerald-500 outline-none">
-                                </div>
-                                <div class="flex items-center justify-between gap-2 pt-1 border-t border-slate-200 font-bold text-slate-800">
-                                    <span>মোট:</span>
-                                    <input type="number" id="glance_j4_total" placeholder="০" class="w-24 p-1 text-sm border rounded-lg text-center bg-slate-100 font-bold outline-none" readonly>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- ২. শ্রেণি ভিত্তিক ভর্তি, উপস্থিতি ও উপবৃত্তি ছক -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">২. শ্রেণি ভিত্তিক ভর্তি, উপস্থিতি ও উপবৃত্তি</h3>
-                    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-                        <table class="w-full text-sm text-left text-slate-600 border-collapse">
-                            <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
-                                <tr>
-                                    <th rowspan="2" class="px-3 py-3 border-r text-center">শ্রেণি</th>
-                                    <th colspan="3" class="px-3 py-2 border-b border-r text-center">ভর্তিকৃত শিশু</th>
-                                    <th colspan="3" class="px-3 py-2 border-b border-r text-center">উপস্থিতি</th>
-                                    <th colspan="3" class="px-3 py-2 border-b text-center">উপবৃত্তি প্রাপ্তি</th>
-                                </tr>
-                                <tr>
-                                    <!-- ভর্তি -->
-                                    <th class="px-2 py-2 border-r text-center">বালক</th>
-                                    <th class="px-2 py-2 border-r text-center">বালিকা</th>
-                                    <th class="px-2 py-2 border-r text-center bg-slate-200 font-bold">মোট</th>
-                                    <!-- উপস্থিতি -->
-                                    <th class="px-2 py-2 border-r text-center">বালক</th>
-                                    <th class="px-2 py-2 border-r text-center">বালিকা</th>
-                                    <th class="px-2 py-2 border-r text-center bg-slate-200 font-bold">মোট</th>
-                                    <!-- উপবৃত্তি -->
-                                    <th class="px-2 py-2 border-r text-center">বালক</th>
-                                    <th class="px-2 py-2 border-r text-center">বালিকা</th>
-                                    <th class="px-2 py-2 text-center bg-slate-200 font-bold">মোট</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-200 text-center">
-                                <tr>
-                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">প্রাক-প্রাথমিক</td>
-                                    <td class="p-1 border-r"><input type="number" id="c0_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c0_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c0_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c0_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c0_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c0_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c0_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c0_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 bg-slate-50"><input type="number" id="c0_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">১ম শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" id="c1_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c1_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c1_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c1_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c1_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c1_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c1_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c1_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 bg-slate-50"><input type="number" id="c1_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">২য় শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" id="c2_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c2_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c2_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c2_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c2_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c2_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c2_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c2_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 bg-slate-50"><input type="number" id="c2_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">৩য় শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" id="c3_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c3_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c3_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c3_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c3_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c3_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c3_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c3_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 bg-slate-50"><input type="number" id="c3_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">৪র্থ শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" id="c4_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c4_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c4_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c4_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c4_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c4_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c4_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c4_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 bg-slate-50"><input type="number" id="c4_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-3 py-2 font-medium text-slate-900 border-r">৫ম শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" id="c5_vb" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c5_vg" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c5_v_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c5_ob" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c5_og" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r bg-slate-50"><input type="number" id="c5_o_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                    <td class="p-1 border-r"><input type="number" id="c5_ub" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="c5_ug" oninput="calcGlance()" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 bg-slate-50"><input type="number" id="c5_u_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100" placeholder="০" readonly></td>
-                                </tr>
-                            </tbody>
-                            <tfoot class="bg-slate-100 font-bold border-t border-slate-300 text-center">
-                                <tr>
-                                    <td class="px-3 py-2 border-r text-slate-800">সর্বমোট</td>
-                                    <!-- ভর্তি সর্বমোট -->
-                                    <td class="p-1 border-r"><input type="number" id="tot_vb" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="tot_vg" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
-                                    <td class="p-1 border-r text-emerald-700 bg-slate-200"><input type="number" id="tot_v_all" class="w-full text-center p-1 font-bold bg-transparent outline-none text-emerald-700" readonly placeholder="০"></td>
-                                    <!-- উপস্থিতি সর্বমোট -->
-                                    <td class="p-1 border-r"><input type="number" id="tot_ob" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="tot_og" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
-                                    <td class="p-1 border-r text-emerald-700 bg-slate-200"><input type="number" id="tot_o_all" class="w-full text-center p-1 font-bold bg-transparent outline-none text-emerald-700" readonly placeholder="০"></td>
-                                    <!-- উপবৃত্তি সর্বমোট -->
-                                    <td class="p-1 border-r"><input type="number" id="tot_ub" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" id="tot_ug" class="w-full text-center p-1 font-bold bg-transparent outline-none" readonly placeholder="০"></td>
-                                    <td class="p-1 text-emerald-700 bg-slate-200"><input type="number" id="tot_u_all" class="w-full text-center p-1 font-bold bg-transparent outline-none text-emerald-700" readonly placeholder="০"></td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="mt-3 flex items-center gap-2 text-slate-600">
-    <span class="text-sm md:text-base font-bold text-slate-800">প্রাক-প্রাথমিক শিক্ষকের নাম:</span>
-    <input type="text" id="glance_pre_teacher" placeholder="শিক্ষকের নাম লিখুন" class="p-1.5 border rounded-lg w-64 focus:ring-1 focus:ring-emerald-500 outline-none text-sm font-medium">
-                    </div>
-                </div>
-
-               <!-- ৩. শিক্ষক ও শিক্ষার্থী সংক্রান্ত অন্যান্য তথ্য -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                   <!-- ৩. একজন শিক্ষকের পাঠদান (সম্পূর্ণ এডিটেবল) -->
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">৩. একজন শিক্ষকের পাঠদান</h3>
-                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
-                            <table class="w-full text-sm text-left text-slate-600 border-collapse">
-                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
-                                    <tr>
-                                        <th class="px-2 py-3 border-r text-center">শিক্ষকের নাম</th>
-                                        <th class="px-2 py-3 border-r text-center">বিষয়</th>
-                                        <th class="px-2 py-3 border-r text-center">শ্রেণি</th>
-                                        <th class="px-2 py-3 text-center">পাঠ শিরোনাম</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-200">
-                                    <tr>
-                                        <td class="p-1 border-r"><input type="text" id="t1_name" placeholder="নাম" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                        <td class="p-1 border-r"><input type="text" id="t1_sub" placeholder="বিষয়" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                        <td class="p-1 border-r"><input type="text" id="t1_class" placeholder="শ্রেণি" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                        <td class="p-1"><input type="text" id="t1_title" placeholder="পাঠ শিরোনাম" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                    </tr>
-                                   <!--  <tr>
-                                        <td class="p-1 border-r"><input type="text" id="t2_name" placeholder="নাম" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                        <td class="p-1 border-r"><input type="text" id="t2_sub" placeholder="বিষয়" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                        <td class="p-1 border-r"><input type="text" id="t2_class" placeholder="শ্রেণি" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                        <td class="p-1"><input type="text" id="t2_title" placeholder="পাঠ শিরোনাম" class="w-full p-1.5 border border-slate-300 rounded text-xs bg-white focus:ring-1 focus:ring-emerald-500 outline-none text-slate-800"></td>
-                                    </tr> -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- ৪. গত বছরের শিক্ষার্থীর সংখ্যা -->
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">৪. গত বছরের শিক্ষার্থীর সংখ্যা</h3>
-                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
-                            <table class="w-full text-sm text-center text-slate-600 border-collapse">
-                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
-                                    <tr>
-                                        <th class="px-4 py-3 border-r">শ্রেণি</th>
-                                        <th class="px-4 py-3 border-r">বালক</th>
-                                        <th class="px-4 py-3 border-r">বালিকা</th>
-                                        <th class="px-4 py-3 bg-slate-200 font-bold">মোট</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-200">
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৩য় শ্রেণি</td>
-                                        <td class="p-1 border-r"><input type="number" id="prev_c3_b" oninput="calcGlance()" class="w-full text-center p-1 border rounded focus:ring-1 focus:ring-emerald-500 outline-none" placeholder="০"></td>
-                                        <td class="p-1 border-r"><input type="number" id="prev_c3_g" oninput="calcGlance()" class="w-full text-center p-1 border rounded focus:ring-1 focus:ring-emerald-500 outline-none" placeholder="০"></td>
-                                        <td class="p-1 bg-slate-50"><input type="number" id="prev_c3_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100 outline-none" placeholder="০" readonly></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৪র্থ শ্রেণি</td>
-                                        <td class="p-1 border-r"><input type="number" id="prev_c4_b" oninput="calcGlance()" class="w-full text-center p-1 border rounded focus:ring-1 focus:ring-emerald-500 outline-none" placeholder="০"></td>
-                                        <td class="p-1 border-r"><input type="number" id="prev_c4_g" oninput="calcGlance()" class="w-full text-center p-1 border rounded focus:ring-1 focus:ring-emerald-500 outline-none" placeholder="০"></td>
-                                        <td class="p-1 bg-slate-50"><input type="number" id="prev_c4_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100 outline-none" placeholder="০" readonly></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৫ম শ্রেণি</td>
-                                        <td class="p-1 border-r"><input type="number" id="prev_c5_b" oninput="calcGlance()" class="w-full text-center p-1 border rounded focus:ring-1 focus:ring-emerald-500 outline-none" placeholder="০"></td>
-                                        <td class="p-1 border-r"><input type="number" id="prev_c5_g" oninput="calcGlance()" class="w-full text-center p-1 border rounded focus:ring-1 focus:ring-emerald-500 outline-none" placeholder="০"></td>
-                                        <td class="p-1 bg-slate-50"><input type="number" id="prev_c5_total" class="w-full text-center p-1 border rounded font-bold bg-slate-100 outline-none" placeholder="০" readonly></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-     <!-- ৫. জমির তথ্য (স্থির মান) -->
-            <div class="mt-6">
-    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-emerald-600 pl-2">৫. জমির তথ্য</h3>
-    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
-        <table class="w-full text-sm text-center text-slate-700 border-collapse">
-            <thead class="text-xs uppercase bg-slate-100 border-b border-slate-200">
-                <tr>
-                    <th colspan="7" class="px-4 py-2.5 text-base font-bold text-slate-800 bg-slate-200 border-b">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</th>
-                </tr>
-                <tr class="text-slate-700 font-bold">
-                    <th class="px-4 py-2.5 border-r border-slate-200">মৌজা</th>
-                    <th class="px-4 py-2.5 border-r border-slate-200">দাগ নং</th>
-                    <th class="px-4 py-2.5 border-r border-slate-200">খতিয়ান</th>
-                    <th class="px-4 py-2.5 border-r border-slate-200">জমি পরিমাণ</th>
-                    <th class="px-4 py-2.5 border-r border-slate-200">দখল পরিমাণ</th>
-                    <th class="px-4 py-2.5 border-r border-slate-200">বেদখল পরিমাণ</th>
-                    <th class="px-4 py-2.5">মামলা আছে কিনা</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 font-medium">
-                <tr class="hover:bg-slate-50 transition-colors">
-                    <td class="px-4 py-3 border-r border-slate-200 font-semibold text-slate-900">সৈয়দপুর কল্যাণী</td>
-                    <td class="px-4 py-3 border-r border-slate-200">২২৬৫</td>
-                    <td class="px-4 py-3 border-r border-slate-200">৭০০</td>
-                    <td class="px-4 py-3 border-r border-slate-200">০.৩৩ শতক</td>
-                    <td class="px-4 py-3 border-r border-slate-200">০.৩৩</td>
-                    <td class="px-4 py-3 border-r border-slate-200 text-slate-600">নেই</td>
-                    <td class="px-4 py-3 text-slate-600">নেই</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-                <!-- বাটনসমূহ -->
-                <div class="flex flex-wrap items-center justify-end gap-3 no-print pt-6 mt-4 border-t border-slate-200">
-                    <button onclick="saveGlanceData()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2">
-                        <i class="fas fa-save"></i> তথ্যটি সংরক্ষণ করুন
-                    </button>
-                    <button onclick="window.print()" class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2">
-                        <i class="fas fa-print"></i> ছকটি প্রিন্ট করুন
-                    </button>
-                </div>
-
             </div>
-
-            <!-- উপবৃত্তিসহ আপডেট করা জাভাস্ক্রিপ্ট -->
-            <script>
-                function calcGlance() {
-                    const getNum = (id) => {
-                        const el = document.getElementById(id);
-                        return el ? (parseFloat(el.value) || 0) : 0;
-                    };
-                    const setNum = (id, val) => {
-                        const el = document.getElementById(id);
-                        if(el) el.value = val > 0 ? val : '';
-                    };
-
-                    // ১. শিশু জরিপ ৪টি কার্ড
-                    for(let i=1; i<=4; i++) {
-                        setNum(`glance_j${i}_total`, getNum(`glance_j${i}_b`) + getNum(`glance_j${i}_g`));
-                    }
-
-                    // ২. শ্রেণি ভিত্তিক টেবিল (ভর্তি, উপস্থিতি ও উপবৃত্তি সারি)
-                    let sumVb = 0, sumVg = 0, sumOb = 0, sumOg = 0, sumUb = 0, sumUg = 0;
-                    for(let i=0; i<=5; i++) {
-                        let vb = getNum(`c${i}_vb`);
-                        let vg = getNum(`c${i}_vg`);
-                        let ob = getNum(`c${i}_ob`);
-                        let og = getNum(`c${i}_og`);
-                        let ub = getNum(`c${i}_ub`);
-                        let ug = getNum(`c${i}_ug`);
-
-                        setNum(`c${i}_v_total`, vb + vg);
-                        setNum(`c${i}_o_total`, ob + og);
-                        setNum(`c${i}_u_total`, ub + ug);
-
-                        sumVb += vb;
-                        sumVg += vg;
-                        sumOb += ob;
-                        sumOg += og;
-                        sumUb += ub;
-                        sumUg += ug;
-                    }
-
-                    // ২. শ্রেণি ভিত্তিক টেবিলের সর্বমোট কলাম
-                    setNum('tot_vb', sumVb);
-                    setNum('tot_vg', sumVg);
-                    setNum('tot_v_all', sumVb + sumVg);
-
-                    setNum('tot_ob', sumOb);
-                    setNum('tot_og', sumOg);
-                    setNum('tot_o_all', sumOb + sumOg);
-
-                    setNum('tot_ub', sumUb);
-                    setNum('tot_ug', sumUg);
-                    setNum('tot_u_all', sumUb + sumUg);
-
-                    // ৪. গত বছরের শিক্ষার্থী
-                    for(let i=3; i<=5; i++) {
-                        setNum(`prev_c${i}_total`, getNum(`prev_c${i}_b`) + getNum(`prev_c${i}_g`));
-                    }
-                }
-
-                function saveGlanceData() {
-                    calcGlance();
-                    const inputs = document.querySelectorAll('#tab-glance input');
-                    const glanceData = {};
-                    inputs.forEach(input => {
-                        if(input.id) {
-                            glanceData[input.id] = input.value;
-                        }
-                    });
-                    localStorage.setItem('nakhapara_glance_data', JSON.stringify(glanceData));
-                    alert('উপবৃত্তিসহ সবগুলো ছকের তথ্য সফলভাবে সংরক্ষণ করা হয়েছে!');
-                }
-
-                function loadGlanceData() {
-                    const savedData = localStorage.getItem('nakhapara_glance_data');
-                    if (savedData) {
-                        const glanceData = JSON.parse(savedData);
-                        Object.keys(glanceData).forEach(id => {
-                            const input = document.getElementById(id);
-                            if (input) {
-                                input.value = glanceData[id];
-                            }
-                        });
-                        calcGlance();
-                    }
-                }
-
-                setTimeout(loadGlanceData, 300);
-            </script>
         </section>
-     
-        <!-- LESSON PLAN MODAL -->
-    <div id="lessonModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden no-print">
-        <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center border-b pb-3 mb-4">
-                <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-book-open text-brand-600"></i> নতুন পাঠটিকা যুক্ত করুন</h3>
-                <button onclick="closeLessonModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
-            </div>
-            <form id="lessonForm" onsubmit="saveLessonPlan(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">তারিখ</label>
-                    <input type="date" id="lessonDate" required class="w-full px-3 py-2 border rounded-xl text-sm">
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">শ্রেণি</label>
-                        <select id="lessonClass" required class="w-full px-3 py-2 border rounded-xl text-sm">
-                            <option value="১ম শ্রেণি">১ম শ্রেণি</option>
-                            <option value="২য় শ্রেণি">২য় শ্রেণি</option>
-                            <option value="৩য় শ্রেণি">৩য় শ্রেণি</option>
-                            <option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option>
-                            <option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">বিষয়</label>
-                        <input type="text" id="lessonSubject" placeholder="বাংলা / গণিত" required class="w-full px-3 py-2 border rounded-xl text-sm">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">পাঠের শিরোনাম / অধ্যায়</label>
-                    <input type="text" id="lessonTitle" placeholder="অধ্যায়ের নাম" required class="w-full px-3 py-2 border rounded-xl text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">শিখনফল ও মূল বিষয়বস্তু</label>
-                    <textarea id="lessonDetails" rows="3" placeholder="পাঠের শিখনফল লিখুন..." required class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">শিক্ষকের নাম</label>
-                    <input type="text" id="teacherName" value="তোফায়েল তোরাব" required class="w-full px-3 py-2 border rounded-xl text-sm">
-                </div>
-                <div class="flex justify-end gap-2 border-t pt-4">
-                    <button type="button" onclick="closeLessonModal()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-sm font-medium">বাতিল</button>
-                    <button type="submit" class="px-5 py-2 bg-brand-600 text-white rounded-xl text-sm font-bold">সংরক্ষণ করুন</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    </main>
 
-    <!-- STUDENT MODAL -->
-    <!-- STUDENT MODAL -->
-    <div id="studentModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden no-print">
-        <div class="bg-white rounded-2xl p-6 max-w-md w-full mx-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <h3 class="text-lg font-bold text-slate-800 mb-4"><i class="fas fa-user-plus text-brand-600"></i> নতুন শিক্ষার্থী যোগ করুন</h3>
-            <form id="studentForm" onsubmit="saveStudent(event)" class="space-y-3">
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">শিক্ষার্থীর নাম</label>
-                    <input type="text" id="stName" placeholder="শিক্ষার্থীর নাম" required class="w-full p-2 border rounded-xl text-sm">
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">শ্রেণি</label>
-                        <select id="stClass" class="w-full p-2 border rounded-xl text-sm">
-                            <option value="১ম শ্রেণি">১ম শ্রেণি</option>
-                            <option value="২য় শ্রেণি">২য় শ্রেণি</option>
-                            <option value="৩য় শ্রেণি">৩য় শ্রেণি</option>
-                            <option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option>
-                            <option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">রোল নম্বর</label>
-                        <input type="text" id="stRoll" placeholder="রোল নম্বর" required class="w-full p-2 border rounded-xl text-sm">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">পিতার নাম</label>
-                    <input type="text" id="stFather" placeholder="পিতার নাম" required class="w-full p-2 border rounded-xl text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">মাতার নাম</label>
-                    <input type="text" id="stMother" placeholder="মাতার নাম" required class="w-full p-2 border rounded-xl text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">অভিভাবকের নাম (যদি থাকে)</label>
-                    <input type="text" id="stGuardianName" placeholder="অভিভাবকের নাম (ঐচ্ছিক)" class="w-full p-2 border rounded-xl text-sm">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">যোগাযোগের মোবাইল নম্বর</label>
-                    <input type="text" id="stGuardian" placeholder="মোবাইল নম্বর" required class="w-full p-2 border rounded-xl text-sm">
-                </div>
-                <div class="flex justify-end gap-2 border-t pt-3">
-                    <button type="button" onclick="closeStudentModal()" class="px-4 py-2 bg-slate-100 rounded-xl text-sm">বাতিল</button>
-                    <button type="submit" class="px-4 py-2 bg-brand-600 text-white font-bold rounded-xl text-sm">সেভ করুন</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-slate-900 via-brand-950 to-emerald-950 text-slate-300 py-6 border-t border-emerald-500/20 mt-auto shadow-2xl relative overflow-hidden no-print">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10 text-xs">
-            <p class="text-slate-400 font-medium tracking-wide">
-                © ২০২৬ <span class="text-emerald-400 font-semibold">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</span>। সর্বস্বত্ব সংরক্ষিত।
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 shadow-lg text-slate-200">
-                <span class="text-amber-300 font-medium"><i class="fas fa-code"></i> কারিগরি সহায়তায় ও সাইট ডেভেলপার:</span>
-                <strong class="text-white font-bold tracking-wide">তোফায়েল তোরাব</strong>
-                <span class="text-slate-500">|</span>
-                <span class="text-emerald-200">সহকারী শিক্ষক, নখাপাড়া সপ্রাবি</span>
-                <span class="text-slate-500">|</span>
-                <a href="mailto:tt.physics9899@gmail.com" class="text-amber-300 hover:underline"><i class="fas fa-envelope"></i> tt.physics9899@gmail.com</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- App Scripts -->
+    <!-- JavaScript for Tab Switching -->
     <script>
-        let lessonPlans = JSON.parse(localStorage.getItem('lessonPlans')) || [];
-        let students = JSON.parse(localStorage.getItem('students')) || [
-            { id: 1, name: 'আব্দুল্লাহ', className: '৫ম শ্রেণি', roll: '০১', phone: '০১৭০০০০০০০১' },
-            { id: 2, name: 'ফাতেমা খাতুন', className: '৫ম শ্রেণি', roll: '০২', phone: '০১৭০০০০০০০২' }
-        ];
-
         function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            const target = document.getElementById('tab-' + tabId);
-            if (target) target.classList.remove('hidden');
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
 
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-brand-50', 'text-brand-700', 'border', 'border-brand-200', 'shadow-sm', 'font-semibold');
-                btn.classList.add('text-slate-600', 'font-medium');
+            // Show selected tab content
+            const activeContent = document.getElementById('tab-' + tabId);
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+
+            // Reset all tab buttons style
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.className = "tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2";
             });
+
+            // Highlight active tab button
             const activeBtn = document.getElementById('nav-' + tabId);
-            if (activeBtn) activeBtn.classList.add('bg-brand-50', 'text-brand-700', 'border', 'border-brand-200', 'shadow-sm', 'font-semibold');
-        }
-
-        // Lesson Plan Modals
-        function openLessonModal() {
-            document.getElementById('lessonModal').classList.remove('hidden');
-            document.getElementById('lessonDate').valueAsDate = new Date();
-        }
-        function closeLessonModal() { document.getElementById('lessonModal').classList.add('hidden'); }
-        
-        function saveLessonPlan(e) {
-            e.preventDefault();
-            const newPlan = {
-                id: Date.now(),
-                date: document.getElementById('lessonDate').value,
-                className: document.getElementById('lessonClass').value,
-                subject: document.getElementById('lessonSubject').value,
-                title: document.getElementById('lessonTitle').value,
-                details: document.getElementById('lessonDetails').value,
-                teacher: document.getElementById('teacherName').value
-            };
-            lessonPlans.unshift(newPlan);
-            localStorage.setItem('lessonPlans', JSON.stringify(lessonPlans));
-            closeLessonModal();
-            renderLessonPlans();
-            updateStats();
-        }
-
-        function renderLessonPlans() {
-            const filterClass = document.getElementById('filterLessonClass').value;
-            const container = document.getElementById('lessonPlanList');
-            container.innerHTML = '';
-
-            const filteredPlans = filterClass ? lessonPlans.filter(p => p.className === filterClass) : lessonPlans;
-
-            if (filteredPlans.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center py-10 bg-white rounded-2xl border text-slate-400">কোনো পাঠটিকা তথ্য পাওয়া যায়নি।</div>`;
-                return;
+            if (activeBtn) {
+                activeBtn.className = "tab-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all shrink-0 flex items-center gap-2 bg-brand-50 text-brand-700 border border-brand-200 shadow-sm";
             }
 
-            filteredPlans.forEach(plan => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative";
-                card.innerHTML = `
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-bold rounded-lg text-xs">${plan.className}</span>
-                        <span class="text-xs text-slate-400 font-medium">${plan.date}</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">${plan.title}</h4>
-                    <p class="text-xs font-semibold text-brand-700 mb-2">বিষয়: ${plan.subject}</p>
-                    <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-xl mb-3">${plan.details}</p>
-                    <div class="text-xs text-slate-500 border-t pt-2 flex justify-between items-center">
-                        <span>শিক্ষক: ${plan.teacher}</span>
-                        <button onclick="deleteLesson(${plan.id})" class="text-red-500"><i class="fas fa-trash"></i></button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        function deleteLesson(id) {
-            lessonPlans = lessonPlans.filter(p => p.id !== id);
-            localStorage.setItem('lessonPlans', JSON.stringify(lessonPlans));
-            renderLessonPlans();
-            updateStats();
-        }
-        
-        /*
-        // Student Handlers
-        function openStudentModal() { document.getElementById('studentModal').classList.remove('hidden'); }
-        function closeStudentModal() { document.getElementById('studentModal').classList.add('hidden'); }
-        
-        function saveStudent(e) {
-            e.preventDefault();
-            const st = {
-                id: Date.now(),
-                name: document.getElementById('stName').value,
-                className: document.getElementById('stClass').value,
-                roll: document.getElementById('stRoll').value,
-                phone: document.getElementById('stGuardian').value
-            };
-            students.push(st);
-            localStorage.setItem('students', JSON.stringify(students));
-            closeStudentModal();
-            renderStudents();
-            updateStats();
-        }
-
-        function renderStudents() {
-            const container = document.getElementById('studentList');
-            container.innerHTML = '';
-            students.forEach(st => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between";
-                card.innerHTML = `
-                    <div>
-                        <h4 class="font-bold text-sm text-slate-800">${st.name}</h4>
-                        <p class="text-xs text-slate-500">${st.className} | রোল: ${st.roll}</p>
-                        <p class="text-xs text-emerald-700"><i class="fas fa-phone text-xs"></i> ${st.phone}</p>
-                    </div>
-                    <button onclick="deleteStudent(${st.id})" class="text-red-400 hover:text-red-600 text-xs"><i class="fas fa-trash"></i></button>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function deleteStudent(id) {
-            students = students.filter(s => s.id !== id);
-            localStorage.setItem('students', JSON.stringify(students));
-            renderStudents();
-            updateStats();
-        }
-        */
-
-        // Student Handlers (আপডেটকৃত)
-        function openStudentModal() { 
-            document.getElementById('studentForm').reset();
-            document.getElementById('studentModal').classList.remove('hidden'); 
-        }
-        
-        function closeStudentModal() { 
-            document.getElementById('studentModal').classList.add('hidden'); 
-        }
-        
-        function saveStudent(e) {
-            e.preventDefault();
-            const st = {
-                id: Date.now(),
-                name: document.getElementById('stName').value,
-                className: document.getElementById('stClass').value,
-                roll: document.getElementById('stRoll').value,
-                father: document.getElementById('stFather').value,
-                mother: document.getElementById('stMother').value,
-                guardianName: document.getElementById('stGuardianName').value || 'প্রযোজ্য নয়',
-                phone: document.getElementById('stGuardian').value
-            };
-            students.push(st);
-            localStorage.setItem('students', JSON.stringify(students));
-            closeStudentModal();
-            renderStudents();
-            updateStats();
-        }
-
-        function renderStudents() {
-            const container = document.getElementById('studentList');
-            if(!container) return;
-            container.innerHTML = '';
-            
-            if(students.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-400">কোনো শিক্ষার্থীর তথ্য পাওয়া যায়নি।</div>`;
-                return;
-            }
-
-            students.forEach(st => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between gap-3";
-                card.innerHTML = `
-                    <div>
-                        <div class="flex justify-between items-start mb-1">
-                            <h4 class="font-bold text-base text-slate-800">${st.name}</h4>
-                            <span class="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-md font-semibold">${st.className} | রোল: ${st.roll}</span>
-                        </div>
-                        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                            <p><span class="font-semibold text-slate-700">পিতা:</span> ${st.father || '---'}</p>
-                            <p><span class="font-semibold text-slate-700">মাতা:</span> ${st.mother || '---'}</p>
-                            <p><span class="font-semibold text-slate-700">অভিভাবক:</span> ${st.guardianName || '---'}</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between border-t pt-2 text-xs">
-                        <span class="text-emerald-700 font-medium"><i class="fas fa-phone text-xs mr-1"></i> ${st.phone}</span>
-                        <button onclick="deleteStudent(${st.id})" class="text-red-400 hover:text-red-600 font-semibold p-1"><i class="fas fa-trash mr-1"></i> মুছুন</button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function deleteStudent(id) {
-            if(confirm('আপনি কি এই শিক্ষার্থীর তথ্য মুছে ফেলতে চান?')) {
-                students = students.filter(s => s.id !== id);
-                localStorage.setItem('students', JSON.stringify(students));
-                renderStudents();
-                updateStats();
-            }
-        }
-
-        // Certificate Generator
-        function generateCert(e) {
-            e.preventDefault();
-            document.getElementById('prevCertType').innerText = document.getElementById('certType').value;
-            document.getElementById('prevName').innerText = document.getElementById('certName').value;
-            document.getElementById('prevFather').innerText = document.getElementById('certFather').value;
-            document.getElementById('prevMother').innerText = document.getElementById('certMother').value;
-            document.getElementById('prevClass').innerText = document.getElementById('certClass').value;
-            document.getElementById('prevRoll').innerText = document.getElementById('certRoll').value;
-            document.getElementById('certificatePreview').classList.remove('hidden');
-        }
-
-        // Stats Update
-        function updateStats() {
-            document.getElementById('statTotalStudents').innerText = students.length;
-            document.getElementById('statTotalLessons').innerText = lessonPlans.length;
-        }
-
-        // Export Data
-        function exportData() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ lessonPlans, students }));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", "nakhapara_school_backup.json");
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
-        }
-
-    // তথ্য সেভ করার ফাংশন
-    function saveGlanceData() {
-        const inputs = document.querySelectorAll('#tab-glance input');
-        const glanceData = {};
-        inputs.forEach(input => {
-            if(input.id) {
-                glanceData[input.id] = input.value;
-            }
-        });
-        localStorage.setItem('nakhapara_glance_data', JSON.stringify(glanceData));
-        alert('তথ্য সফলভাবে সংরক্ষণ করা হয়েছে!');
-    }
-
-    // পেজ লোড হলে আগের সেভ করা তথ্য ফিরিয়ে আনার ফাংশন
-    function loadGlanceData() {
-        const savedData = localStorage.getItem('nakhapara_glance_data');
-        if (savedData) {
-            const glanceData = JSON.parse(savedData);
-            Object.keys(glanceData).forEach(id => {
-                const input = document.getElementById(id);
-                if (input) {
-                    input.value = glanceData[id];
-                }
-            });
-        }
-    }
-
-    // পেজ রান হওয়ার সাথে সাথে লোড হবে
-    document.addEventListener('DOMContentLoaded', loadGlanceData);
-</script>
-        // Initialize App
-        renderLessonPlans();
-        renderStudents();
-        updateStats();
     </script>
 </body>
 </html>
