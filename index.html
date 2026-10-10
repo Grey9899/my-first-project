@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>নখাপাড়া সরকারি প্রাথমিক বিদ্যালয় | ডিজিটাল ব্যবস্থাপনা সিস্টেম</title>
+    <!-- মোবাইল অ্যাপ (PWA) সেটিংস -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#14532d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="নখাপাড়া সপ্রাবি">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Noto Sans Bengali & Inter -->
@@ -91,6 +100,9 @@
             </div>
             
             <div class="flex items-center gap-3">
+                <button id="installAppBtn" onclick="installApp()" class="hidden px-4 py-2 bg-white text-brand-800 hover:bg-emerald-50 text-sm font-bold rounded-xl shadow-lg transition-all items-center gap-2">
+                    <i class="fas fa-mobile-alt"></i> অ্যাপ ইনস্টল করুন
+                </button>
                 <button onclick="switchTab('teachers')" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-xl border border-white/20 backdrop-blur-md transition-all flex items-center gap-2">
                     <i class="fas fa-cog text-amber-300"></i> শিক্ষক সেটিংস
                 </button>
@@ -1266,6 +1278,32 @@
         renderStudents();
         updateStats();
         renderVisit();
+
+        // ===================== মোবাইল অ্যাপ (PWA) =====================
+        let deferredInstall = null;
+        window.addEventListener('beforeinstallprompt', e => {
+            e.preventDefault();
+            deferredInstall = e;
+            const b = document.getElementById('installAppBtn');
+            if (b) { b.classList.remove('hidden'); b.classList.add('flex'); }
+        });
+        window.addEventListener('appinstalled', () => {
+            deferredInstall = null;
+            const b = document.getElementById('installAppBtn');
+            if (b) { b.classList.add('hidden'); b.classList.remove('flex'); }
+        });
+        function installApp() {
+            if (!deferredInstall) return;
+            deferredInstall.prompt();
+            deferredInstall.userChoice.finally(() => {
+                deferredInstall = null;
+                const b = document.getElementById('installAppBtn');
+                if (b) { b.classList.add('hidden'); b.classList.remove('flex'); }
+            });
+        }
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
+        }
     </script>
 </body>
 </html>
