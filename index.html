@@ -508,6 +508,7 @@
                    <input type="email" id="glance_email" placeholder="ngps.bir89@gmail.com" class="border-b border-slate-300 focus:border-brand-500 text-center outline-none bg-transparent w-64">
                         </div>
                     <span class="inline-block px-4 py-1 bg-brand-100 text-brand-800 rounded-full text-xs md:text-sm font-semibold">বিদ্যালয় পরিদর্শন তথ্য ছক</span>
+                    <p id="glanceVisitBadge" class="hidden text-xs md:text-sm text-slate-600 pt-1">সর্বশেষ বিদ্যালয় পরিদর্শন: <strong id="glanceVisitText" class="text-slate-800"></strong></p>
                 </div>
 
                 <!-- ১. শিশু জরিপ ও ভর্তি সংক্রান্ত তথ্য -->
@@ -881,6 +882,7 @@
             });
             const activeBtn = document.getElementById('nav-' + tabId);
             if (activeBtn) activeBtn.classList.add('bg-brand-50', 'text-brand-700', 'border', 'border-brand-200', 'shadow-sm', 'font-semibold');
+            if (tabId === 'gallery') renderGallery();
         }
 
         // Lesson Plan Modals
@@ -1051,10 +1053,219 @@
     // পেজ রান হওয়ার সাথে সাথে লোড হবে
     document.addEventListener('DOMContentLoaded', loadGlanceData);
 
+        // ===================== এক নজরে: সাব-মেন্যু =====================
+        function switchGlanceSub(which) {
+            document.getElementById('glance-sub-chart').classList.toggle('hidden', which !== 'chart');
+            document.getElementById('glance-sub-visit').classList.toggle('hidden', which !== 'visit');
+            ['chart', 'visit'].forEach(k => {
+                const b = document.getElementById('glanceSubBtn-' + k);
+                const on = (k === which);
+                b.classList.toggle('bg-brand-600', on);
+                b.classList.toggle('text-white', on);
+                b.classList.toggle('shadow', on);
+                b.classList.toggle('font-semibold', on);
+                b.classList.toggle('text-slate-600', !on);
+                b.classList.toggle('hover:bg-slate-100', !on);
+                b.classList.toggle('font-medium', !on);
+            });
+            if (which === 'visit') renderVisit();
+        }
+
+        // ===================== সর্বশেষ বিদ্যালয় পরিদর্শন =====================
+        const VISIT_KEY = 'nakhapara_last_visit_date';
+        function toBn(n) { return String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]); }
+        function getVisitDate() { try { return localStorage.getItem(VISIT_KEY) || ''; } catch (e) { return ''; } }
+        function parseIso(iso) { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d); }
+        function formatBnDate(iso) {
+            return parseIso(iso).toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+        function daysAgoText(iso) {
+            const t = new Date(); const today = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+            const diff = Math.round((today - parseIso(iso)) / 86400000);
+            if (diff === 0) return 'আজই পরিদর্শন হয়েছে';
+            if (diff === 1) return 'গতকাল';
+            if (diff > 1) return toBn(diff) + ' দিন আগে';
+            if (diff === -1) return 'আগামীকাল';
+            return toBn(-diff) + ' দিন পরে';
+        }
+        function renderVisit() {
+            const iso = getVisitDate();
+            const view = document.getElementById('visitView');
+            const form = document.getElementById('visitForm');
+            const badge = document.getElementById('glanceVisitBadge');
+            if (iso) {
+                document.getElementById('visitDateText').textContent = formatBnDate(iso);
+                document.getElementById('visitAgoText').textContent = daysAgoText(iso);
+                document.getElementById('glanceVisitText').textContent = formatBnDate(iso);
+                badge.classList.remove('hidden');
+                view.classList.remove('hidden');
+                form.classList.add('hidden');
+            } else {
+                badge.classList.add('hidden');
+                view.classList.add('hidden');
+                form.classList.remove('hidden');
+                form.elements['visitDate'].value = '';
+                document.getElementById('visitCancelBtn').classList.add('hidden');
+            }
+        }
+        function editVisit() {
+            const form = document.getElementById('visitForm');
+            form.elements['visitDate'].value = getVisitDate();
+            document.getElementById('visitCancelBtn').classList.remove('hidden');
+            document.getElementById('visitView').classList.add('hidden');
+            form.classList.remove('hidden');
+        }
+        function cancelVisitEdit() { renderVisit(); }
+        function saveVisit(e) {
+            e.preventDefault();
+            const v = document.getElementById('visitForm').elements['visitDate'].value;
+            if (!v) { alert('অনুগ্রহ করে তারিখ নির্বাচন করুন।'); return; }
+            try { localStorage.setItem(VISIT_KEY, v); } catch (err) { alert('তারিখ সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ বন্ধ থাকতে পারে।'); return; }
+            renderVisit();
+        }
+
+        // ===================== ফটো গ্যালারি (IndexedDB) =====================
+        const PHOTO_DB = 'nakhapara_gallery', PHOTO_STORE = 'photos';
+        let photoDb = null, galleryItems = [], galleryUrls = [], lightboxIndex = -1, lightboxUrl = null;
+
+        function escapeHtml(str) {
+            return String(str || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+        function openPhotoDb() {
+            return new Promise((resolve, reject) => {
+                if (photoDb) return resolve(photoDb);
+                if (!window.indexedDB) return reject(new Error('IndexedDB unsupported'));
+                const req = indexedDB.open(PHOTO_DB, 1);
+                req.onupgradeneeded = () => { req.result.createObjectStore(PHOTO_STORE, { keyPath: 'id' }); };
+                req.onsuccess = () => { photoDb = req.result; resolve(photoDb); };
+                req.onerror = () => reject(req.error);
+            });
+        }
+        function idbReq(req) { return new Promise((res, rej) => { req.onsuccess = () => res(req.result); req.onerror = () => rej(req.error); }); }
+        async function photoStore(mode) { const db = await openPhotoDb(); return db.transaction(PHOTO_STORE, mode).objectStore(PHOTO_STORE); }
+        async function getAllPhotos() { const all = await idbReq((await photoStore('readonly')).getAll()); return all.sort((a, b) => b.createdAt - a.createdAt); }
+        async function putPhoto(p) { return idbReq((await photoStore('readwrite')).put(p)); }
+        async function removePhoto(id) { return idbReq((await photoStore('readwrite')).delete(id)); }
+
+        function loadImage(file) {
+            return new Promise((resolve, reject) => {
+                const url = URL.createObjectURL(file);
+                const img = new Image();
+                img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+                img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('bad image')); };
+                img.src = url;
+            });
+        }
+        function resizeToBlob(img, maxSide, quality) {
+            const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+            const w = Math.max(1, Math.round(img.naturalWidth * scale)), h = Math.max(1, Math.round(img.naturalHeight * scale));
+            const c = document.createElement('canvas'); c.width = w; c.height = h;
+            const ctx = c.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); ctx.drawImage(img, 0, 0, w, h);
+            return new Promise((resolve, reject) => c.toBlob(b => b ? resolve(b) : reject(new Error('blob')), 'image/jpeg', quality));
+        }
+        function showGalleryStatus(msg, type) {
+            const el = document.getElementById('galleryStatus');
+            const styles = { info: 'bg-blue-50 text-blue-800 border border-blue-200', ok: 'bg-emerald-50 text-emerald-800 border border-emerald-200', error: 'bg-red-50 text-red-800 border border-red-200' };
+            el.className = 'rounded-xl px-4 py-3 text-sm font-medium ' + (styles[type] || styles.info);
+            el.textContent = msg;
+        }
+        function hideGalleryStatus() { document.getElementById('galleryStatus').className = 'hidden'; }
+
+        async function handleGalleryFiles(fileList) {
+            const files = Array.from(fileList || []).filter(f => f.type && f.type.startsWith('image/'));
+            if (!files.length) { showGalleryStatus('শুধু ছবির ফাইল (JPG, PNG ইত্যাদি) দেওয়া যাবে।', 'error'); return; }
+            let ok = 0, fail = 0;
+            for (let i = 0; i < files.length; i++) {
+                showGalleryStatus('ছবি সংরক্ষণ হচ্ছে... (' + toBn(i + 1) + '/' + toBn(files.length) + ')', 'info');
+                try {
+                    const img = await loadImage(files[i]);
+                    const full = await resizeToBlob(img, 1600, 0.82);
+                    const thumb = await resizeToBlob(img, 480, 0.75);
+                    await putPhoto({ id: Date.now() + '-' + i + '-' + Math.floor(Math.random() * 1e6), name: files[i].name, caption: '', createdAt: Date.now() + i, full, thumb });
+                    ok++;
+                } catch (err) { fail++; }
+            }
+            await renderGallery();
+            if (fail && !ok) showGalleryStatus('ছবি সংরক্ষণ করা যায়নি। ছবির ফরম্যাট (JPG/PNG) অথবা ব্রাউজারের স্টোরেজ পরীক্ষা করুন।', 'error');
+            else if (fail) showGalleryStatus(toBn(ok) + 'টি ছবি সংরক্ষিত হয়েছে, ' + toBn(fail) + 'টি করা যায়নি।', 'error');
+            else { showGalleryStatus(toBn(ok) + 'টি ছবি সফলভাবে সংরক্ষিত হয়েছে।', 'ok'); setTimeout(hideGalleryStatus, 4000); }
+        }
+
+        async function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            try { galleryItems = await getAllPhotos(); }
+            catch (err) {
+                grid.innerHTML = '<div class="col-span-full text-center py-10 bg-white rounded-2xl border text-red-500 text-sm">এই ব্রাউজারে ছবি সংরক্ষণের সুবিধা পাওয়া যায়নি। প্রাইভেট/ইনকগনিটো মোড বন্ধ করে চেষ্টা করুন।</div>';
+                return;
+            }
+            galleryUrls.forEach(u => URL.revokeObjectURL(u)); galleryUrls = [];
+            document.getElementById('galleryCount').textContent = galleryItems.length ? ('মোট ছবি: ' + toBn(galleryItems.length) + 'টি') : '';
+            if (!galleryItems.length) {
+                grid.innerHTML = '<div class="col-span-full text-center py-14 bg-white rounded-2xl border border-slate-200 text-slate-400"><i class="fas fa-photo-video text-4xl mb-3 text-slate-300"></i><p class="text-sm">এখনও কোনো ছবি সংরক্ষণ করা হয়নি। ওপরের বাটন থেকে প্রথম ছবিটি আপলোড করুন।</p></div>';
+                return;
+            }
+            grid.innerHTML = galleryItems.map((p, i) => {
+                const url = URL.createObjectURL(p.thumb); galleryUrls.push(url);
+                const cap = escapeHtml(p.caption);
+                return '<div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 shadow-sm border border-slate-200 hover:shadow-xl transition-all">' +
+                    '<img src="' + url + '" alt="' + cap + '" loading="lazy" onclick="openLightbox(' + i + ')" class="w-full h-full object-cover cursor-zoom-in transition-transform duration-300 group-hover:scale-105">' +
+                    '<div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 text-white text-xs font-medium truncate">' + (cap || '&nbsp;') + '</div>' +
+                    '<button onclick="deletePhotoAt(' + i + ')" title="মুছুন" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-red-600/90 hover:bg-red-700 text-white text-xs shadow opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity"><i class="fas fa-trash"></i></button>' +
+                    '</div>';
+            }).join('');
+        }
+
+        async function deletePhotoAt(i) {
+            if (!galleryItems[i]) return;
+            if (!confirm('এই ছবিটি স্থায়ীভাবে মুছে ফেলতে চান?')) return;
+            await removePhoto(galleryItems[i].id);
+            await renderGallery();
+        }
+
+        // ---- লাইটবক্স ----
+        function openLightbox(i) { lightboxIndex = i; document.getElementById('photoLightbox').classList.remove('hidden'); document.getElementById('photoLightbox').classList.add('flex'); showLightbox(); }
+        function closeLightbox() {
+            const lb = document.getElementById('photoLightbox'); lb.classList.add('hidden'); lb.classList.remove('flex');
+            if (lightboxUrl) { URL.revokeObjectURL(lightboxUrl); lightboxUrl = null; }
+            document.getElementById('lightboxImg').removeAttribute('src');
+            lightboxIndex = -1;
+        }
+        function showLightbox() {
+            const p = galleryItems[lightboxIndex]; if (!p) { closeLightbox(); return; }
+            if (lightboxUrl) URL.revokeObjectURL(lightboxUrl);
+            lightboxUrl = URL.createObjectURL(p.full);
+            const img = document.getElementById('lightboxImg'); img.src = lightboxUrl; img.alt = p.caption || '';
+            document.getElementById('lightboxCounter').textContent = toBn(lightboxIndex + 1) + ' / ' + toBn(galleryItems.length);
+            document.getElementById('lightboxCaption').value = p.caption || '';
+            document.getElementById('lightboxDate').textContent = new Date(p.createdAt).toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+        function stepLightbox(d) {
+            if (!galleryItems.length) return;
+            lightboxIndex = (lightboxIndex + d + galleryItems.length) % galleryItems.length; showLightbox();
+        }
+        async function saveCaption(value) {
+            const p = galleryItems[lightboxIndex]; if (!p) return;
+            p.caption = value.trim(); await putPhoto(p); await renderGallery();
+        }
+        async function deleteCurrentPhoto() {
+            const p = galleryItems[lightboxIndex]; if (!p) return;
+            if (!confirm('এই ছবিটি স্থায়ীভাবে মুছে ফেলতে চান?')) return;
+            await removePhoto(p.id); await renderGallery();
+            if (!galleryItems.length) closeLightbox(); else { lightboxIndex = Math.min(lightboxIndex, galleryItems.length - 1); showLightbox(); }
+        }
+        document.addEventListener('keydown', e => {
+            if (lightboxIndex < 0) return;
+            if (e.target && e.target.id === 'lightboxCaption') { if (e.key === 'Escape') e.target.blur(); return; }
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') stepLightbox(-1);
+            else if (e.key === 'ArrowRight') stepLightbox(1);
+        });
+
         // Initialize App
         renderLessonPlans();
         renderStudents();
         updateStats();
+        renderVisit();
     </script>
 </body>
 </html>
