@@ -56,22 +56,45 @@
                 <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-inner shrink-0 mx-auto md:mx-0">
                     <i class="fas fa-graduation-cap text-3xl sm:text-4xl text-amber-300"></i>
                 </div>
-               <div>
+                
+             <!--  <div>
     <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white drop-shadow-sm">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h1>
     
-    <!-- কোড, স্থাপিত ও EMIS অংশ -->
+     কোড, স্থাপিত ও EMIS অংশ 
     <p class="text-xs sm:text-sm text-emerald-100 mt-1 flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1">
         <span><i class="fas fa-id-badge text-amber-300 mr-1"></i> কোডঃ ১৫০৪৬১</span>
         <span><i class="fas fa-calendar-alt text-amber-300 mr-1"></i> স্থাপিতঃ ১৯৮৯</span>
         <span><i class="fas fa-fingerprint text-amber-300 mr-1"></i> EMIS: ৯৯১০৩১২০৬০৪</span>
     </p>
 
-    <!-- ঠিকানা অংশ (কালਰ ও দৃশ্যমানতা ঠিক করা হয়েছে) -->
+    ঠিকানা অংশ (কালਰ ও দৃশ্যমানতা ঠিক করা হয়েছে) 
     <p class="text-xs sm:text-sm text-white font-medium mt-1.5 bg-black/20 px-2 py-1 rounded inline-block">
         <i class="fas fa-map-marker-alt text-amber-300 mr-1"></i> ডাকঘরঃ কল্যাণীহাট-৫২২০, উপজেলাঃ বীরগঞ্জ, জেলাঃ দিনাজপুর
     </p>
 </div>
-            </div>
+            </div> -->
+                
+       <div class="flex flex-col gap-2">
+    <!-- ১. বিদ্যালয়ের নাম -->
+    <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white drop-shadow-sm">
+        নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়
+    </h1>
+
+    <!-- ২. কোড, স্থাপিত ও EMIS অংশ (মোবাইলে স্বয়ংক্রিয়ভাবে নিচে নিচে বা পাশে সাজাবে) -->
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-emerald-100">
+        <span class="inline-flex items-center"><i class="fas fa-id-badge text-amber-300 mr-1.5"></i> কোডঃ ১৫০৪৬১</span>
+        <span class="inline-flex items-center"><i class="fas fa-calendar-alt text-amber-300 mr-1.5"></i> স্থাপিতঃ ১৯৮৯</span>
+        <span class="inline-flex items-center"><i class="fas fa-fingerprint text-amber-300 mr-1.5"></i> EMIS: ৯৯১০৩১২০৬০৪</span>
+    </div>
+
+    <!-- ৩. ঠিকানা অংশ (ওভারল্যাপ বন্ধ করতে আলাদা ব্লক) -->
+    <div class="mt-1">
+        <p class="text-xs sm:text-sm text-emerald-50 font-normal leading-relaxed flex items-start sm:items-center">
+            <i class="fas fa-map-marker-alt text-amber-300 mr-1.5 mt-0.5 sm:mt-0 shrink-0"></i> 
+            <span>ডাকঘরঃ কল্যাণীহাট-৫২২০, উপজেলাঃ বীরগঞ্জ, জেলাঃ দিনাজপুর</span>
+        </p>
+    </div>
+</div>
             
             <div class="flex items-center gap-3">
                 <button onclick="switchTab('teachers')" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-xl border border-white/20 backdrop-blur-md transition-all flex items-center gap-2">
