@@ -53,14 +53,35 @@
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div class="max-w-7xl mx-auto px-4 py-4 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
             <div class="flex items-center gap-4 text-center md:text-left">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-inner shrink-0 mx-auto md:mx-0">
-                    <i class="fas fa-graduation-cap text-3xl sm:text-4xl text-amber-300"></i>
+                <!-- বিদ্যালয়ের লোগো (SVG) -->
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center shadow-lg shrink-0 mx-auto md:mx-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="নখাপাড়া সপ্রাবি, বীরগঞ্জ, দিনাজপুর — স্থাপিতঃ ১৯৮৯ খ্রীঃ" class="w-full h-full">
+<defs><clipPath id="logoLight"><circle cx="50" cy="47" r="25"/></clipPath></defs>
+<circle cx="50" cy="50" r="49" fill="#14532d"/>
+<circle cx="50" cy="50" r="47.3" fill="none" stroke="#f59e0b" stroke-width="1.3"/>
+<text font-family="'Noto Sans Bengali','FreeSans',sans-serif" font-weight="700" font-size="7.2" fill="#ffffff" x="50" y="21" text-anchor="middle">নখাপাড়া সপ্রাবি</text>
+<circle cx="50" cy="47" r="25.8" fill="#f59e0b"/>
+<circle cx="50" cy="47" r="24.6" fill="#f0fdf4"/>
+<g clip-path="url(#logoLight)">
+<g transform="translate(50 44) scale(0.5) translate(-50 -49)">
+<g stroke="#f59e0b" stroke-width="3.2" stroke-linecap="round"><line x1="64" y1="44" x2="70" y2="44"/><line x1="62.1" y1="37" x2="67.3" y2="34"/><line x1="57" y1="31.9" x2="60" y2="26.7"/><line x1="50" y1="30" x2="50" y2="24"/><line x1="43" y1="31.9" x2="40" y2="26.7"/><line x1="37.9" y1="37" x2="32.7" y2="34"/><line x1="36" y1="44" x2="30" y2="44"/></g>
+<circle cx="50" cy="44" r="10" fill="#f59e0b"/>
+<path d="M50 74 C42 68 31 67 22 70 L22 54 C31 51 42 52 50 58 Z" fill="#15803d"/>
+<path d="M50 74 C58 68 69 67 78 70 L78 54 C69 51 58 52 50 58 Z" fill="#16a34a"/>
+<line x1="50" y1="58" x2="50" y2="74" stroke="#f0fdf4" stroke-width="2"/>
+<path d="M27 59 C34 57.5 41 58 46 61.5 M27 63.5 C34 62 41 62.5 46 66 M73 59 C66 57.5 59 58 54 61.5 M73 63.5 C66 62 59 62.5 54 66" fill="none" stroke="#f0fdf4" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+</g></g>
+<rect x="24" y="58.5" width="52" height="9.5" rx="1.5" fill="#f59e0b" stroke="#14532d" stroke-width=".8"/>
+<text font-family="'Noto Sans Bengali','FreeSans',sans-serif" font-weight="700" font-size="6.3" fill="#14532d" x="50" y="65.6" text-anchor="middle">স্থাপিতঃ ১৯৮৯ খ্রীঃ</text>
+<text font-family="'Noto Sans Bengali','FreeSans',sans-serif" font-weight="700" font-size="6.8" fill="#fde68a" x="50" y="83" text-anchor="middle">বীরগঞ্জ, দিনাজপুর</text>
+<circle cx="12.5" cy="47" r="1.6" fill="#f59e0b"/><circle cx="87.5" cy="47" r="1.6" fill="#f59e0b"/>
+</svg>
                 </div>
                 <div>
                     <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white drop-shadow-sm">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</h1>
                     <p class="text-xs sm:text-sm text-emerald-100 mt-1 flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1">
                         <span><i class="fas fa-id-badge text-amber-300 mr-1"></i> কোডঃ ১৫০৪৬১</span>
-                        <span><i class="fas fa-calendar-alt text-amber-300 mr-1"></i> স্থাপিতঃ ১৯৮৯</span>
+                        <span><i class="fas fa-calendar-alt text-amber-300 mr-1"></i> স্থাপিতঃ ১৯৮৯ খ্রীঃ</span>
                         <span><i class="fas fa-fingerprint text-amber-300 mr-1"></i> EMIS: ৯৯১০৩১২০৬০৪</span>
                     </p>
                     <p class="text-xs text-emerald-200 mt-1">
@@ -100,6 +121,9 @@
             </button>
             <button onclick="switchTab('students')" id="nav-students" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
                 <i class="fas fa-user-graduate text-base"></i> শিক্ষার্থী প্রোফাইল
+            </button>
+            <button onclick="switchTab('gallery')" id="nav-gallery" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
+                <i class="fas fa-images text-base"></i> ফটো গ্যালারি
             </button>
             <button onclick="switchTab('backup')" id="nav-backup" class="tab-btn px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all shrink-0 flex items-center gap-2">
                 <i class="fas fa-hdd text-base"></i> ডেটা ব্যাকআপ
@@ -408,6 +432,44 @@
             </div>
         </section>
 
+        <!-- TAB: PHOTO GALLERY -->
+        <section id="tab-gallery" class="tab-content hidden space-y-6">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-700 via-teal-700 to-brand-800 p-6 sm:p-8 text-white shadow-xl">
+                <div class="absolute -right-10 -top-12 w-56 h-56 rounded-full bg-white/10"></div>
+                <div class="absolute right-28 -bottom-20 w-44 h-44 rounded-full bg-amber-300/10"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold text-amber-300 mb-3"><i class="fas fa-camera-retro"></i> বিদ্যালয়ের স্মৃতি</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">ফটো গ্যালারি</h2>
+                        <p class="text-emerald-100 text-sm leading-relaxed max-w-xl">বিদ্যালয়ের অনুষ্ঠান, পরিদর্শন, ক্লাসরুম ও বিভিন্ন মুহূর্তের ছবি এখানে সংরক্ষণ করুন। প্রয়োজনে যেকোনো ছবি মুছেও ফেলতে পারবেন।</p>
+                        <p id="galleryCount" class="mt-3 text-xs font-semibold text-amber-200"></p>
+                    </div>
+                    <div class="shrink-0">
+                        <button onclick="document.getElementById('galleryFileInput').click()" class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-xl shadow-lg transition-all flex items-center gap-2">
+                            <i class="fas fa-cloud-upload-alt"></i> ছবি আপলোড করুন
+                        </button>
+                        <input type="file" id="galleryFileInput" accept="image/*" multiple class="hidden" onchange="handleGalleryFiles(this.files); this.value='';">
+                    </div>
+                </div>
+            </div>
+
+            <div id="galleryDrop" onclick="document.getElementById('galleryFileInput').click()"
+                 ondragover="event.preventDefault(); this.classList.add('border-brand-500','bg-brand-50');"
+                 ondragleave="this.classList.remove('border-brand-500','bg-brand-50');"
+                 ondrop="event.preventDefault(); this.classList.remove('border-brand-500','bg-brand-50'); handleGalleryFiles(event.dataTransfer.files);"
+                 class="cursor-pointer border-2 border-dashed border-slate-300 hover:border-brand-500 hover:bg-brand-50 bg-white rounded-2xl p-6 text-center transition-all">
+                <i class="fas fa-images text-3xl text-brand-500 mb-2"></i>
+                <p class="text-sm font-semibold text-slate-700">ছবি এখানে টেনে এনে ছাড়ুন, অথবা ক্লিক করে বেছে নিন</p>
+                <p class="text-xs text-slate-500 mt-1">একসঙ্গে একাধিক ছবি দেওয়া যাবে। ছবি স্বয়ংক্রিয়ভাবে ছোট করে সংরক্ষিত হয়, তাই জায়গা কম লাগে।</p>
+            </div>
+
+            <div id="galleryStatus" class="hidden rounded-xl px-4 py-3 text-sm font-medium"></div>
+
+            <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+
+            <p class="text-xs text-slate-400 text-center"><i class="fas fa-info-circle"></i> ছবিগুলো এই ডিভাইসের ব্রাউজারে সংরক্ষিত থাকে। অন্য ফোন বা কম্পিউটারে খুললে সেখানে এই ছবি দেখা যাবে না, আর ব্রাউজারের ডেটা মুছলে ছবিও মুছে যাবে।</p>
+        </section>
+
         <!-- TAB 7: BACKUP & RESTORE -->
         <section id="tab-backup" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
@@ -422,6 +484,18 @@
 
          <!-- TAB 8: AT A GLANCE (এডিটেবল পরিদর্শন তথ্য ছক) -->
         <section id="tab-glance" class="tab-content hidden space-y-6">
+
+            <!-- এক নজরে: সাব-মেন্যু -->
+            <div class="no-print flex flex-wrap gap-2 p-1.5 bg-white border border-slate-200 rounded-2xl shadow-sm w-fit max-w-full">
+                <button type="button" id="glanceSubBtn-chart" onclick="switchGlanceSub('chart')" class="glance-sub-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 bg-brand-600 text-white shadow">
+                    <i class="fas fa-table"></i> পরিদর্শন তথ্য ছক
+                </button>
+                <button type="button" id="glanceSubBtn-visit" onclick="switchGlanceSub('visit')" class="glance-sub-btn px-4 py-2 rounded-xl text-sm font-medium transition-all flex items-center gap-2 text-slate-600 hover:bg-slate-100">
+                    <i class="fas fa-calendar-check"></i> সর্বশেষ বিদ্যালয় পরিদর্শন
+                </button>
+            </div>
+
+            <div id="glance-sub-chart">
             <div class="space-y-8 p-4 md:p-6 bg-white rounded-2xl shadow-sm border border-slate-200 printable-area">
 
                 <!-- বিদ্যালয়ের শিরোনাম -->
@@ -644,7 +718,66 @@
                 
 
             </div>
+            </div><!-- /glance-sub-chart -->
+
+            <!-- সাব-মেন্যু: সর্বশেষ বিদ্যালয় পরিদর্শন -->
+            <div id="glance-sub-visit" class="hidden no-print">
+                <div class="max-w-xl bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="bg-gradient-to-r from-emerald-700 to-teal-700 text-white px-6 py-5 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center text-2xl text-amber-300 shrink-0"><i class="fas fa-calendar-check"></i></div>
+                        <div>
+                            <h3 class="text-lg font-bold">সর্বশেষ বিদ্যালয় পরিদর্শন</h3>
+                            <p class="text-xs text-emerald-100">সর্বশেষ পরিদর্শনের তারিখ এখানে সংরক্ষণ ও পরিবর্তন করুন</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <!-- দেখার অবস্থা -->
+                        <div id="visitView" class="text-center space-y-3">
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">সর্বশেষ পরিদর্শনের তারিখ</p>
+                            <p id="visitDateText" class="text-3xl font-bold text-emerald-800"></p>
+                            <p id="visitAgoText" class="text-sm text-slate-500"></p>
+                            <button type="button" onclick="editVisit()" class="mt-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-xl shadow transition-all inline-flex items-center gap-2">
+                                <i class="fas fa-edit"></i> তারিখ পরিবর্তন করুন
+                            </button>
+                        </div>
+
+                        <!-- সম্পাদনার অবস্থা -->
+                        <form id="visitForm" onsubmit="saveVisit(event)" class="hidden space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">পরিদর্শনের তারিখ</label>
+                                <input type="date" name="visitDate" required class="w-full px-3 py-2.5 border rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+                            <div class="flex justify-end gap-2">
+                                <button type="button" id="visitCancelBtn" onclick="cancelVisitEdit()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-sm font-medium">বাতিল</button>
+                                <button type="submit" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-bold flex items-center gap-2"><i class="fas fa-save"></i> সংরক্ষণ করুন</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
+
+ <!-- PHOTO LIGHTBOX -->
+    <div id="photoLightbox" class="fixed inset-0 z-[60] hidden flex-col bg-black/95 no-print" onclick="if(event.target===this) closeLightbox()">
+        <div class="flex items-center justify-between px-4 py-3 text-white">
+            <span id="lightboxCounter" class="text-sm font-medium text-slate-300"></span>
+            <button onclick="closeLightbox()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-xl" aria-label="বন্ধ করুন">&times;</button>
+        </div>
+        <div class="flex-1 min-h-0 flex items-center justify-between gap-2 px-2 sm:px-6" onclick="if(event.target===this) closeLightbox()">
+            <button onclick="stepLightbox(-1)" class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-white/10 hover:bg-white/20 text-white" aria-label="আগের ছবি"><i class="fas fa-chevron-left"></i></button>
+            <img id="lightboxImg" alt="" class="max-h-full max-w-full object-contain rounded-lg shadow-2xl">
+            <button onclick="stepLightbox(1)" class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-white/10 hover:bg-white/20 text-white" aria-label="পরের ছবি"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="px-4 py-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-3xl w-full mx-auto">
+            <input id="lightboxCaption" type="text" maxlength="120" placeholder="ছবির শিরোনাম লিখুন (ঐচ্ছিক)" onchange="saveCaption(this.value)" class="flex-1 px-4 py-2.5 rounded-xl bg-white/10 text-white placeholder-slate-400 text-sm outline-none focus:ring-2 focus:ring-amber-400">
+            <div class="flex items-center justify-between gap-3">
+                <span id="lightboxDate" class="text-xs text-slate-400"></span>
+                <button onclick="deleteCurrentPhoto()" class="px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-sm font-bold flex items-center gap-2"><i class="fas fa-trash"></i> মুছুন</button>
+            </div>
+        </div>
+    </div>
+
  <!-- LESSON PLAN MODAL -->
     <div id="lessonModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden no-print">
         <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
