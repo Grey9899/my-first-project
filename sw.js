@@ -1,15 +1,15 @@
 /* নখাপাড়া সপ্রাবি: অফলাইন সাপোর্টের জন্য Service Worker
  * সাইটে বড় কোনো পরিবর্তন করলে নিচের VERSION সংখ্যা বাড়িয়ে দিন (যেমন v2),
  * তাহলে সবার ফোনে নতুন সংস্করণ চালু হবে। */
-const VERSION = 'nakhapara-v1';
+const VERSION = 'nakhapara-v2';
 
 // সাইটের মূল ফাইল
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 // বাইরের লাইব্রেরি (ইন্টারনেট থেকে আসে), আগেভাগে জমিয়ে রাখা হয়
