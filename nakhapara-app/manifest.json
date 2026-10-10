@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়",
+  "short_name": "নখাপাড়া সপ্রাবি",
+  "description": "নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়ের ডিজিটাল ব্যবস্থাপনা সিস্টেম: পাঠটিকা, মূল্যায়ন, সনদ ও ফটো গ্যালারি।",
+  "lang": "bn",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#14532d",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
