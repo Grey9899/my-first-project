@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn" class="h-full">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,10 +46,10 @@
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 h-full flex flex-col font-sans antialiased min-h-screen">
+<body class="bg-slate-50 text-slate-800 flex flex-col font-sans antialiased min-h-screen">
 
     <!-- Top Header Banner -->
-    <header class="bg-gradient-to-r from-brand-900 via-brand-800 to-emerald-900 text-white shadow-xl relative overflow-hidden no-print">
+    <header class="bg-gradient-to-r from-brand-900 via-brand-800 to-emerald-900 text-white shadow-xl relative overflow-hidden no-print shrink-0">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]"></div>
         <div class="max-w-7xl mx-auto px-4 py-4 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
             <div class="flex items-center gap-4 text-center md:text-left">
@@ -179,7 +179,7 @@
                             <i class="fas fa-book-reader"></i>
                         </div>
                         <h3 class="font-bold text-slate-800 text-lg mb-2">প্রতিদিনের পাঠটিকা সংযোজন</h3>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-4">১ম থেকে ৫োম শ্রেণির সকল বিষয়ের জন্য প্রতিদিনের তারিখ অনুযায়ী পাঠটিকা, শিখনফল ও বাড়ির কাজ যুক্ত ও পরিচালনা করুন।</p>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">১ম থেকে ৫ম শ্রেণির সকল বিষয়ের জন্য প্রতিদিনের তারিখ অনুযায়ী পাঠটিকা, শিখনফল ও বাড়ির কাজ যুক্ত ও পরিচালনা করুন।</p>
                     </div>
                     <button onclick="switchTab('lessonplan')" class="w-full py-2.5 bg-slate-100 hover:bg-brand-50 text-slate-700 hover:text-brand-700 font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2">
                         পাঠটিকা তালিকা দেখুন <i class="fas fa-arrow-right"></i>
@@ -713,7 +713,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-slate-900 via-brand-950 to-emerald-950 text-slate-300 py-6 border-t border-emerald-500/20 mt-auto shadow-2xl relative overflow-hidden no-print">
+    <footer class="bg-gradient-to-r from-slate-900 via-brand-950 to-emerald-950 text-slate-300 py-6 border-t border-emerald-500/20 mt-auto shadow-2xl relative overflow-hidden no-print shrink-0">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10 text-xs">
             <p class="text-slate-400 font-medium tracking-wide">
                 © ২০২৬ <span class="text-emerald-400 font-semibold">নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়</span>। সর্বস্বত্ব সংরক্ষিত।
@@ -917,7 +917,7 @@
 
     // পেজ রান হওয়ার সাথে সাথে লোড হবে
     document.addEventListener('DOMContentLoaded', loadGlanceData);
-</script>
+
         // Initialize App
         renderLessonPlans();
         renderStudents();
