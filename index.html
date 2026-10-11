@@ -338,8 +338,8 @@
                             <tr><th class="p-2 border">রোল</th><th class="p-2 border">নাম</th><th class="p-2 border">ধারাবাহিক নম্বর (৪০)</th><th class="p-2 border">সামষ্টিক নম্বর (৬০)</th><th class="p-2 border">মোট</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td class="p-2 border">০১</td><td class="p-2 border">আব্দুল্লাহ</td><td class="p-2 border"><input type="number" class="w-16 border rounded p-1" value="৩৫"></td><td class="p-2 border"><input type="number" class="w-16 border rounded p-1" value="৫২"></td><td class="p-2 border font-bold">৮৭ (A+)</td></tr>
-                            <tr><td class="p-2 border">০২</td><td class="p-2 border">ফাতেমা খাতুন</td><td class="p-2 border"><input type="number" class="w-16 border rounded p-1" value="৩৮"></td><td class="p-2 border"><input type="number" class="w-16 border rounded p-1" value="৫৫"></td><td class="p-2 border font-bold">৯৩ (A+)</td></tr>
+                            <tr><td class="p-2 border">০১</td><td class="p-2 border">আব্দুল্লাহ</td><td class="p-2 border"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" class="w-16 border rounded p-1" value="৩৫"></td><td class="p-2 border"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" class="w-16 border rounded p-1" value="৫২"></td><td class="p-2 border font-bold">৮৭ (A+)</td></tr>
+                            <tr><td class="p-2 border">০২</td><td class="p-2 border">ফাতেমা খাতুন</td><td class="p-2 border"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" class="w-16 border rounded p-1" value="৩৮"></td><td class="p-2 border"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" class="w-16 border rounded p-1" value="৫৫"></td><td class="p-2 border font-bold">৯৩ (A+)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -521,206 +521,133 @@
                         </div>
                     <span class="inline-block px-4 py-1 bg-brand-100 text-brand-800 rounded-full text-xs md:text-sm font-semibold">বিদ্যালয় পরিদর্শন তথ্য ছক</span>
                     <p id="glanceVisitBadge" class="hidden text-xs md:text-sm text-slate-600 pt-1">সর্বশেষ বিদ্যালয় পরিদর্শন: <strong id="glanceVisitText" class="text-slate-800"></strong></p>
-                </div>
-
-                <!-- ১. শিশু জরিপ ও ভর্তি সংক্রান্ত তথ্য -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">১. শিশু জরিপ ও ভর্তি তথ্য</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">৪ থেকে ১০+ বয়স পর্যন্ত জরিপকৃত শিশু</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">জরিপকৃত ৫+ শিশুর সংখ্যা</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">নিজ বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
-                            <p class="text-xs text-slate-500 font-medium mb-2">অন্য বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
-                            <div class="text-sm text-slate-700 space-y-2">
-                                <div class="flex items-center gap-2">
-                                    <span>বালক:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span>বালিকা:</span>
-                                    <input type="number" placeholder="০" class="w-full p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none">
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-slate-600 pt-2">
+                        <span class="font-semibold text-slate-700"><i class="fas fa-user-tie text-brand-600"></i> পরিদর্শনকারী কর্মকর্তার পদবি:</span>
+                        <select data-desig-select onchange="onDesigChange(this)" class="max-w-full px-2 py-1 border border-slate-300 rounded-lg bg-white text-slate-800 focus:ring-1 focus:ring-brand-500 outline-none"></select>
+                        <button type="button" onclick="openDesigModal()" class="no-print px-2.5 py-1 text-xs font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200 rounded-lg"><i class="fas fa-pen"></i> অপশন সম্পাদনা</button>
                     </div>
                 </div>
 
-                <!-- ২. শ্রেণি ভিত্তিক ভর্তি ও উপস্থিতি ছক -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">২. শ্রেণি ভিত্তিক ভর্তি ও উপস্থিতি</h3>
-                    <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-                        <table class="w-full text-sm text-left text-slate-600 border-collapse">
-                            <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
-                                <tr>
-                                    <th rowspan="2" class="px-4 py-3 border-r text-center">শ্রেণি</th>
-                                    <th colspan="2" class="px-4 py-2 border-b border-r text-center">ভর্তিকৃত শিশু</th>
-                                    <th colspan="2" class="px-4 py-2 border-b text-center">উপস্থিতি</th>
-                                </tr>
-                                <tr>
-                                    <th class="px-4 py-2 border-r text-center">বালক</th>
-                                    <th class="px-4 py-2 border-r text-center">বালিকা</th>
-                                    <th class="px-4 py-2 border-r text-center">বালক</th>
-                                    <th class="px-4 py-2 text-center">বালিকা</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-200 text-center">
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-slate-900 border-r">প্রাক-প্রাথমিক</td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-slate-900 border-r">১ম শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-slate-900 border-r">২য় শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-slate-900 border-r">৩য় শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-slate-900 border-r">৪র্থ শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-slate-900 border-r">৫ম শ্রেণি</td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-3 flex items-center gap-2 text-xs text-slate-600">
-                        <span>প্রাক-প্রাথমিক শিক্ষকের নাম:</span>
-                        <input type="text" placeholder="শিক্ষকের নাম লিখুন" class="p-1 border rounded-lg w-64 focus:ring-1 focus:ring-brand-500 outline-none">
-                    </div>
-                </div>
+<div>
+<h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">১. শিশু জরিপ ও ভর্তি তথ্য</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+<p class="text-xs text-slate-500 font-medium mb-2">৪ থেকে ১০+ বয়স পর্যন্ত জরিপকৃত শিশু</p>
+<div class="text-sm text-slate-700 space-y-2">
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালক:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_a_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালিকা:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_a_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2 pt-2 border-t border-slate-200"><span class="w-14 shrink-0 font-bold text-emerald-800">মোট:</span><span class="flex-1 text-center"><span data-sum="s1_a_boys,s1_a_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></span></div>
+</div></div>
+<div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+<p class="text-xs text-slate-500 font-medium mb-2">জরিপকৃত ৫+ শিশুর সংখ্যা</p>
+<div class="text-sm text-slate-700 space-y-2">
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালক:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_b_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালিকা:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_b_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2 pt-2 border-t border-slate-200"><span class="w-14 shrink-0 font-bold text-emerald-800">মোট:</span><span class="flex-1 text-center"><span data-sum="s1_b_boys,s1_b_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></span></div>
+</div></div>
+<div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+<p class="text-xs text-slate-500 font-medium mb-2">নিজ বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
+<div class="text-sm text-slate-700 space-y-2">
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালক:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_c_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালিকা:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_c_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2 pt-2 border-t border-slate-200"><span class="w-14 shrink-0 font-bold text-emerald-800">মোট:</span><span class="flex-1 text-center"><span data-sum="s1_c_boys,s1_c_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></span></div>
+</div></div>
+<div class="p-4 bg-slate-50 rounded-xl shadow-sm border border-slate-200">
+<p class="text-xs text-slate-500 font-medium mb-2">অন্য বিদ্যালয়ে ভর্তিকৃত ৫+ শিশু</p>
+<div class="text-sm text-slate-700 space-y-2">
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালক:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_d_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2"><span class="w-14 shrink-0">বালিকা:</span><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s1_d_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></div>
+<div class="flex items-center gap-2 pt-2 border-t border-slate-200"><span class="w-14 shrink-0 font-bold text-emerald-800">মোট:</span><span class="flex-1 text-center"><span data-sum="s1_d_boys,s1_d_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></span></div>
+</div></div>
+</div>
+</div>
 
-                <!-- ৩. শিক্ষক ও শিক্ষার্থী সংক্রান্ত অন্যান্য তথ্য -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
-                    <!-- শিক্ষকের পাঠদান -->
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">৩. একজন শিক্ষকের পাঠদান</h3>
-                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-                            <table class="w-full text-sm text-left text-slate-600">
-                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
-                                    <tr>
-                                        <th class="px-4 py-3">শিক্ষকের নাম</th>
-                                        <th class="px-4 py-3">বিষয়</th>
-                                        <th class="px-4 py-3">শ্রেণি</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-200">
-                                    <tr>
-                                        <td class="p-1"><input type="text" placeholder="নাম" class="w-full p-1 border rounded"></td>
-                                        <td class="p-1"><input type="text" placeholder="বিষয়" class="w-full p-1 border rounded"></td>
-                                        <td class="p-1"><input type="text" placeholder="শ্রেণি" class="w-full p-1 border rounded"></td>
-                                    </tr>
-                                     </tbody>
-                               </table>
-                           </div>
-                       </div>
+<div>
+<h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">২. শ্রেণি ভিত্তিক ভর্তি, উপস্থিতি ও উপবৃত্তিপ্রাপ্ত শিক্ষার্থী</h3>
+<div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+<table class="w-full text-sm text-slate-600 border-collapse" style="min-width:720px">
+<thead class="text-xs text-slate-700 bg-slate-100 border-b border-slate-200">
+<tr><th rowspan="2" class="px-3 py-3 border-r text-center align-middle">শ্রেণি</th><th colspan="3" class="px-2 py-2 border-b border-r text-center">ভর্তিকৃত শিশু</th><th colspan="3" class="px-2 py-2 border-b border-r text-center">উপস্থিতি</th><th colspan="3" class="px-2 py-2 border-b  text-center">উপবৃত্তিপ্রাপ্ত শিক্ষার্থী</th></tr>
+<tr><th class="px-2 py-2 text-center border-r">বালক</th><th class="px-2 py-2 text-center border-r">বালিকা</th><th class="px-2 py-2 text-center border-r text-emerald-800">মোট</th><th class="px-2 py-2 text-center border-r">বালক</th><th class="px-2 py-2 text-center border-r">বালিকা</th><th class="px-2 py-2 text-center border-r text-emerald-800">মোট</th><th class="px-2 py-2 text-center border-r">বালক</th><th class="px-2 py-2 text-center border-r">বালিকা</th><th class="px-2 py-2 text-center  text-emerald-800">মোট</th></tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-center">
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">প্রাক-প্রাথমিক</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_pre_enr_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_pre_enr_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_pre_enr_boys,s2_pre_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_pre_att_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_pre_att_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_pre_att_boys,s2_pre_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_pre_stp_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_pre_stp_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 "><span data-sum="s2_pre_stp_boys,s2_pre_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">১ম শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_1_enr_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_1_enr_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_1_enr_boys,s2_1_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_1_att_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_1_att_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_1_att_boys,s2_1_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_1_stp_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_1_stp_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 "><span data-sum="s2_1_stp_boys,s2_1_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">২য় শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_2_enr_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_2_enr_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_2_enr_boys,s2_2_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_2_att_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_2_att_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_2_att_boys,s2_2_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_2_stp_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_2_stp_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 "><span data-sum="s2_2_stp_boys,s2_2_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">৩য় শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_3_enr_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_3_enr_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_3_enr_boys,s2_3_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_3_att_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_3_att_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_3_att_boys,s2_3_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_3_stp_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_3_stp_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 "><span data-sum="s2_3_stp_boys,s2_3_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">৪র্থ শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_4_enr_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_4_enr_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_4_enr_boys,s2_4_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_4_att_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_4_att_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_4_att_boys,s2_4_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_4_stp_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_4_stp_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 "><span data-sum="s2_4_stp_boys,s2_4_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">৫ম শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_5_enr_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_5_enr_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_5_enr_boys,s2_5_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_5_att_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_5_att_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><span data-sum="s2_5_att_boys,s2_5_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_5_stp_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s2_5_stp_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 "><span data-sum="s2_5_stp_boys,s2_5_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+</tbody>
+<tfoot class="border-t-2 border-slate-300 bg-slate-50 text-center font-bold">
+<tr><td class="px-3 py-2 border-r text-emerald-800">মোট</td><td class="p-1 border-r"><span data-sum="s2_pre_enr_boys,s2_1_enr_boys,s2_2_enr_boys,s2_3_enr_boys,s2_4_enr_boys,s2_5_enr_boys" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_enr_girls,s2_1_enr_girls,s2_2_enr_girls,s2_3_enr_girls,s2_4_enr_girls,s2_5_enr_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_enr_boys,s2_1_enr_boys,s2_2_enr_boys,s2_3_enr_boys,s2_4_enr_boys,s2_5_enr_boys,s2_pre_enr_girls,s2_1_enr_girls,s2_2_enr_girls,s2_3_enr_girls,s2_4_enr_girls,s2_5_enr_girls" class="block px-1 py-1 bg-emerald-100 text-emerald-900 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_att_boys,s2_1_att_boys,s2_2_att_boys,s2_3_att_boys,s2_4_att_boys,s2_5_att_boys" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_att_girls,s2_1_att_girls,s2_2_att_girls,s2_3_att_girls,s2_4_att_girls,s2_5_att_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_att_boys,s2_1_att_boys,s2_2_att_boys,s2_3_att_boys,s2_4_att_boys,s2_5_att_boys,s2_pre_att_girls,s2_1_att_girls,s2_2_att_girls,s2_3_att_girls,s2_4_att_girls,s2_5_att_girls" class="block px-1 py-1 bg-emerald-100 text-emerald-900 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_stp_boys,s2_1_stp_boys,s2_2_stp_boys,s2_3_stp_boys,s2_4_stp_boys,s2_5_stp_boys" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s2_pre_stp_girls,s2_1_stp_girls,s2_2_stp_girls,s2_3_stp_girls,s2_4_stp_girls,s2_5_stp_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 "><span data-sum="s2_pre_stp_boys,s2_1_stp_boys,s2_2_stp_boys,s2_3_stp_boys,s2_4_stp_boys,s2_5_stp_boys,s2_pre_stp_girls,s2_1_stp_girls,s2_2_stp_girls,s2_3_stp_girls,s2_4_stp_girls,s2_5_stp_girls" class="block px-1 py-1 bg-emerald-100 text-emerald-900 font-bold rounded-lg text-sm">০</span></td></tr>
+</tfoot>
+</table>
+</div>
+<div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600"><span>প্রাক-প্রাথমিক শিক্ষকের নাম:</span><input type="text" id="s2_pre_teacher" placeholder="শিক্ষকের নাম লিখুন" class="p-1 border rounded-lg w-64 max-w-full focus:ring-1 focus:ring-brand-500 outline-none"></div>
+</div>
 
-                    <!-- গত বছরের শিক্ষার্থীর সংখ্যা -->
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">৪. গত বছরের শিক্ষার্থীর সংখ্যা</h3>
-                        <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
-                            <table class="w-full text-sm text-center text-slate-600">
-                                <thead class="text-xs text-slate-700 uppercase bg-slate-100 border-b border-slate-200">
-                                    <tr>
-                                        <th class="px-4 py-3 border-r">শ্রেণি</th>
-                                        <th class="px-4 py-3 border-r">বালক</th>
-                                        <th class="px-4 py-3">বালিকা</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-200">
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৩য় শ্রেণি</td>
-                                        <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                        <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৪র্থ শ্রেণি</td>
-                                        <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                        <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-slate-900 border-r">৫ম শ্রেণি</td>
-                                        <td class="p-1 border-r"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                        <td class="p-1"><input type="number" class="w-full text-center p-1 border rounded" placeholder="০"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+<div class="lg:col-span-3">
+<h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">৩. একজন শিক্ষকের পাঠদান</h3>
+<div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+<table class="w-full text-sm text-left text-slate-600" style="min-width:560px">
+<thead class="text-xs text-slate-700 bg-slate-100 border-b border-slate-200">
+<tr><th class="px-3 py-3 text-left">শিক্ষকের নাম</th><th class="px-3 py-3 text-left">বিষয়</th><th class="px-3 py-3 text-left">শ্রেণি</th><th class="px-3 py-3 text-left">পাঠের বিষয়বস্তু</th></tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<tr>
+<td class="p-1 align-top"><input type="text" id="s3_name" placeholder="নাম" class="w-full p-1 border rounded focus:ring-1 focus:ring-brand-500 outline-none"></td>
+<td class="p-1 align-top"><input type="text" id="s3_subject" placeholder="বিষয়" class="w-full p-1 border rounded focus:ring-1 focus:ring-brand-500 outline-none"></td>
+<td class="p-1 align-top"><input type="text" id="s3_class" placeholder="শ্রেণি" class="w-full p-1 border rounded focus:ring-1 focus:ring-brand-500 outline-none"></td>
+<td class="p-1 align-top"><textarea id="s3_content" rows="2" placeholder="পাঠের বিষয়বস্তু লিখুন" class="w-full p-1 border rounded focus:ring-1 focus:ring-brand-500 outline-none resize-y"></textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="lg:col-span-2">
+<h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2">৪. গত বছরের শিক্ষার্থীর সংখ্যা</h3>
+<div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+<table class="w-full text-sm text-center text-slate-600" style="min-width:300px">
+<thead class="text-xs text-slate-700 bg-slate-100 border-b border-slate-200">
+<tr><th class="px-3 py-3 border-r">শ্রেণি</th><th class="px-2 py-3 border-r">বালক</th><th class="px-2 py-3 border-r">বালিকা</th><th class="px-2 py-3 text-emerald-800">মোট</th></tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">৩য় শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s4_3_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s4_3_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><span data-sum="s4_3_boys,s4_3_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">৪র্থ শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s4_4_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s4_4_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><span data-sum="s4_4_boys,s4_4_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+<tr><td class="px-3 py-2 font-medium text-slate-900 border-r whitespace-nowrap">৫ম শ্রেণি</td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s4_5_boys" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1 border-r"><input type="text" inputmode="decimal" data-bn-digits autocomplete="off" id="s4_5_girls" placeholder="০" class="w-full min-w-0 text-center p-1 text-sm border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><span data-sum="s4_5_boys,s4_5_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td></tr>
+</tbody>
+<tfoot class="border-t-2 border-slate-300 bg-slate-50 font-bold">
+<tr><td class="px-3 py-2 border-r text-emerald-800">মোট</td><td class="p-1 border-r"><span data-sum="s4_3_boys,s4_4_boys,s4_5_boys" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1 border-r"><span data-sum="s4_3_girls,s4_4_girls,s4_5_girls" class="block px-1 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-sm">০</span></td><td class="p-1"><span data-sum="s4_3_boys,s4_4_boys,s4_5_boys,s4_3_girls,s4_4_girls,s4_5_girls" class="block px-1 py-1 bg-emerald-100 text-emerald-900 font-bold rounded-lg text-sm">০</span></td></tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
 
-                </div>
+<div>
+<h3 class="text-lg font-bold text-slate-700 mb-3 border-l-4 border-brand-500 pl-2 underline decoration-2 underline-offset-4">ঊর্ধ্বতন কর্মকর্তাঃ</h3>
+<div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+<table class="w-full text-sm text-slate-600 border-collapse" style="min-width:560px">
+<thead class="text-slate-800 bg-slate-100">
+<tr><th colspan="3" class="px-3 py-2 text-center font-bold border-b border-slate-300">কর্মকর্তাগণের নাম, পদবী ও যোগাযোগ নম্বর</th></tr>
+<tr class="text-xs border-b border-slate-200"><th class="px-3 py-2 text-center border-r w-1/3">পদবী</th><th class="px-3 py-2 text-center border-r w-1/3">নাম</th><th class="px-3 py-2 text-center w-1/3">যোগাযোগ নম্বর</th></tr>
+</thead>
+<tbody class="divide-y divide-slate-200">
+<tr><td class="px-3 py-3 text-center font-medium text-slate-900 border-r bg-slate-50">মহাপরিচালক, প্রাথমিক শিক্ষা অধিদপ্তর</td><td class="p-1 border-r"><input type="text" id="s5_1_name" placeholder="নাম লিখুন" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><input type="tel" inputmode="tel" data-bn-phone autocomplete="off" id="s5_1_phone" placeholder="মোবাইল নম্বর" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td></tr>
+<tr><td class="px-3 py-3 text-center font-medium text-slate-900 border-r bg-slate-50">উপপরিচালক, প্রাথমিক শিক্ষা, রংপুর অঞ্চল</td><td class="p-1 border-r"><input type="text" id="s5_2_name" placeholder="নাম লিখুন" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><input type="tel" inputmode="tel" data-bn-phone autocomplete="off" id="s5_2_phone" placeholder="মোবাইল নম্বর" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td></tr>
+<tr><td class="px-3 py-3 text-center font-medium text-slate-900 border-r bg-slate-50">জেলা প্রাথমিক শিক্ষা অফিসার</td><td class="p-1 border-r"><input type="text" id="s5_3_name" placeholder="নাম লিখুন" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><input type="tel" inputmode="tel" data-bn-phone autocomplete="off" id="s5_3_phone" placeholder="মোবাইল নম্বর" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td></tr>
+<tr><td class="px-3 py-3 text-center font-medium text-slate-900 border-r bg-slate-50">উপজেলা প্রাথমিক শিক্ষা অফিসার</td><td class="p-1 border-r"><input type="text" id="s5_4_name" placeholder="নাম লিখুন" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><input type="tel" inputmode="tel" data-bn-phone autocomplete="off" id="s5_4_phone" placeholder="মোবাইল নম্বর" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td></tr>
+<tr><td class="px-3 py-3 text-center font-medium text-slate-900 border-r bg-slate-50">সহকারী উপজেলা প্রাথমিক শিক্ষা অফিসার</td><td class="p-1 border-r"><input type="text" id="s5_5_name" placeholder="নাম লিখুন" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td><td class="p-1"><input type="tel" inputmode="tel" data-bn-phone autocomplete="off" id="s5_5_phone" placeholder="মোবাইল নম্বর" class="w-full p-2 text-center border rounded-lg focus:ring-1 focus:ring-brand-500 outline-none"></td></tr>
+</tbody>
+</table>
+</div>
+</div>
 
                 <!-- প্রিন্ট বাটন -->
                 <!-- বাটনসমূহ (একই লাইনে ডানে সাজানো) -->
 <div class="flex flex-wrap items-center justify-end gap-3 no-print pt-6 mt-4 border-t border-slate-200">
+    <span id="glanceSavedNote" class="mr-auto text-xs font-semibold text-emerald-700 opacity-0 transition-opacity"><i class="fas fa-check-circle"></i> স্বয়ংক্রিয়ভাবে সংরক্ষিত</span>
     <button onclick="saveGlanceData()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-all flex items-center gap-2">
         <i class="fas fa-save"></i> তথ্যটি সংরক্ষণ করুন
     </button>
@@ -750,8 +677,13 @@
                             <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">সর্বশেষ পরিদর্শনের তারিখ</p>
                             <p id="visitDateText" class="text-3xl font-bold text-emerald-800"></p>
                             <p id="visitAgoText" class="text-sm text-slate-500"></p>
+                            <div class="mt-3 pt-4 border-t border-slate-100 space-y-1">
+                                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">পরিদর্শনকারী কর্মকর্তা</p>
+                                <p id="visitOfficerText" class="text-lg font-bold text-slate-800"></p>
+                                <p id="visitDesigText" class="text-sm text-slate-600"></p>
+                            </div>
                             <button type="button" onclick="editVisit()" class="mt-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-xl shadow transition-all inline-flex items-center gap-2">
-                                <i class="fas fa-edit"></i> তারিখ পরিবর্তন করুন
+                                <i class="fas fa-edit"></i> সম্পাদনা করুন
                             </button>
                         </div>
 
@@ -760,6 +692,17 @@
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">পরিদর্শনের তারিখ</label>
                                 <input type="date" name="visitDate" required class="w-full px-3 py-2.5 border rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">পরিদর্শনকারী অফিসারের নাম</label>
+                                <input type="text" name="visitOfficer" maxlength="80" placeholder="অফিসারের নাম লিখুন" class="w-full px-3 py-2.5 border rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <label class="block text-xs font-bold text-slate-700">পদবি</label>
+                                    <button type="button" onclick="openDesigModal()" class="text-xs font-semibold text-brand-700 hover:underline"><i class="fas fa-pen"></i> অপশন সম্পাদনা</button>
+                                </div>
+                                <select name="visitDesig" data-desig-select class="w-full px-3 py-2.5 border rounded-xl text-sm bg-white focus:ring-2 focus:ring-brand-500 outline-none"></select>
                             </div>
                             <div class="flex justify-end gap-2">
                                 <button type="button" id="visitCancelBtn" onclick="cancelVisitEdit()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-sm font-medium">বাতিল</button>
@@ -770,6 +713,26 @@
                 </div>
             </div>
         </section>
+
+ <!-- DESIGNATION OPTIONS MODAL -->
+    <div id="desigModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/50 backdrop-blur-sm no-print">
+        <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center border-b pb-3 mb-4">
+                <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-user-tie text-brand-600"></i> পদবির অপশন সম্পাদনা</h3>
+                <button type="button" onclick="closeDesigModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold" aria-label="বন্ধ করুন">&times;</button>
+            </div>
+            <p class="text-xs text-slate-500 mb-3">প্রতিটি অপশনের লেখা বদলাতে পারবেন, মুছতে পারবেন বা নতুন যোগ করতে পারবেন।</p>
+            <div id="desigList" class="space-y-2 overflow-y-auto pr-1 flex-1"></div>
+            <button type="button" onclick="addDesigRow('')" class="mt-3 w-full py-2 border-2 border-dashed border-slate-300 hover:border-brand-500 text-slate-600 hover:text-brand-700 rounded-xl text-sm font-semibold"><i class="fas fa-plus"></i> নতুন অপশন যোগ করুন</button>
+            <div class="flex flex-wrap justify-between gap-2 border-t pt-4 mt-4">
+                <button type="button" onclick="resetDesigOptions()" class="px-3 py-2 text-xs text-slate-500 hover:text-red-600">প্রথম অবস্থায় ফিরুন</button>
+                <div class="flex gap-2">
+                    <button type="button" onclick="closeDesigModal()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-sm font-medium">বাতিল</button>
+                    <button type="button" onclick="saveDesigOptions()" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-bold"><i class="fas fa-save"></i> সংরক্ষণ করুন</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
  <!-- PHOTO LIGHTBOX -->
     <div id="photoLightbox" class="fixed inset-0 z-[60] hidden flex-col bg-black/95 no-print" onclick="if(event.target===this) closeLightbox()">
@@ -1035,34 +998,56 @@
             downloadAnchor.remove();
         }
 
-    // তথ্য সেভ করার ফাংশন
-    function saveGlanceData() {
-        const inputs = document.querySelectorAll('#tab-glance input');
-        const glanceData = {};
-        inputs.forEach(input => {
-            if(input.id) {
-                glanceData[input.id] = input.value;
-            }
+    // ===================== এক নজরে ছক: সংরক্ষণ, পুনরুদ্ধার ও মোট হিসাব =====================
+    const GLANCE_KEY = 'nakhapara_glance_data';
+    function bnToNum(str) {
+        const t = String(str || '').replace(/[০-৯]/g, d => '০১২৩৪৫৬৭৮৯'.indexOf(d)).replace(/[^0-9.]/g, '');
+        const n = parseFloat(t); return isNaN(n) ? 0 : n;
+    }
+    function fmtNum(n) { return String(Math.round(n * 100) / 100).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]); }
+    // প্রতিটি "মোট" ঘরের data-sum এ যোগ হবে এমন ঘরগুলোর নাম (id) লেখা আছে
+    function recalcTotals() {
+        document.querySelectorAll('#glance-sub-chart [data-sum]').forEach(el => {
+            let sum = 0;
+            el.dataset.sum.split(',').forEach(id => { const i = document.getElementById(id); if (i) sum += bnToNum(i.value); });
+            el.textContent = fmtNum(sum);
         });
-        localStorage.setItem('nakhapara_glance_data', JSON.stringify(glanceData));
-        alert('তথ্য সফলভাবে সংরক্ষণ করা হয়েছে!');
     }
-
-    // পেজ লোড হলে আগের সেভ করা তথ্য ফিরিয়ে আনার ফাংশন
+    function collectGlance() {
+        const data = {};
+        document.querySelectorAll('#glance-sub-chart input[id], #glance-sub-chart textarea[id]').forEach(el => { data[el.id] = el.value; });
+        return data;
+    }
+    function saveGlanceData(silent) {
+        try { localStorage.setItem(GLANCE_KEY, JSON.stringify(collectGlance())); }
+        catch (e) { if (silent !== true) alert('তথ্য সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ বন্ধ থাকতে পারে।'); return false; }
+        if (silent !== true) alert('তথ্য সফলভাবে সংরক্ষণ করা হয়েছে!');
+        return true;
+    }
     function loadGlanceData() {
-        const savedData = localStorage.getItem('nakhapara_glance_data');
-        if (savedData) {
-            const glanceData = JSON.parse(savedData);
-            Object.keys(glanceData).forEach(id => {
-                const input = document.getElementById(id);
-                if (input) {
-                    input.value = glanceData[id];
-                }
-            });
+        let data = null;
+        try { data = JSON.parse(localStorage.getItem(GLANCE_KEY) || 'null'); } catch (e) {}
+        if (data && typeof data === 'object') {
+            Object.keys(data).forEach(id => { const el = document.getElementById(id); if (el) el.value = data[id]; });
         }
+        recalcTotals();
     }
-
-    // পেজ রান হওয়ার সাথে সাথে লোড হবে
+    // লেখার সঙ্গে সঙ্গে মোট হিসাব হয় এবং একটু থেমে নিজে থেকে সংরক্ষিত হয়
+    (function () {
+        let timer = null;
+        const box = document.getElementById('glance-sub-chart');
+        if (!box) return;
+        box.addEventListener('input', () => {
+            recalcTotals();
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                if (saveGlanceData(true)) {
+                    const n = document.getElementById('glanceSavedNote');
+                    if (n) { n.style.opacity = '1'; setTimeout(() => { n.style.opacity = '0'; }, 1800); }
+                }
+            }, 700);
+        });
+    })();
     document.addEventListener('DOMContentLoaded', loadGlanceData);
 
         // ===================== এক নজরে: সাব-মেন্যু =====================
@@ -1085,8 +1070,29 @@
 
         // ===================== সর্বশেষ বিদ্যালয় পরিদর্শন =====================
         const VISIT_KEY = 'nakhapara_last_visit_date';
+        const OFFICER_KEY = 'nakhapara_last_visit_officer';
+        const DESIG_KEY = 'nakhapara_last_visit_desig';
+        const DESIG_OPTS_KEY = 'nakhapara_visit_desig_options';
+        const DEFAULT_DESIGS = [
+            'মহাপরিচালক, প্রাথমিক শিক্ষা অধিদপ্তর',
+            'বিভাগীয় উপপরিচালক, রংপুর অঞ্চল, প্রাথমিক শিক্ষা',
+            'জেলা প্রাথমিক শিক্ষা অফিসার',
+            'উপজেলা প্রাথমিক শিক্ষা অফিসার',
+            'সহকারী উপজেলা প্রাথমিক শিক্ষা অফিসার'
+        ];
+        function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+        function lsSet(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
         function toBn(n) { return String(n).replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]); }
-        function getVisitDate() { try { return localStorage.getItem(VISIT_KEY) || ''; } catch (e) { return ''; } }
+        function getVisitDate() { return lsGet(VISIT_KEY) || ''; }
+        function getOfficer() { return lsGet(OFFICER_KEY) || ''; }
+        function getDesig() { return lsGet(DESIG_KEY) || ''; }
+        function getDesigOptions() {
+            try {
+                const raw = lsGet(DESIG_OPTS_KEY);
+                if (raw) { const a = JSON.parse(raw); if (Array.isArray(a)) return a.filter(x => typeof x === 'string' && x.trim()); }
+            } catch (e) {}
+            return DEFAULT_DESIGS.slice();
+        }
         function parseIso(iso) { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d); }
         function formatBnDate(iso) {
             return parseIso(iso).toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -1100,45 +1106,121 @@
             if (diff === -1) return 'আগামীকাল';
             return toBn(-diff) + ' দিন পরে';
         }
-        function renderVisit() {
-            const iso = getVisitDate();
+
+        // সব পদবি-সিলেক্টে অপশন বসায় (সংরক্ষিত নির্বাচন ধরে রাখে)
+        function fillDesigSelects() {
+            const opts = getDesigOptions(), cur = getDesig();
+            const list = (cur && !opts.includes(cur)) ? opts.concat([cur]) : opts;
+            document.querySelectorAll('[data-desig-select]').forEach(sel => {
+                sel.innerHTML = '';
+                const first = document.createElement('option'); first.value = ''; first.textContent = '— পদবি নির্বাচন করুন —'; sel.appendChild(first);
+                list.forEach(o => { const op = document.createElement('option'); op.value = o; op.textContent = o; sel.appendChild(op); });
+                sel.value = cur;
+            });
+        }
+        // ছকের সিলেক্ট বদলালেই সংরক্ষিত হয়
+        function onDesigChange(sel) {
+            lsSet(DESIG_KEY, sel.value);
+            fillDesigSelects();
+            renderVisit(true);
+        }
+
+        function visitSummaryLine() {
+            const parts = [getOfficer(), getDesig()].filter(Boolean);
+            return parts.join(', ');
+        }
+        function renderVisit(keepEditing) {
+            fillDesigSelects();
+            const iso = getVisitDate(), officer = getOfficer(), desig = getDesig();
             const view = document.getElementById('visitView');
             const form = document.getElementById('visitForm');
             const badge = document.getElementById('glanceVisitBadge');
+            const hasAny = !!(iso || officer || desig);
+            if (hasAny) {
+                badge.classList.remove('hidden');
+                let t = iso ? formatBnDate(iso) : '';
+                const who = visitSummaryLine();
+                if (who) t += (t ? ' — ' : '') + who;
+                document.getElementById('glanceVisitText').textContent = t;
+            } else { badge.classList.add('hidden'); }
+            if (keepEditing === true && !form.classList.contains('hidden')) return;
             if (iso) {
                 document.getElementById('visitDateText').textContent = formatBnDate(iso);
                 document.getElementById('visitAgoText').textContent = daysAgoText(iso);
-                document.getElementById('glanceVisitText').textContent = formatBnDate(iso);
-                badge.classList.remove('hidden');
+                document.getElementById('visitOfficerText').textContent = officer || 'নাম দেওয়া হয়নি';
+                document.getElementById('visitDesigText').textContent = desig || '';
                 view.classList.remove('hidden');
                 form.classList.add('hidden');
             } else {
-                badge.classList.add('hidden');
                 view.classList.add('hidden');
                 form.classList.remove('hidden');
                 form.elements['visitDate'].value = '';
+                form.elements['visitOfficer'].value = officer;
+                form.elements['visitDesig'].value = desig;
                 document.getElementById('visitCancelBtn').classList.add('hidden');
             }
         }
         function editVisit() {
             const form = document.getElementById('visitForm');
             form.elements['visitDate'].value = getVisitDate();
+            form.elements['visitOfficer'].value = getOfficer();
+            fillDesigSelects();
+            form.elements['visitDesig'].value = getDesig();
             document.getElementById('visitCancelBtn').classList.remove('hidden');
             document.getElementById('visitView').classList.add('hidden');
             form.classList.remove('hidden');
         }
-        function cancelVisitEdit() { renderVisit(); }
+        function cancelVisitEdit() { document.getElementById('visitForm').classList.add('hidden'); renderVisit(); }
         function saveVisit(e) {
             e.preventDefault();
-            const v = document.getElementById('visitForm').elements['visitDate'].value;
-            if (!v) { alert('অনুগ্রহ করে তারিখ নির্বাচন করুন।'); return; }
-            try { localStorage.setItem(VISIT_KEY, v); } catch (err) { alert('তারিখ সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ বন্ধ থাকতে পারে।'); return; }
+            const f = document.getElementById('visitForm').elements;
+            if (!f['visitDate'].value) { alert('অনুগ্রহ করে তারিখ নির্বাচন করুন।'); return; }
+            const ok = lsSet(VISIT_KEY, f['visitDate'].value)
+                && lsSet(OFFICER_KEY, f['visitOfficer'].value.trim())
+                && lsSet(DESIG_KEY, f['visitDesig'].value);
+            if (!ok) { alert('তথ্য সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ বন্ধ থাকতে পারে।'); return; }
+            document.getElementById('visitForm').classList.add('hidden');
             renderVisit();
         }
 
+        // ---- পদবির অপশন সম্পাদনা ----
+        function addDesigRow(value) {
+            const row = document.createElement('div');
+            row.className = 'flex items-center gap-2';
+            const inp = document.createElement('input');
+            inp.type = 'text'; inp.value = value; inp.maxLength = 120; inp.placeholder = 'পদবি লিখুন';
+            inp.className = 'desig-input flex-1 px-3 py-2 border rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none';
+            const del = document.createElement('button');
+            del.type = 'button'; del.title = 'মুছুন'; del.innerHTML = '<i class="fas fa-trash"></i>';
+            del.className = 'w-9 h-9 shrink-0 rounded-xl bg-red-50 hover:bg-red-100 text-red-500';
+            del.onclick = () => row.remove();
+            row.appendChild(inp); row.appendChild(del);
+            document.getElementById('desigList').appendChild(row);
+            if (!value) inp.focus();
+        }
+        function openDesigModal() {
+            const list = document.getElementById('desigList'); list.innerHTML = '';
+            getDesigOptions().forEach(o => addDesigRow(o));
+            const m = document.getElementById('desigModal'); m.classList.remove('hidden'); m.classList.add('flex');
+        }
+        function closeDesigModal() { const m = document.getElementById('desigModal'); m.classList.add('hidden'); m.classList.remove('flex'); }
+        function saveDesigOptions() {
+            const vals = []; document.querySelectorAll('#desigList .desig-input').forEach(i => { const v = i.value.trim(); if (v && !vals.includes(v)) vals.push(v); });
+            if (!lsSet(DESIG_OPTS_KEY, JSON.stringify(vals))) { alert('সংরক্ষণ করা যায়নি। ব্রাউজারের স্টোরেজ বন্ধ থাকতে পারে।'); return; }
+            if (getDesig() && !vals.includes(getDesig())) lsSet(DESIG_KEY, '');
+            closeDesigModal(); renderVisit(true);
+        }
+        function resetDesigOptions() {
+            if (!confirm('অপশনগুলো প্রথম অবস্থায় ফিরিয়ে নিতে চান? আপনার করা পরিবর্তন মুছে যাবে।')) return;
+            const list = document.getElementById('desigList'); list.innerHTML = '';
+            DEFAULT_DESIGS.forEach(o => addDesigRow(o));
+        }
+
         // ===================== ফটো গ্যালারি (IndexedDB) =====================
-        const PHOTO_DB = 'nakhapara_gallery', PHOTO_STORE = 'photos';
-        let photoDb = null, galleryItems = [], galleryUrls = [], lightboxIndex = -1, lightboxUrl = null;
+        // ছোট ছবি (thumb) ও বড় ছবি (full) আলাদা জায়গায় থাকে; দুটোই সাধারণ ডেটা হিসেবে
+        // (লেখা ও ArrayBuffer) রাখা হয়, যাতে পুরনো মোবাইল ব্রাউজারেও ঠিক চলে।
+        const PHOTO_DB = 'nakhapara_gallery', PHOTO_STORE = 'photos', FULL_STORE = 'photos_full';
+        let photoDb = null, galleryItems = [], lightboxIndex = -1, lightboxUrl = null, galleryBusy = false;
 
         function escapeHtml(str) {
             return String(str || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -1146,35 +1228,71 @@
         function openPhotoDb() {
             return new Promise((resolve, reject) => {
                 if (photoDb) return resolve(photoDb);
-                if (!window.indexedDB) return reject(new Error('IndexedDB unsupported'));
-                const req = indexedDB.open(PHOTO_DB, 1);
-                req.onupgradeneeded = () => { req.result.createObjectStore(PHOTO_STORE, { keyPath: 'id' }); };
-                req.onsuccess = () => { photoDb = req.result; resolve(photoDb); };
-                req.onerror = () => reject(req.error);
+                if (!window.indexedDB) return reject(new Error('এই ব্রাউজারে ছবি সংরক্ষণের সুবিধা নেই।'));
+                const req = indexedDB.open(PHOTO_DB, 2);
+                req.onupgradeneeded = () => {
+                    const db = req.result;
+                    if (!db.objectStoreNames.contains(PHOTO_STORE)) db.createObjectStore(PHOTO_STORE, { keyPath: 'id' });
+                    if (!db.objectStoreNames.contains(FULL_STORE)) db.createObjectStore(FULL_STORE, { keyPath: 'id' });
+                };
+                req.onsuccess = () => { photoDb = req.result; photoDb.onversionchange = () => { photoDb.close(); photoDb = null; }; resolve(photoDb); };
+                req.onerror = () => reject(req.error || new Error('ডেটাবেস খোলা যায়নি।'));
+                req.onblocked = () => reject(new Error('ডেটাবেস অন্য ট্যাবে ব্যবহৃত হচ্ছে। অন্য ট্যাব বন্ধ করে আবার চেষ্টা করুন।'));
             });
         }
-        function idbReq(req) { return new Promise((res, rej) => { req.onsuccess = () => res(req.result); req.onerror = () => rej(req.error); }); }
-        async function photoStore(mode) { const db = await openPhotoDb(); return db.transaction(PHOTO_STORE, mode).objectStore(PHOTO_STORE); }
-        async function getAllPhotos() { const all = await idbReq((await photoStore('readonly')).getAll()); return all.sort((a, b) => b.createdAt - a.createdAt); }
-        async function putPhoto(p) { return idbReq((await photoStore('readwrite')).put(p)); }
-        async function removePhoto(id) { return idbReq((await photoStore('readwrite')).delete(id)); }
-
-        function loadImage(file) {
+        // লেনদেন সম্পূর্ণ শেষ হলে তবেই সফল ধরা হয় (শুধু অনুরোধ নয়)
+        async function idbRun(stores, mode, fn) {
+            const db = await openPhotoDb();
             return new Promise((resolve, reject) => {
-                const url = URL.createObjectURL(file);
-                const img = new Image();
-                img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
-                img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('bad image')); };
-                img.src = url;
+                const tx = db.transaction(stores, mode);
+                let result;
+                tx.oncomplete = () => resolve(result);
+                tx.onerror = () => reject(tx.error || new Error('সংরক্ষণ ব্যর্থ হয়েছে।'));
+                tx.onabort = () => reject(tx.error || new Error('সংরক্ষণ বাতিল হয়েছে (সম্ভবত ফোনের জায়গা শেষ)।'));
+                try { fn(...stores.map(n => tx.objectStore(n)), v => { result = v; }); } catch (e) { reject(e); try { tx.abort(); } catch (x) {} }
             });
         }
-        function resizeToBlob(img, maxSide, quality) {
-            const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
-            const w = Math.max(1, Math.round(img.naturalWidth * scale)), h = Math.max(1, Math.round(img.naturalHeight * scale));
-            const c = document.createElement('canvas'); c.width = w; c.height = h;
-            const ctx = c.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); ctx.drawImage(img, 0, 0, w, h);
-            return new Promise((resolve, reject) => c.toBlob(b => b ? resolve(b) : reject(new Error('blob')), 'image/jpeg', quality));
+        const idbGet = (store, id) => idbRun([store], 'readonly', (os, out) => { const r = os.get(id); r.onsuccess = () => out(r.result); });
+        async function getAllPhotos() {
+            const all = await idbRun([PHOTO_STORE], 'readonly', (os, out) => { const r = os.getAll(); r.onsuccess = () => out(r.result); });
+            return (all || []).sort((a, b) => b.createdAt - a.createdAt);
         }
+        const putPhotoMeta = p => idbRun([PHOTO_STORE], 'readwrite', os => { os.put(p); });
+        const savePhotoBoth = (meta, full) => idbRun([PHOTO_STORE, FULL_STORE], 'readwrite', (m, f) => { m.put(meta); f.put(full); });
+        const removePhoto = id => idbRun([PHOTO_STORE, FULL_STORE], 'readwrite', (m, f) => { m.delete(id); f.delete(id); });
+
+        // ছবি পড়া: প্রথমে createImageBitmap (দ্রুত, কম মেমোরি, ছবি ঘুরিয়ে ঠিক করে), না হলে সাধারণ Image
+        async function decodeImage(file, maxSide) {
+            if (window.createImageBitmap) {
+                try {
+                    const probe = await createImageBitmap(file);
+                    const w0 = probe.width, h0 = probe.height;
+                    const scale = Math.min(1, maxSide / Math.max(w0, h0));
+                    if (scale === 1) return { src: probe, w: w0, h: h0, close: () => probe.close && probe.close() };
+                    probe.close && probe.close();
+                    const bmp = await createImageBitmap(file, { resizeWidth: Math.round(w0 * scale), resizeHeight: Math.round(h0 * scale), resizeQuality: 'high' });
+                    return { src: bmp, w: bmp.width, h: bmp.height, close: () => bmp.close && bmp.close() };
+                } catch (e) { /* নিচের পদ্ধতিতে চেষ্টা */ }
+            }
+            const url = URL.createObjectURL(file);
+            try {
+                const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = () => rej(new Error('ছবিটি খোলা যায়নি')); i.src = url; });
+                return { src: img, w: img.naturalWidth, h: img.naturalHeight, close: () => {} };
+            } finally { URL.revokeObjectURL(url); }
+        }
+        function drawScaled(src, w, h, maxSide) {
+            const scale = Math.min(1, maxSide / Math.max(w, h));
+            const cw = Math.max(1, Math.round(w * scale)), ch = Math.max(1, Math.round(h * scale));
+            const c = document.createElement('canvas'); c.width = cw; c.height = ch;
+            const ctx = c.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, cw, ch); ctx.drawImage(src, 0, 0, cw, ch);
+            return c;
+        }
+        const canvasToBlob = (c, q) => new Promise((res, rej) => c.toBlob(b => b ? res(b) : rej(new Error('ছবি রূপান্তর ব্যর্থ')), 'image/jpeg', q));
+        function blobToBuffer(b) {
+            if (b.arrayBuffer) return b.arrayBuffer();
+            return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(r.error); r.readAsArrayBuffer(b); });
+        }
+
         function showGalleryStatus(msg, type) {
             const el = document.getElementById('galleryStatus');
             const styles = { info: 'bg-blue-50 text-blue-800 border border-blue-200', ok: 'bg-emerald-50 text-emerald-800 border border-emerald-200', error: 'bg-red-50 text-red-800 border border-red-200' };
@@ -1182,45 +1300,65 @@
             el.textContent = msg;
         }
         function hideGalleryStatus() { document.getElementById('galleryStatus').className = 'hidden'; }
+        const IMG_EXT = /\.(jpe?g|png|webp|gif|bmp|avif|heic|heif)$/i;
 
         async function handleGalleryFiles(fileList) {
-            const files = Array.from(fileList || []).filter(f => f.type && f.type.startsWith('image/'));
+            if (galleryBusy) { showGalleryStatus('আগের ছবিগুলো সংরক্ষণ হচ্ছে, একটু অপেক্ষা করুন।', 'info'); return; }
+            const files = Array.from(fileList || []).filter(f => (f.type && f.type.startsWith('image/')) || IMG_EXT.test(f.name || ''));
             if (!files.length) { showGalleryStatus('শুধু ছবির ফাইল (JPG, PNG ইত্যাদি) দেওয়া যাবে।', 'error'); return; }
-            let ok = 0, fail = 0;
+            galleryBusy = true;
+            // ব্রাউজারকে স্থায়ী স্টোরেজ চাওয়া হয়, যাতে জায়গা কমলে ছবি নিজে থেকে মুছে না যায়
+            try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) {}
+            let ok = 0, lastError = '';
+            const failedNames = [];
             for (let i = 0; i < files.length; i++) {
                 showGalleryStatus('ছবি সংরক্ষণ হচ্ছে... (' + toBn(i + 1) + '/' + toBn(files.length) + ')', 'info');
+                let dec = null;
                 try {
-                    const img = await loadImage(files[i]);
-                    const full = await resizeToBlob(img, 1600, 0.82);
-                    const thumb = await resizeToBlob(img, 480, 0.75);
-                    await putPhoto({ id: Date.now() + '-' + i + '-' + Math.floor(Math.random() * 1e6), name: files[i].name, caption: '', createdAt: Date.now() + i, full, thumb });
+                    dec = await decodeImage(files[i], 1600);
+                    const fullCanvas = drawScaled(dec.src, dec.w, dec.h, 1600);
+                    const thumbCanvas = drawScaled(fullCanvas, fullCanvas.width, fullCanvas.height, 420);
+                    const fullBuf = await blobToBuffer(await canvasToBlob(fullCanvas, 0.82));
+                    const thumb = thumbCanvas.toDataURL('image/jpeg', 0.75);
+                    const id = Date.now() + '-' + i + '-' + Math.floor(Math.random() * 1e6);
+                    await savePhotoBoth({ id, name: files[i].name || 'ছবি', caption: '', createdAt: Date.now() + i, thumb }, { id, buf: fullBuf, type: 'image/jpeg' });
                     ok++;
-                } catch (err) { fail++; }
+                } catch (err) {
+                    failedNames.push(files[i].name || 'ছবি');
+                    lastError = (err && (err.message || err.name)) ? (err.message || err.name) : String(err);
+                } finally { if (dec && dec.close) dec.close(); }
             }
+            galleryBusy = false;
             await renderGallery();
-            if (fail && !ok) showGalleryStatus('ছবি সংরক্ষণ করা যায়নি। ছবির ফরম্যাট (JPG/PNG) অথবা ব্রাউজারের স্টোরেজ পরীক্ষা করুন।', 'error');
-            else if (fail) showGalleryStatus(toBn(ok) + 'টি ছবি সংরক্ষিত হয়েছে, ' + toBn(fail) + 'টি করা যায়নি।', 'error');
-            else { showGalleryStatus(toBn(ok) + 'টি ছবি সফলভাবে সংরক্ষিত হয়েছে।', 'ok'); setTimeout(hideGalleryStatus, 4000); }
+            const failed = failedNames.length;
+            if (failed) {
+                const heic = failedNames.some(n => /\.(heic|heif)$/i.test(n)) ? ' HEIC ছবি এই ব্রাউজারে খোলে না, ফোনের ক্যামেরা সেটিংসে JPG করে নিন।' : '';
+                showGalleryStatus((ok ? toBn(ok) + 'টি সংরক্ষিত হয়েছে, ' : '') + toBn(failed) + 'টি ছবি সংরক্ষণ করা যায়নি।' + heic + ' (কারণ: ' + lastError + ')', 'error');
+            } else {
+                showGalleryStatus(toBn(ok) + 'টি ছবি সফলভাবে সংরক্ষিত হয়েছে।', 'ok'); setTimeout(hideGalleryStatus, 4000);
+            }
         }
 
         async function renderGallery() {
             const grid = document.getElementById('galleryGrid');
             try { galleryItems = await getAllPhotos(); }
             catch (err) {
-                grid.innerHTML = '<div class="col-span-full text-center py-10 bg-white rounded-2xl border text-red-500 text-sm">এই ব্রাউজারে ছবি সংরক্ষণের সুবিধা পাওয়া যায়নি। প্রাইভেট/ইনকগনিটো মোড বন্ধ করে চেষ্টা করুন।</div>';
+                grid.innerHTML = '<div class="col-span-full text-center py-10 bg-white rounded-2xl border text-red-500 text-sm">ছবি সংরক্ষণের জায়গা খোলা যায়নি: ' + escapeHtml(err && err.message) + '<br>প্রাইভেট/ইনকগনিটো মোড বন্ধ করে চেষ্টা করুন।</div>';
                 return;
             }
-            galleryUrls.forEach(u => URL.revokeObjectURL(u)); galleryUrls = [];
             document.getElementById('galleryCount').textContent = galleryItems.length ? ('মোট ছবি: ' + toBn(galleryItems.length) + 'টি') : '';
             if (!galleryItems.length) {
                 grid.innerHTML = '<div class="col-span-full text-center py-14 bg-white rounded-2xl border border-slate-200 text-slate-400"><i class="fas fa-photo-video text-4xl mb-3 text-slate-300"></i><p class="text-sm">এখনও কোনো ছবি সংরক্ষণ করা হয়নি। ওপরের বাটন থেকে প্রথম ছবিটি আপলোড করুন।</p></div>';
                 return;
             }
             grid.innerHTML = galleryItems.map((p, i) => {
-                const url = URL.createObjectURL(p.thumb); galleryUrls.push(url);
                 const cap = escapeHtml(p.caption);
-                return '<div class="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 shadow-sm border border-slate-200 hover:shadow-xl transition-all">' +
-                    '<img src="' + url + '" alt="' + cap + '" loading="lazy" onclick="openLightbox(' + i + ')" class="w-full h-full object-cover cursor-zoom-in transition-transform duration-300 group-hover:scale-105">' +
+                // নতুন ছবির thumb লেখা (data URL); পুরনো সংস্করণের ছবির জন্য Blob থেকে লিংক
+                let src = '';
+                if (typeof p.thumb === 'string') src = p.thumb;
+                else if (p.thumb && window.Blob && p.thumb instanceof Blob) { src = URL.createObjectURL(p.thumb); }
+                return '<div class="group relative overflow-hidden rounded-2xl bg-slate-200 shadow-sm border border-slate-200 hover:shadow-xl transition-all" style="aspect-ratio:4/3">' +
+                    '<img src="' + src + '" alt="' + cap + '" onclick="openLightbox(' + i + ')" style="width:100%;height:100%;object-fit:cover;display:block" class="cursor-zoom-in transition-transform duration-300 group-hover:scale-105">' +
                     '<div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 text-white text-xs font-medium truncate">' + (cap || '&nbsp;') + '</div>' +
                     '<button onclick="deletePhotoAt(' + i + ')" title="মুছুন" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-red-600/90 hover:bg-red-700 text-white text-xs shadow opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity"><i class="fas fa-trash"></i></button>' +
                     '</div>';
@@ -1230,26 +1368,35 @@
         async function deletePhotoAt(i) {
             if (!galleryItems[i]) return;
             if (!confirm('এই ছবিটি স্থায়ীভাবে মুছে ফেলতে চান?')) return;
-            await removePhoto(galleryItems[i].id);
+            try { await removePhoto(galleryItems[i].id); } catch (e) { alert('ছবি মোছা যায়নি: ' + (e && e.message)); }
             await renderGallery();
         }
 
         // ---- লাইটবক্স ----
-        function openLightbox(i) { lightboxIndex = i; document.getElementById('photoLightbox').classList.remove('hidden'); document.getElementById('photoLightbox').classList.add('flex'); showLightbox(); }
+        function openLightbox(i) { lightboxIndex = i; const lb = document.getElementById('photoLightbox'); lb.classList.remove('hidden'); lb.classList.add('flex'); showLightbox(); }
         function closeLightbox() {
             const lb = document.getElementById('photoLightbox'); lb.classList.add('hidden'); lb.classList.remove('flex');
             if (lightboxUrl) { URL.revokeObjectURL(lightboxUrl); lightboxUrl = null; }
             document.getElementById('lightboxImg').removeAttribute('src');
             lightboxIndex = -1;
         }
-        function showLightbox() {
+        async function showLightbox() {
             const p = galleryItems[lightboxIndex]; if (!p) { closeLightbox(); return; }
-            if (lightboxUrl) URL.revokeObjectURL(lightboxUrl);
-            lightboxUrl = URL.createObjectURL(p.full);
-            const img = document.getElementById('lightboxImg'); img.src = lightboxUrl; img.alt = p.caption || '';
+            const mine = lightboxIndex;
             document.getElementById('lightboxCounter').textContent = toBn(lightboxIndex + 1) + ' / ' + toBn(galleryItems.length);
             document.getElementById('lightboxCaption').value = p.caption || '';
             document.getElementById('lightboxDate').textContent = new Date(p.createdAt).toLocaleDateString('bn-BD', { day: 'numeric', month: 'long', year: 'numeric' });
+            const img = document.getElementById('lightboxImg'); img.alt = p.caption || '';
+            // আগে ছোট ছবিটি সঙ্গে সঙ্গে দেখাই, তারপর বড়টি এলে বদলে দিই
+            img.src = (typeof p.thumb === 'string') ? p.thumb : '';
+            try {
+                const rec = await idbGet(FULL_STORE, p.id);
+                if (mine !== lightboxIndex) return;
+                let blob = null;
+                if (rec && rec.buf) blob = new Blob([rec.buf], { type: rec.type || 'image/jpeg' });
+                else if (p.full && window.Blob && p.full instanceof Blob) blob = p.full;
+                if (blob) { if (lightboxUrl) URL.revokeObjectURL(lightboxUrl); lightboxUrl = URL.createObjectURL(blob); img.src = lightboxUrl; }
+            } catch (e) { /* ছোট ছবিটিই থাকবে */ }
         }
         function stepLightbox(d) {
             if (!galleryItems.length) return;
@@ -1257,12 +1404,15 @@
         }
         async function saveCaption(value) {
             const p = galleryItems[lightboxIndex]; if (!p) return;
-            p.caption = value.trim(); await putPhoto(p); await renderGallery();
+            p.caption = value.trim();
+            try { await putPhotoMeta(p); } catch (e) { alert('শিরোনাম সংরক্ষণ করা যায়নি: ' + (e && e.message)); return; }
+            await renderGallery();
         }
         async function deleteCurrentPhoto() {
             const p = galleryItems[lightboxIndex]; if (!p) return;
             if (!confirm('এই ছবিটি স্থায়ীভাবে মুছে ফেলতে চান?')) return;
-            await removePhoto(p.id); await renderGallery();
+            try { await removePhoto(p.id); } catch (e) { alert('ছবি মোছা যায়নি: ' + (e && e.message)); return; }
+            await renderGallery();
             if (!galleryItems.length) closeLightbox(); else { lightboxIndex = Math.min(lightboxIndex, galleryItems.length - 1); showLightbox(); }
         }
         document.addEventListener('keydown', e => {
@@ -1271,6 +1421,40 @@
             if (e.key === 'Escape') closeLightbox();
             else if (e.key === 'ArrowLeft') stepLightbox(-1);
             else if (e.key === 'ArrowRight') stepLightbox(1);
+        });
+
+        // ===================== সংখ্যার ঘরে বাংলা অঙ্ক =====================
+        // ইংরেজি অঙ্ক (0-9) টাইপ করলেও নিজে থেকে বাংলা (০-৯) হয়ে যায়।
+        // শুধু অঙ্ক ও দশমিক চিহ্ন (.) রাখা হয়, বাকি অক্ষর বাদ যায়।
+        const EN2BN = { '0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯','٫':'.','।':'.' };
+        function cleanBnDigits(v) {
+            return v.replace(/[0-9٫।]/g, c => EN2BN[c]).replace(/[^০-৯.]/g, '').replace(/(\..*?)\./g, '$1');
+        }
+        document.addEventListener('input', e => {
+            const el = e.target;
+            if (!el || !el.hasAttribute || !el.hasAttribute('data-bn-digits')) return;
+            if (e.isComposing) return;
+            const cleaned = cleanBnDigits(el.value);
+            if (cleaned !== el.value) {
+                const pos = el.selectionStart, diff = el.value.length - cleaned.length;
+                el.value = cleaned;
+                try { el.setSelectionRange(Math.max(0, pos - Math.max(0, diff)), Math.max(0, pos - Math.max(0, diff))); } catch (err) {}
+            }
+        });
+        // ফোন নম্বরের ঘর: ইংরেজি অঙ্ক বাংলা হয়ে যায়; অঙ্ক, + ও - ছাড়া অন্য অক্ষর বাদ যায়
+        document.addEventListener('input', e => {
+            const el = e.target;
+            if (!el || !el.hasAttribute || !el.hasAttribute('data-bn-phone') || e.isComposing) return;
+            const cleaned = el.value.replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[d]).replace(/[^০-৯+\-\s]/g, '');
+            if (cleaned !== el.value) {
+                const pos = el.selectionStart, back = Math.max(0, el.value.length - cleaned.length);
+                el.value = cleaned;
+                try { el.setSelectionRange(Math.max(0, pos - back), Math.max(0, pos - back)); } catch (err) {}
+            }
+        });
+        document.addEventListener('compositionend', e => {
+            const el = e.target;
+            if (el && el.hasAttribute && el.hasAttribute('data-bn-digits')) el.value = cleanBnDigits(el.value);
         });
 
         // Initialize App
