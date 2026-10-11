@@ -301,7 +301,7 @@
                             </tr>
                              <tr class="border-b bg-slate-50">
                                 <td class="p-2 border"><img src="https://i.postimg.cc/xd6yn7MT/1791260022345.jpg" alt="হাফিজা খাতুন" class="w-12 h-12 rounded-full object-cover mx-auto"></td>
-                                <td class="p-2 border font-bold">হাফিজা খাতুন</td>
+                                <td class="p-2 border font-bold">জনাব হাফিজা খাতুন</td>
                                 <td class="p-2 border">সহকারী শিক্ষক</td>
                                 <td class="p-2 border">বীরগঞ্জ, দিনাজপুর</td>
                                 <td class="p-2 border">০১৭৩২-০৬৩৯৭২</td>
@@ -329,7 +329,7 @@
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <select id="evalClass" class="p-2.5 border rounded-xl text-sm"><option value="১ম শ্রেণি">১ম শ্রেণি</option><option value="২য় শ্রেণি">২য় শ্রেণি</option><option value="৩য় শ্রেণি">৩য় শ্রেণি</option><option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option><option value="৫ম শ্রেণি">৫ম শ্রেণি</option></select>
-                    <select id="evalSubject" class="p-2.5 border rounded-xl text-sm"><option value="বাংলা">বাংলা</option><option value="ইংরেজি">ইংরেজি</option><option value="গণিত">গণিত</option><option value="বিজ্ঞান">বিজ্ঞান</option></select>
+                    <select id="evalSubject" class="p-2.5 border rounded-xl text-sm"><option value="বাংলা">বাংলা</option><option value="ইংরেজি">ইংরেজি</option><option value="গণিত">গণিত</option><option value="বিজ্ঞান">বিজ্ঞান</option> <option value="বাংলাদেশ ও বিশ্বপরিচয়">বাংলাদেশ ও বিশ্বপরিচয়</option></select>
                     <button onclick="alert('মূল্যায়ন ছক লোড হয়েছে।')" class="bg-brand-600 text-white rounded-xl font-bold text-sm">রেজিস্টার দেখুন</button>
                 </div>
                 <div class="overflow-x-auto pt-4">
@@ -808,6 +808,8 @@
             <h3 class="text-lg font-bold text-slate-800 mb-4"><i class="fas fa-user-plus text-brand-600"></i> নতুন শিক্ষার্থী যোগ করুন</h3>
             <form id="studentForm" onsubmit="saveStudent(event)" class="space-y-3">
                 <input type="text" id="stName" placeholder="শিক্ষার্থীর নাম" required class="w-full p-2 border rounded-xl text-sm">
+                 <input type="text" id="stFather" placeholder="পিতার নাম" required class="w-full p-2 border rounded-xl text-sm">
+                 <input type="text" id="stMother" placeholder="মাতার নাম" required class="w-full p-2 border rounded-xl text-sm">
                 <select id="stClass" class="w-full p-2 border rounded-xl text-sm">
                     <option value="১ম শ্রেণি">১ম শ্রেণি</option><option value="২য় শ্রেণি">২য় শ্রেণি</option><option value="৩য় শ্রেণি">৩য় শ্রেণি</option><option value="৪র্থ শ্রেণি">৪র্থ শ্রেণি</option><option value="৫ম শ্রেণি">৫ম শ্রেণি</option>
                 </select>
