@@ -817,6 +817,23 @@
             </div>
         </section>
 
+    <!-- SOCIAL LINKS MODAL -->
+    <div id="socialModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/50 backdrop-blur-sm no-print">
+        <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center border-b pb-3 mb-4">
+                <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-share-nodes text-brand-600"></i> সামাজিক যোগাযোগ মাধ্যম</h3>
+                <button type="button" onclick="closeSocialModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold" aria-label="বন্ধ করুন">&times;</button>
+            </div>
+            <p class="text-xs text-slate-500 mb-3">যেগুলো দরকার শুধু সেগুলোর লিংক লিখুন, ফাঁকা রাখলে ওই আইকন দেখাবে না। হোয়াটসঅ্যাপ ও ফোনে নম্বর, ইমেইলে ঠিকানা লিখুন। ইনস্টাগ্রাম, টিকটক, এক্স ও টেলিগ্রামে শুধু @ইউজারনেম দিলেও চলবে।</p>
+            <div id="socialFields" class="space-y-3 overflow-y-auto pr-1 flex-1"></div>
+            <div id="socialMsg" class="hidden mt-3 rounded-xl px-4 py-3 text-sm font-medium"></div>
+            <div class="flex justify-end gap-2 border-t pt-4 mt-4">
+                <button type="button" onclick="closeSocialModal()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-sm font-medium">বাতিল</button>
+                <button type="button" onclick="saveSocial()" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-sm font-bold"><i class="fas fa-save"></i> সংরক্ষণ করুন</button>
+            </div>
+        </div>
+    </div>
+
  <!-- DESIGNATION OPTIONS MODAL -->
     <div id="desigModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/50 backdrop-blur-sm no-print">
         <div class="bg-white rounded-2xl p-6 max-w-lg w-full mx-4 shadow-2xl max-h-[90vh] flex flex-col">
@@ -938,6 +955,20 @@
                 <span class="text-emerald-200">সহকারী শিক্ষক, নখাপাড়া সপ্রাবি</span>
                 <span class="text-slate-500">|</span>
                 <a href="mailto:tt.physics9899@gmail.com" class="text-amber-300 hover:underline"><i class="fas fa-envelope"></i> tt.physics9899@gmail.com</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-4 pt-4 border-t border-white/10 relative z-10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <span class="text-amber-300 font-medium"><i class="fas fa-share-nodes"></i> আমাদের সঙ্গে থাকুন:</span>
+                <span id="socialBar" class="flex flex-wrap items-center justify-center gap-2"></span>
+                <button type="button" onclick="openSocialModal()" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-slate-100 rounded-full border border-white/10"><i class="fas fa-pen"></i> লিংক সম্পাদনা</button>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <span class="text-slate-400">সাইটটি শেয়ার করুন:</span>
+                <a href="#" onclick="return shareSite('facebook')" class="w-8 h-8 rounded-full flex items-center justify-center text-white" style="background:#1877f2" title="ফেসবুকে শেয়ার"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="return shareSite('whatsapp')" class="w-8 h-8 rounded-full flex items-center justify-center text-white" style="background:#25d366" title="হোয়াটসঅ্যাপে শেয়ার"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" onclick="return shareSite('telegram')" class="w-8 h-8 rounded-full flex items-center justify-center text-white" style="background:#229ed9" title="টেলিগ্রামে শেয়ার"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" onclick="return shareSite('copy')" class="w-8 h-8 rounded-full flex items-center justify-center text-white bg-slate-600" title="লিংক কপি"><i class="fas fa-link"></i></a>
             </div>
         </div>
     </footer>
@@ -1866,6 +1897,79 @@
                 (sg ? ' (বিদ্যালয় থেকে ' + fmtDist(haversine(g, sg)) + ')' : '') + ' &nbsp;<a class="text-amber-300 underline" target="_blank" rel="noopener" href="' + mapsLink(g.lat, g.lng) + '">মানচিত্রে দেখুন</a>';
         }
 
+        // ===================== সামাজিক যোগাযোগ মাধ্যম =====================
+        const SOCIAL_KEY = 'nakhapara_social_links';
+        const SOCIAL_LIST = [
+            { k: 'facebook', n: 'ফেসবুক পেজ', i: 'fab fa-facebook-f', c: '#1877f2', ph: 'https://facebook.com/পেজের-নাম' },
+            { k: 'fbgroup', n: 'ফেসবুক গ্রুপ', i: 'fas fa-users', c: '#4267b2', ph: 'https://facebook.com/groups/...' },
+            { k: 'youtube', n: 'ইউটিউব চ্যানেল', i: 'fab fa-youtube', c: '#ff0000', ph: 'https://youtube.com/@চ্যানেল' },
+            { k: 'whatsapp', n: 'হোয়াটসঅ্যাপ', i: 'fab fa-whatsapp', c: '#25d366', ph: 'মোবাইল নম্বর, যেমন ০১৭XXXXXXXX', kind: 'phone' },
+            { k: 'messenger', n: 'ম্যাসেঞ্জার', i: 'fab fa-facebook-messenger', c: '#0084ff', ph: 'https://m.me/ইউজারনেম' },
+            { k: 'telegram', n: 'টেলিগ্রাম', i: 'fab fa-telegram-plane', c: '#229ed9', ph: '@ইউজারনেম বা লিংক', base: 'https://t.me/' },
+            { k: 'instagram', n: 'ইনস্টাগ্রাম', i: 'fab fa-instagram', c: '#e4405f', ph: '@ইউজারনেম বা লিংক', base: 'https://instagram.com/' },
+            { k: 'tiktok', n: 'টিকটক', i: 'fab fa-tiktok', c: '#111111', ph: '@ইউজারনেম বা লিংক', base: 'https://www.tiktok.com/@' },
+            { k: 'twitter', n: 'এক্স (টুইটার)', i: 'fab fa-twitter', c: '#1da1f2', ph: '@ইউজারনেম বা লিংক', base: 'https://x.com/' },
+            { k: 'linkedin', n: 'লিংকডইন', i: 'fab fa-linkedin-in', c: '#0a66c2', ph: 'https://linkedin.com/...' },
+            { k: 'website', n: 'ওয়েবসাইট', i: 'fas fa-globe', c: '#0d9488', ph: 'https://...' },
+            { k: 'email', n: 'ইমেইল', i: 'fas fa-envelope', c: '#d97706', ph: 'name@example.com', kind: 'email' },
+            { k: 'phone', n: 'ফোন', i: 'fas fa-phone', c: '#16a34a', ph: 'মোবাইল নম্বর', kind: 'phone' }
+        ];
+        function bnToEnDigits(v) { return String(v).replace(/[০-৯]/g, d => '০১২৩৪৫৬৭৮৯'.indexOf(d)); }
+        // লেখা থেকে নিরাপদ লিংক বানায়; ভুল বা অনিরাপদ হলে null
+        function socialHref(item, raw) {
+            let v = String(raw || '').trim(); if (!v) return null;
+            if (item.kind === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? 'mailto:' + v : null;
+            if (item.kind === 'phone') {
+                let d = bnToEnDigits(v).replace(/[^\d+]/g, '');
+                if (d.startsWith('+')) d = d.slice(1); else if (d.startsWith('00')) d = d.slice(2); else if (d.startsWith('0')) d = '88' + d; else if (d.startsWith('1') && d.length === 10) d = '880' + d;
+                if (d.length < 10 || d.length > 15) return null;
+                return item.k === 'whatsapp' ? 'https://wa.me/' + d : 'tel:+' + d;
+            }
+            if (/^[a-z][a-z0-9+.-]*:/i.test(v) && !/^https?:\/\//i.test(v)) return null;
+            if (/^https?:\/\//i.test(v)) { try { return new URL(v).href; } catch (e) { return null; } }
+            if (item.base && /^@?[\w.]+$/.test(v)) return item.base + v.replace(/^@/, '');
+            if (/^[\w-]+(\.[\w-]+)+(\/.*)?$/.test(v)) { try { return new URL('https://' + v).href; } catch (e) { return null; } }
+            return null;
+        }
+        function renderSocialBar() {
+            const bar = document.getElementById('socialBar'); if (!bar) return;
+            const data = readJson(SOCIAL_KEY, {});
+            const html = SOCIAL_LIST.map(it => {
+                const h = socialHref(it, data[it.k]); if (!h) return '';
+                return '<a href="' + escapeHtml(h) + '" target="_blank" rel="noopener noreferrer" title="' + it.n + '" class="w-8 h-8 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform" style="background:' + it.c + '"><i class="' + it.i + '"></i></a>';
+            }).join('');
+            bar.innerHTML = html || '<span class="text-slate-500">এখনও কোনো লিংক যোগ করা হয়নি</span>';
+        }
+        function openSocialModal() {
+            const data = readJson(SOCIAL_KEY, {});
+            document.getElementById('socialFields').innerHTML = SOCIAL_LIST.map(it =>
+                '<div><label class="flex items-center gap-2 text-xs font-bold text-slate-700 mb-1"><span class="w-6 h-6 rounded-full flex items-center justify-center text-white text-[11px]" style="background:' + it.c + '"><i class="' + it.i + '"></i></span>' + it.n + '</label>' +
+                '<input type="text" data-social="' + it.k + '" value="' + escapeHtml(data[it.k] || '') + '" placeholder="' + escapeHtml(it.ph) + '" maxlength="200" class="w-full px-3 py-2 border rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none"></div>').join('');
+            document.getElementById('socialMsg').className = 'hidden';
+            const m = document.getElementById('socialModal'); m.classList.remove('hidden'); m.classList.add('flex');
+        }
+        function closeSocialModal() { const m = document.getElementById('socialModal'); m.classList.add('hidden'); m.classList.remove('flex'); }
+        function saveSocial() {
+            const out = {}, bad = [];
+            document.querySelectorAll('#socialFields input[data-social]').forEach(inp => {
+                const it = SOCIAL_LIST.find(x => x.k === inp.dataset.social), v = inp.value.trim();
+                if (!v) return;
+                if (socialHref(it, v)) out[it.k] = v; else bad.push(it.n);
+            });
+            if (bad.length) { setMsg('socialMsg', 'এই ঘরগুলোর লেখা সঠিক লিংক/নম্বর নয়: ' + bad.join(', '), 'error'); return; }
+            if (!lsSet(SOCIAL_KEY, JSON.stringify(out))) { setMsg('socialMsg', 'সংরক্ষণ করা যায়নি (ব্রাউজারের স্টোরেজ বন্ধ?)।', 'error'); return; }
+            renderSocialBar(); closeSocialModal();
+        }
+        function shareSite(where) {
+            const url = location.href.split('#')[0], text = 'নখাপাড়া সরকারি প্রাথমিক বিদ্যালয়';
+            const u = encodeURIComponent(url), t = encodeURIComponent(text);
+            const links = { facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + u, whatsapp: 'https://wa.me/?text=' + t + '%20' + u, telegram: 'https://t.me/share/url?url=' + u + '&text=' + t };
+            if (links[where]) { window.open(links[where], '_blank', 'noopener'); return false; }
+            if (navigator.share) { navigator.share({ title: text, url: url }).catch(() => {}); return false; }
+            (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => alert('সাইটের লিংক কপি হয়েছে।')).catch(() => prompt('লিংকটি কপি করুন:', url));
+            return false;
+        }
+
         // Initialize App
         renderLessonPlans();
         renderStudents();
@@ -1873,6 +1977,7 @@
         renderVisit();
         renderVisitGeo();
         initGeoToggle();
+        renderSocialBar();
 
         // ===================== মোবাইল অ্যাপ (PWA) =====================
         let deferredInstall = null;
