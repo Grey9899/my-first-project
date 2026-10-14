@@ -1,43 +1,45 @@
-/* নখাপাড়া সপ্রাবি: অফলাইন সাপোর্টের জন্য Service Worker
- * সাইটে বড় কোনো পরিবর্তন করলে নিচের VERSION সংখ্যা বাড়িয়ে দিন (যেমন v2),
- * তাহলে সবার ফোনে নতুন সংস্করণ চালু হবে। */
-const VERSION = 'nakhapara-v2';
+// নখাপাড়া সপ্রাবি - Service Worker
+// ফাইল বদলালে নিচের সংস্করণ নম্বর বাড়ান, তাহলে পুরনো ক্যাশ মুছে নতুন ক্যাশ হবে।
+const VERSION = 'v5';
+const SHELL = 'nakhapara-shell-' + VERSION;
+const RUNTIME = 'nakhapara-runtime-' + VERSION;
 
-// সাইটের মূল ফাইল
-const APP_SHELL = [
+const SHELL_FILES = [
   './',
   './index.html',
   './manifest.json',
+  './firebase-config.js',
+  './firebase-sync.js',
+  './secure-attendance.js',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './apple-touch-icon.png'
 ];
 
-// বাইরের লাইব্রেরি (ইন্টারনেট থেকে আসে), আগেভাগে জমিয়ে রাখা হয়
-const EXTERNAL = [
+// প্রথমবার অনলাইনে খুললে এগুলো ক্যাশে চলে যাবে, পরে অফলাইনেও চলবে
+const CDN_FILES = [
   'https://cdn.tailwindcss.com',
-  'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+  'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
-    const cache = await caches.open(VERSION);
-    await cache.addAll(APP_SHELL);
-    // বাইরের ফাইল আনা না গেলেও ইনস্টল যেন আটকে না যায়
-    await Promise.all(EXTERNAL.map(async url => {
-      try {
-        const res = await fetch(url, { mode: 'no-cors' });
-        await cache.put(url, res);
-      } catch (e) { /* ইন্টারনেট না থাকলে বাদ */ }
-    }));
-    await self.skipWaiting();
+    const shell = await caches.open(SHELL);
+    // একটি ফাইল না পেলেও ইনস্টল যেন আটকে না যায়
+    await Promise.all(SHELL_FILES.map(u => shell.add(u).catch(() => {})));
+    const rt = await caches.open(RUNTIME);
+    await Promise.all(CDN_FILES.map(u =>
+      fetch(u, { mode: 'no-cors' }).then(r => rt.put(u, r)).catch(() => {})
+    ));
+    self.skipWaiting();
   })());
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k !== SHELL && k !== RUNTIME).map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });
@@ -45,32 +47,38 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;
-
   const url = new URL(req.url);
-  if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+  if (!/^https?:$/.test(url.protocol)) return;
 
-  // পাতা খোলা: আগে ইন্টারনেট থেকে নতুনটা, না পেলে জমানো কপি
+  // Firebase এর লাইভ সংযোগ (ডেটাবেস, লগইন) কখনো ক্যাশ করা যাবে না, সরাসরি নেটওয়ার্কে যাবে
+  const h = url.hostname;
+  if ((h.endsWith('googleapis.com') && h !== 'fonts.googleapis.com') || h.endsWith('firebaseio.com') ||
+      h.endsWith('firebaseinstallations.googleapis.com') || h.endsWith('cloudfunctions.net')) return;
+
+  // পেজ খোলা: আগে নেটওয়ার্ক (নতুন সংস্করণ পেতে), না পেলে ক্যাশ
   if (req.mode === 'navigate') {
     event.respondWith((async () => {
       try {
         const fresh = await fetch(req);
-        const cache = await caches.open(VERSION);
-        cache.put('./index.html', fresh.clone());
+        const c = await caches.open(SHELL);
+        c.put('./index.html', fresh.clone()).catch(() => {});
         return fresh;
       } catch (e) {
-        const cached = await caches.match('./index.html');
-        return cached || new Response('অফলাইন: পাতাটি পাওয়া যায়নি।', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+        return (await caches.match('./index.html')) || (await caches.match('./')) ||
+          new Response('অফলাইন: এখনও ক্যাশ হয়নি। একবার ইন্টারনেট দিয়ে খুলুন।', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
       }
     })());
     return;
   }
 
-  // বাকি সব (স্ক্রিপ্ট, ফন্ট, আইকন, ছবি): জমানোটা সঙ্গে সঙ্গে দেখায়, পেছনে নতুন করে আনে
+  // বাকি সব (CSS, ফন্ট, ছবি, স্ক্রিপ্ট): ক্যাশ থেকে দেখাও, পেছনে নতুন করে আনো
   event.respondWith((async () => {
-    const cache = await caches.open(VERSION);
-    const cached = await cache.match(req);
-    const network = fetch(req).then(res => {
-      if (res && (res.ok || res.type === 'opaque')) cache.put(req, res.clone());
+    const cached = await caches.match(req);
+    const network = fetch(req).then(async res => {
+      if (res && (res.ok || res.type === 'opaque')) {
+        const c = await caches.open(url.origin === location.origin ? SHELL : RUNTIME);
+        c.put(req, res.clone()).catch(() => {});
+      }
       return res;
     }).catch(() => null);
     return cached || (await network) || new Response('', { status: 504 });
