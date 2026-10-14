@@ -2954,9 +2954,7 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
         }
-    </script>
-
-    <!-- Firebase লগইন ও ক্লাউড সিঙ্ক (firebase-config.js-এ কনফিগ না বসানো পর্যন্ত নিষ্ক্রিয়) -->
-    <script type="module" src="firebase-sync.js"></script>
+    <script src="secure-attendance.js"></script>
+<script type="module" src="firebase-sync.js"></script>
 </body>
 </html>
