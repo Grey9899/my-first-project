@@ -14,11 +14,8 @@
     //     নাম অবশ্যই "শিক্ষক প্রোফাইল" ট্যাবের নামের (জনাব ছাড়া) মতো হতে হবে।
     const TEACHER_ACCOUNTS = {
         'ngps.bir127@gmail.com': 'চিত্তরঞ্জন রায়',
-        'teacher1@example.com': 'বুবলী রানী ঘোষ',
-        'tt.physics99@gmail.com': 'তোফায়েল তোরাব',
-        'teacher3@example.com': 'রাজেদুন্নাহার',
-        'teacher4@example.com': 'হাফিজা খাতুন'
-    };
+        'tt.physics99@gmail.com': 'তোফায়েল তোরাব'
+            };
     const HEAD_EMAIL = 'ngps.bir127@gmail.com';   // শুধু ইনি বিদ্যালয়ের অবস্থান/সীমা বদলাতে ও অন্যের ভুল হাজিরা মুছতে পারবেন
     const REQUIRE_BIOMETRIC = true;                 // false করলে আঙুলের ছাপ চাওয়া বন্ধ (স্তর ২ বাদ)
 
